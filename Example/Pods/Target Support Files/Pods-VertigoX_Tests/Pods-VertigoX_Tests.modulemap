@@ -1,0 +1,6 @@
+framework module Pods_VertigoX_Tests {
+  umbrella header "Pods-VertigoX_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

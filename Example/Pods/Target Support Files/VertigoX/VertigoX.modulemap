@@ -1,0 +1,6 @@
+framework module VertigoX {
+  umbrella header "VertigoX-umbrella.h"
+
+  export *
+  module * { export * }
+}

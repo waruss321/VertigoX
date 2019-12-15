@@ -1,0 +1,16 @@
+PODS:
+  - VertigoX (0.1.0)
+
+DEPENDENCIES:
+  - VertigoX (from `../`)
+
+EXTERNAL SOURCES:
+  VertigoX:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  VertigoX: 487d7453131c46e9df415704227e04cf26adbde0
+
+PODFILE CHECKSUM: cbdd67ae2a03782446511d29673e4866d6a8e5ab
+
+COCOAPODS: 1.8.4

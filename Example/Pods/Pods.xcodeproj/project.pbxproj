@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1740707369194B500AAA5D9E030609CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2E299BC87D0AB49A6D1921FC325AF656 /* Pods-VertigoX_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C209E13FF9CC340A3D820FD59CCC76 /* Pods-VertigoX_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C2EB9F52379B49FA9C18BF0BACA827E /* Pods-VertigoX_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B431AF5E4C15E1418ED30A770A2A9FA /* Pods-VertigoX_Tests-dummy.m */; };
+		569FADCA0266EA1612B837537AE6FCF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		573B3942ABC7448A905F3A5B6B9194DB /* VertigoX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC161A7AA4B726405A96A27BA23A3ABC /* VertigoX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6484B19F66DDE10BD9FB1A2D5E0394AB /* Pods-VertigoX_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2373B209F9F2268F4B3A1EE9835EA6B9 /* Pods-VertigoX_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FB381D88F8EC0ADE6097BC8FC49646B /* Pods-VertigoX_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B406A5E21AAFE8F46AB5AE005107D /* Pods-VertigoX_Example-dummy.m */; };
+		8FCF11AC079A925A0FD5AFAA5BE96253 /* VertigoX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ADC536FAA308C8377A80B11031F5B2 /* VertigoX-dummy.m */; };
+		C435F2F6A57E515F5523EA41EF3C6501 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		DAB728F22A6CD6910F011305B579E05F /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508039A09189495FA748E48176D5D9F /* ReplaceMe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60A8A59F752684EE7FB6C3B459402ED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AB2F67F44D55BD68EEE0F1A67661B9;
+			remoteInfo = "Pods-VertigoX_Example";
+		};
+		864BDDA95310DFC44BC08EC8D91D628A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48BB2811D7B0DD3DA4DBDB81B507D84C;
+			remoteInfo = VertigoX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00657E5E826277443B6526F9BCCC372B /* Pods-VertigoX_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Example.release.xcconfig"; sourceTree = "<group>"; };
+		024B882E65B4C0986DACD53AFD0002BC /* Pods-VertigoX_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		125FAAAECE1F3DE1531FB83F7B0A9018 /* Pods-VertigoX_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VertigoX_Tests-Info.plist"; sourceTree = "<group>"; };
+		1E63D6566949DE198C817831ADC4BF6D /* Pods-VertigoX_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VertigoX_Example-frameworks.sh"; sourceTree = "<group>"; };
+		22CAA572C91CD8A0ECA38CD2480C3DD0 /* Pods-VertigoX_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VertigoX_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2373B209F9F2268F4B3A1EE9835EA6B9 /* Pods-VertigoX_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VertigoX_Example-umbrella.h"; sourceTree = "<group>"; };
+		25B65A1635481CE12B8BEFD875E4514A /* VertigoX.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = VertigoX.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2C2B406A5E21AAFE8F46AB5AE005107D /* Pods-VertigoX_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VertigoX_Example-dummy.m"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		32B5741958AA9413B480835DD5B80AF8 /* VertigoX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VertigoX.framework; path = VertigoX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DC4C32CF33F7F738485BBA2C268409A /* Pods-VertigoX_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VertigoX_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3F6E1ABA989BD9633C8ACD17E023F921 /* Pods-VertigoX_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VertigoX_Example.modulemap"; sourceTree = "<group>"; };
+		40C209E13FF9CC340A3D820FD59CCC76 /* Pods-VertigoX_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VertigoX_Tests-umbrella.h"; sourceTree = "<group>"; };
+		55674775E10F57C5E6027B95DF651ECE /* Pods-VertigoX_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VertigoX_Example-Info.plist"; sourceTree = "<group>"; };
+		58ADC536FAA308C8377A80B11031F5B2 /* VertigoX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VertigoX-dummy.m"; sourceTree = "<group>"; };
+		6ACE946F81D5D68487E0C8C962291D0E /* Pods_VertigoX_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VertigoX_Example.framework; path = "Pods-VertigoX_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B431AF5E4C15E1418ED30A770A2A9FA /* Pods-VertigoX_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VertigoX_Tests-dummy.m"; sourceTree = "<group>"; };
+		81B3FAEEF887ADDE3796698314DFA756 /* Pods-VertigoX_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8508039A09189495FA748E48176D5D9F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = VertigoX/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		8724626E6AA5FC0F1AE1D6BE1E31C5BA /* Pods-VertigoX_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VertigoX_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9A68C4B38F319471FFF430DC4158F697 /* Pods_VertigoX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VertigoX_Tests.framework; path = "Pods-VertigoX_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A59F482FF9823544A8345C3EBE36E067 /* Pods-VertigoX_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B084A4A91497EAD37C39E0CB417B297B /* VertigoX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VertigoX-prefix.pch"; sourceTree = "<group>"; };
+		B854CF9A537981D763EF73B7E2358519 /* VertigoX-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VertigoX-Info.plist"; sourceTree = "<group>"; };
+		BB5D8833DF477FC309DBC4EDE6D3CB2A /* Pods-VertigoX_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VertigoX_Tests.modulemap"; sourceTree = "<group>"; };
+		E1122A02D18816A9EF065E0AAFB57FCA /* VertigoX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VertigoX.modulemap; sourceTree = "<group>"; };
+		E143BE077F35407FD5772C45A09857AB /* VertigoX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VertigoX.xcconfig; sourceTree = "<group>"; };
+		E715A9460F0AE034414740482A09DF0D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F0C5531CCF9D649D4FD4B2AFFAA23D98 /* Pods-VertigoX_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VertigoX_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F86B6E67DD9DD4091F6E1DC5D89FE19C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FC161A7AA4B726405A96A27BA23A3ABC /* VertigoX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VertigoX-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60E8FABA4181919A59A0E2AC93643850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				569FADCA0266EA1612B837537AE6FCF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B40F6EB64F25FF70417D142B4DCC25A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C435F2F6A57E515F5523EA41EF3C6501 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E252000CB70585493F753554778DD8E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1740707369194B500AAA5D9E030609CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		226AF56B9D992DC554E828DA3D29DA6F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				374B645350A5CAFB085B32E6C71B8C53 /* VertigoX */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		323D46C6636ACE0BFB6EBD4DA4CE64D9 /* Pods-VertigoX_Example */ = {
+			isa = PBXGroup;
+			children = (
+				3F6E1ABA989BD9633C8ACD17E023F921 /* Pods-VertigoX_Example.modulemap */,
+				8724626E6AA5FC0F1AE1D6BE1E31C5BA /* Pods-VertigoX_Example-acknowledgements.markdown */,
+				F0C5531CCF9D649D4FD4B2AFFAA23D98 /* Pods-VertigoX_Example-acknowledgements.plist */,
+				2C2B406A5E21AAFE8F46AB5AE005107D /* Pods-VertigoX_Example-dummy.m */,
+				1E63D6566949DE198C817831ADC4BF6D /* Pods-VertigoX_Example-frameworks.sh */,
+				55674775E10F57C5E6027B95DF651ECE /* Pods-VertigoX_Example-Info.plist */,
+				2373B209F9F2268F4B3A1EE9835EA6B9 /* Pods-VertigoX_Example-umbrella.h */,
+				81B3FAEEF887ADDE3796698314DFA756 /* Pods-VertigoX_Example.debug.xcconfig */,
+				00657E5E826277443B6526F9BCCC372B /* Pods-VertigoX_Example.release.xcconfig */,
+			);
+			name = "Pods-VertigoX_Example";
+			path = "Target Support Files/Pods-VertigoX_Example";
+			sourceTree = "<group>";
+		};
+		374B645350A5CAFB085B32E6C71B8C53 /* VertigoX */ = {
+			isa = PBXGroup;
+			children = (
+				8508039A09189495FA748E48176D5D9F /* ReplaceMe.swift */,
+				5BB1EE3612BA784446E52CD36D213471 /* Pod */,
+				8EC69618992DE3E5FCBA18E142C77628 /* Support Files */,
+			);
+			name = VertigoX;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3ADB4C87ED3986D3A8CDA5723558A444 /* Pods-VertigoX_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D8833DF477FC309DBC4EDE6D3CB2A /* Pods-VertigoX_Tests.modulemap */,
+				3DC4C32CF33F7F738485BBA2C268409A /* Pods-VertigoX_Tests-acknowledgements.markdown */,
+				22CAA572C91CD8A0ECA38CD2480C3DD0 /* Pods-VertigoX_Tests-acknowledgements.plist */,
+				6B431AF5E4C15E1418ED30A770A2A9FA /* Pods-VertigoX_Tests-dummy.m */,
+				125FAAAECE1F3DE1531FB83F7B0A9018 /* Pods-VertigoX_Tests-Info.plist */,
+				40C209E13FF9CC340A3D820FD59CCC76 /* Pods-VertigoX_Tests-umbrella.h */,
+				A59F482FF9823544A8345C3EBE36E067 /* Pods-VertigoX_Tests.debug.xcconfig */,
+				024B882E65B4C0986DACD53AFD0002BC /* Pods-VertigoX_Tests.release.xcconfig */,
+			);
+			name = "Pods-VertigoX_Tests";
+			path = "Target Support Files/Pods-VertigoX_Tests";
+			sourceTree = "<group>";
+		};
+		3FDA2BB2AB217E070933FAB8F3DEEF56 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				323D46C6636ACE0BFB6EBD4DA4CE64D9 /* Pods-VertigoX_Example */,
+				3ADB4C87ED3986D3A8CDA5723558A444 /* Pods-VertigoX_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5BB1EE3612BA784446E52CD36D213471 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F86B6E67DD9DD4091F6E1DC5D89FE19C /* LICENSE */,
+				E715A9460F0AE034414740482A09DF0D /* README.md */,
+				25B65A1635481CE12B8BEFD875E4514A /* VertigoX.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		80C45CC0869392F68FA66330FC8CEF88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6ACE946F81D5D68487E0C8C962291D0E /* Pods_VertigoX_Example.framework */,
+				9A68C4B38F319471FFF430DC4158F697 /* Pods_VertigoX_Tests.framework */,
+				32B5741958AA9413B480835DD5B80AF8 /* VertigoX.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EC69618992DE3E5FCBA18E142C77628 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1122A02D18816A9EF065E0AAFB57FCA /* VertigoX.modulemap */,
+				E143BE077F35407FD5772C45A09857AB /* VertigoX.xcconfig */,
+				58ADC536FAA308C8377A80B11031F5B2 /* VertigoX-dummy.m */,
+				B854CF9A537981D763EF73B7E2358519 /* VertigoX-Info.plist */,
+				B084A4A91497EAD37C39E0CB417B297B /* VertigoX-prefix.pch */,
+				FC161A7AA4B726405A96A27BA23A3ABC /* VertigoX-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/VertigoX";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				226AF56B9D992DC554E828DA3D29DA6F /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				80C45CC0869392F68FA66330FC8CEF88 /* Products */,
+				3FDA2BB2AB217E070933FAB8F3DEEF56 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A7445B18F7EA16626EFB7878BB249071 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E299BC87D0AB49A6D1921FC325AF656 /* Pods-VertigoX_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8AF62DE2F203A292BDCBAA266082E58 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				573B3942ABC7448A905F3A5B6B9194DB /* VertigoX-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4C8B6A2FF18984BEF43CF55B8B11D53 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6484B19F66DDE10BD9FB1A2D5E0394AB /* Pods-VertigoX_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26275885CEB8403A2981DEC63A28E899 /* Pods-VertigoX_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCA8616445CDF55C00399D56B4AC867 /* Build configuration list for PBXNativeTarget "Pods-VertigoX_Tests" */;
+			buildPhases = (
+				A7445B18F7EA16626EFB7878BB249071 /* Headers */,
+				0D67DD81418C9CF1E1DE2905173033C6 /* Sources */,
+				60E8FABA4181919A59A0E2AC93643850 /* Frameworks */,
+				C77A91D1ED3AE4B10FD7C374D72FDF38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E39EB011BC2121F4997BCF5DA441D07B /* PBXTargetDependency */,
+			);
+			name = "Pods-VertigoX_Tests";
+			productName = "Pods-VertigoX_Tests";
+			productReference = 9A68C4B38F319471FFF430DC4158F697 /* Pods_VertigoX_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		48BB2811D7B0DD3DA4DBDB81B507D84C /* VertigoX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF84A91EC40193CCB97D17551FBAF5F6 /* Build configuration list for PBXNativeTarget "VertigoX" */;
+			buildPhases = (
+				A8AF62DE2F203A292BDCBAA266082E58 /* Headers */,
+				86329456B0758A827BF9F7B701CC31A0 /* Sources */,
+				E252000CB70585493F753554778DD8E2 /* Frameworks */,
+				AC1D527F1345171D12FC31BD262BB9AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VertigoX;
+			productName = VertigoX;
+			productReference = 32B5741958AA9413B480835DD5B80AF8 /* VertigoX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		86AB2F67F44D55BD68EEE0F1A67661B9 /* Pods-VertigoX_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99A01A32A8607DC0B988A266AF33D46F /* Build configuration list for PBXNativeTarget "Pods-VertigoX_Example" */;
+			buildPhases = (
+				D4C8B6A2FF18984BEF43CF55B8B11D53 /* Headers */,
+				9306345D077258C38028FEA1F6D74EAA /* Sources */,
+				9B40F6EB64F25FF70417D142B4DCC25A /* Frameworks */,
+				CDA8672B6391AFA4E95701BEAEAC0232 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F10BDB66F5E8072D9A30035DC1F9A9C2 /* PBXTargetDependency */,
+			);
+			name = "Pods-VertigoX_Example";
+			productName = "Pods-VertigoX_Example";
+			productReference = 6ACE946F81D5D68487E0C8C962291D0E /* Pods_VertigoX_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 80C45CC0869392F68FA66330FC8CEF88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86AB2F67F44D55BD68EEE0F1A67661B9 /* Pods-VertigoX_Example */,
+				26275885CEB8403A2981DEC63A28E899 /* Pods-VertigoX_Tests */,
+				48BB2811D7B0DD3DA4DBDB81B507D84C /* VertigoX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC1D527F1345171D12FC31BD262BB9AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C77A91D1ED3AE4B10FD7C374D72FDF38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA8672B6391AFA4E95701BEAEAC0232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D67DD81418C9CF1E1DE2905173033C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2EB9F52379B49FA9C18BF0BACA827E /* Pods-VertigoX_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86329456B0758A827BF9F7B701CC31A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAB728F22A6CD6910F011305B579E05F /* ReplaceMe.swift in Sources */,
+				8FCF11AC079A925A0FD5AFAA5BE96253 /* VertigoX-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9306345D077258C38028FEA1F6D74EAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FB381D88F8EC0ADE6097BC8FC49646B /* Pods-VertigoX_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E39EB011BC2121F4997BCF5DA441D07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-VertigoX_Example";
+			target = 86AB2F67F44D55BD68EEE0F1A67661B9 /* Pods-VertigoX_Example */;
+			targetProxy = 60A8A59F752684EE7FB6C3B459402ED4 /* PBXContainerItemProxy */;
+		};
+		F10BDB66F5E8072D9A30035DC1F9A9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VertigoX;
+			target = 48BB2811D7B0DD3DA4DBDB81B507D84C /* VertigoX */;
+			targetProxy = 864BDDA95310DFC44BC08EC8D91D628A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		20AAB04CC63001BA4A05122491C35125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E143BE077F35407FD5772C45A09857AB /* VertigoX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VertigoX/VertigoX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VertigoX/VertigoX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VertigoX/VertigoX.modulemap";
+				PRODUCT_MODULE_NAME = VertigoX;
+				PRODUCT_NAME = VertigoX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5491150AF218E7932F054FA25390F332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024B882E65B4C0986DACD53AFD0002BC /* Pods-VertigoX_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5BA8325967F8C725AAA813622C6F3429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A59F482FF9823544A8345C3EBE36E067 /* Pods-VertigoX_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8221C652C9CC17627A468C6EE41D0BCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B3FAEEF887ADDE3796698314DFA756 /* Pods-VertigoX_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VertigoX_Example/Pods-VertigoX_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VertigoX_Example/Pods-VertigoX_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8AF77408D43EEE2F0712A2EDFE68E2D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E143BE077F35407FD5772C45A09857AB /* VertigoX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VertigoX/VertigoX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VertigoX/VertigoX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VertigoX/VertigoX.modulemap";
+				PRODUCT_MODULE_NAME = VertigoX;
+				PRODUCT_NAME = VertigoX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B65FC7730D3EEBAA10B9D8017726BF1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00657E5E826277443B6526F9BCCC372B /* Pods-VertigoX_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VertigoX_Example/Pods-VertigoX_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VertigoX_Example/Pods-VertigoX_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
+				B0087CB4594321EF41619F3181FE120E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99A01A32A8607DC0B988A266AF33D46F /* Build configuration list for PBXNativeTarget "Pods-VertigoX_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8221C652C9CC17627A468C6EE41D0BCA /* Debug */,
+				B65FC7730D3EEBAA10B9D8017726BF1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCA8616445CDF55C00399D56B4AC867 /* Build configuration list for PBXNativeTarget "Pods-VertigoX_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BA8325967F8C725AAA813622C6F3429 /* Debug */,
+				5491150AF218E7932F054FA25390F332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF84A91EC40193CCB97D17551FBAF5F6 /* Build configuration list for PBXNativeTarget "VertigoX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AF77408D43EEE2F0712A2EDFE68E2D1 /* Debug */,
+				20AAB04CC63001BA4A05122491C35125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

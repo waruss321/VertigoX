@@ -1,0 +1,22 @@
+{
+  "name": "VertigoX",
+  "version": "0.1.0",
+  "summary": "A short description of VertigoX.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/waruss321/VertigoX",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "waruss321": "r.warwick@pitchero.com"
+  },
+  "source": {
+    "git": "https://github.com/waruss321/VertigoX.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "VertigoX/Classes/**/*"
+}
