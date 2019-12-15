@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'VertigoX_Example' do
+  pod 'VertigoX', :path => '../'
+
+  target 'VertigoX_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
