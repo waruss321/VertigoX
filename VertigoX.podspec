@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/waruss321/VertigoX'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'waruss321' => 'russellwarwick1998@gmail.com' }
-  s.source           = { :git => 'https://github.com/waruss321/VertigoX.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/waruss321/VertigoX.git', :branch => "master", :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
 
