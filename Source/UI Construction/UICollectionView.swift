@@ -9,8 +9,7 @@
 import UIKit
 
 public extension UICollectionView {
-convenience init(background: UIColor, contentInset: UIEdgeInsets = .zero,
-    layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout(), alwaysBounce: Bool = true, berticalScrollIndicator: Bool = true) {
+    convenience init(background: UIColor, contentInset: UIEdgeInsets = .zero, layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout(), alwaysBounce: Bool = true, berticalScrollIndicator: Bool = true) {
     
         self.init(frame: .zero, collectionViewLayout: layout)
         self.backgroundColor = background

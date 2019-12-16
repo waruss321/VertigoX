@@ -17,12 +17,10 @@ public extension UIButton {
         self.setTitleColor(color, for: .normal)
         self.setTitleColor(highlightedColor, for: .highlighted)
         self.backgroundColor = backgroundColor
-        
     }
 
     convenience init(image: UIImage) {
         self.init()
         self.setImage(image, for: .normal)
     }
-    
 }

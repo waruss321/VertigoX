@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIView {
-    convenience public init(color: UIColor = .clear, alpha: CGFloat = 1.0) {
+    convenience init(color: UIColor = .clear, alpha: CGFloat = 1.0) {
         self.init(frame: .zero)
         self.backgroundColor = color
         self.alpha = alpha
