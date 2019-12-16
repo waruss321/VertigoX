@@ -8,7 +8,7 @@ public enum Deeplinks: DeepLinkType {
     
 }
 
-public protocol Coordinator: class, Presentable {
+public protocol Coordinator: Presentable {
     func start()
     func start(with option: DeepLinkType?)
     func addDependency(_ coordinator: Coordinator)

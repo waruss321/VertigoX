@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UILabel {
-    convenience public init(text: String? = nil, font: UIFont = UIFont.systemFont(ofSize: 15), color: UIColor = .black, alignment: NSTextAlignment = .left, lines: Int = 1, backgroundColor: UIColor = .clear) {
+    convenience init(text: String? = nil, font: UIFont = UIFont.systemFont(ofSize: 15), color: UIColor = .black, alignment: NSTextAlignment = .left, lines: Int = 1, backgroundColor: UIColor = .clear) {
         self.init()
         self.text = text
         self.textAlignment = alignment

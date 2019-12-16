@@ -847,19 +847,11 @@
 		BC21035623A7018A00DDE520 /* Coordinator Kit */ = {
 			isa = PBXGroup;
 			children = (
-				BC21035723A7018A00DDE520 /* Factories */,
 				BC21035823A7018A00DDE520 /* BaseCoordinator.swift */,
 				BC21035923A7018A00DDE520 /* Protocols */,
 				BC21035D23A7018B00DDE520 /* Router */,
 			);
 			path = "Coordinator Kit";
-			sourceTree = "<group>";
-		};
-		BC21035723A7018A00DDE520 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Factories;
 			sourceTree = "<group>";
 		};
 		BC21035923A7018A00DDE520 /* Protocols */ = {
