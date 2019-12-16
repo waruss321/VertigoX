@@ -689,13 +689,7 @@
 		374B645350A5CAFB085B32E6C71B8C53 /* VertigoX */ = {
 			isa = PBXGroup;
 			children = (
-				BC21035623A7018A00DDE520 /* Coordinator Kit */,
-				BC21034E23A7018A00DDE520 /* Extensions */,
-				BC21036A23A7018B00DDE520 /* IG List Kit */,
-				BC21036023A7018B00DDE520 /* UI Constraints */,
-				BC21036323A7018B00DDE520 /* UI Construction */,
-				BC21034B23A7018A00DDE520 /* View Templates */,
-				BC21035523A7018A00DDE520 /* Helpers.swift */,
+				BC2103B123A71EEC00DDE520 /* Source */,
 				5BB1EE3612BA784446E52CD36D213471 /* Pod */,
 				8EC69618992DE3E5FCBA18E142C77628 /* Support Files */,
 			);
@@ -945,6 +939,20 @@
 				BC21037323A7018B00DDE520 /* IGItemFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		BC2103B123A71EEC00DDE520 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BC21035623A7018A00DDE520 /* Coordinator Kit */,
+				BC21034E23A7018A00DDE520 /* Extensions */,
+				BC21036A23A7018B00DDE520 /* IG List Kit */,
+				BC21036023A7018B00DDE520 /* UI Constraints */,
+				BC21036323A7018B00DDE520 /* UI Construction */,
+				BC21034B23A7018A00DDE520 /* View Templates */,
+				BC21035523A7018A00DDE520 /* Helpers.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		CB082EFD36609F35494E7F188DD3A2FB /* Signals */ = {
