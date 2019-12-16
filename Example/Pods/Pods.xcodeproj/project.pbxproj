@@ -50,7 +50,6 @@
 		48809D6ECBC7B4E2D504B2668BACF286 /* IGListBindingSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414453838A91929D535AF63C61F9BACD /* IGListBindingSectionController.m */; };
 		4C0FAD5BD111FDE5E49B2E518BEDB49A /* Pods-VertigoX_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2373B209F9F2268F4B3A1EE9835EA6B9 /* Pods-VertigoX_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C2EB9F52379B49FA9C18BF0BACA827E /* Pods-VertigoX_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B431AF5E4C15E1418ED30A770A2A9FA /* Pods-VertigoX_Tests-dummy.m */; };
-		4D7A9B4EB5A16EA7B32F83583060B016 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508039A09189495FA748E48176D5D9F /* ReplaceMe.swift */; };
 		4E3204AA702EAF5A6D37D5490090D07E /* VertigoX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ADC536FAA308C8377A80B11031F5B2 /* VertigoX-dummy.m */; };
 		5060C3CF1D06D93BCA1ADF35C13CB77B /* IGListGenericSectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 97EE1CD47F00D77A52AC887A53594D85 /* IGListGenericSectionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509C2CD032C62CD3A687283595E73C49 /* IGListExperiments.h in Headers */ = {isa = PBXBuildFile; fileRef = B98365F3A18A89BDD215EA6C7692F013 /* IGListExperiments.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -355,7 +354,6 @@
 		81B3FAEEF887ADDE3796698314DFA756 /* Pods-VertigoX_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		824D31F0F4216BCD9D73F80A12643C33 /* UICollectionView+IGListBatchUpdateData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+IGListBatchUpdateData.m"; path = "Source/IGListKit/Internal/UICollectionView+IGListBatchUpdateData.m"; sourceTree = "<group>"; };
 		849CD35D13014AACC474BF42123F136C /* UICollectionView+IGListBatchUpdateData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+IGListBatchUpdateData.h"; path = "Source/IGListKit/Internal/UICollectionView+IGListBatchUpdateData.h"; sourceTree = "<group>"; };
-		8508039A09189495FA748E48176D5D9F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = VertigoX/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		85639564136FC81DAFE083593609701E /* IGListCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListCollectionView.m; path = Source/IGListKit/IGListCollectionView.m; sourceTree = "<group>"; };
 		8724626E6AA5FC0F1AE1D6BE1E31C5BA /* Pods-VertigoX_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VertigoX_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		892D99856E08A01DDC4552951FE5A20E /* IGListDiffKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IGListDiffKit.modulemap; sourceTree = "<group>"; };
@@ -698,7 +696,6 @@
 				BC21036323A7018B00DDE520 /* UI Construction */,
 				BC21034B23A7018A00DDE520 /* View Templates */,
 				BC21035523A7018A00DDE520 /* Helpers.swift */,
-				8508039A09189495FA748E48176D5D9F /* ReplaceMe.swift */,
 				5BB1EE3612BA784446E52CD36D213471 /* Pod */,
 				8EC69618992DE3E5FCBA18E142C77628 /* Support Files */,
 			);
@@ -1466,7 +1463,6 @@
 				BC21038A23A7018B00DDE520 /* UIImageView.swift in Sources */,
 				BC21038423A7018B00DDE520 /* UIViewConstraints.swift in Sources */,
 				BC21038723A7018B00DDE520 /* UIStackView.swift in Sources */,
-				4D7A9B4EB5A16EA7B32F83583060B016 /* ReplaceMe.swift in Sources */,
 				BC21038C23A7018B00DDE520 /* SpaceItem.swift in Sources */,
 				BC21037F23A7018B00DDE520 /* Presentable.swift in Sources */,
 				4E3204AA702EAF5A6D37D5490090D07E /* VertigoX-dummy.m in Sources */,
