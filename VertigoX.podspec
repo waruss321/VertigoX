@@ -12,10 +12,6 @@ Pod::Spec.new do |s|
   s.summary          = 'A Swift ToolKit to help create clean efficient apps'
   s.swift_version    = '5.0'
 
- 
-
-  s.description      = <<--DESC 'A Swift ToolKit to help create clean efficient apps' DESC
-
   s.homepage         = 'https://github.com/waruss321/VertigoX'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'waruss321' => 'russellwarwick1998@gmail.com' }
