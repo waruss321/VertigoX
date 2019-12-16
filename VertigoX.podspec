@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.version          = '0.1.0'
   s.summary          = 'A Swift ToolKit to help create clean efficient apps'
   s.swift_version    = '5.0'
-
+ 
   s.homepage         = 'https://github.com/waruss321/VertigoX'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'waruss321' => 'russellwarwick1998@gmail.com' }
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'VertigoX/Classes/**/*'
+  s.source_files = 'VertigoX/**/*'
   
   # s.resource_bundles = {
   #   'VertigoX' => ['VertigoX/Assets/*.png']
