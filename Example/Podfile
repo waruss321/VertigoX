@@ -2,6 +2,10 @@ use_frameworks!
 
 target 'VertigoX_Example' do
   pod 'VertigoX', :path => '../'
+  
+  pod 'IGListKit', '~> 4.0.0'
+  pod 'Signals', '~> 6.0'
+  pod 'FittedSheets', '~> 1.3.0'
 
   target 'VertigoX_Tests' do
     inherit! :search_paths
