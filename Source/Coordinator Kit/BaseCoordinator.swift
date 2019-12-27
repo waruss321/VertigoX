@@ -1,9 +1,9 @@
 //
 //  BaseCoordinator.swift
-//  Pitchero Club
+//  VertigoX
 //
 //  Created by Russell Warwick on 21/06/2019.
-//  Copyright © 2019 Pitchero. All rights reserved.
+//  Copyright © 2019 Russell Warwick. All rights reserved.
 //
 
 /* DOCS

@@ -22,7 +22,7 @@ pod 'VertigoX'
 
 ## Author
 
-waruss321, r.warwick@pitchero.com
+waruss321, russellwarwick1998@gmail.com
 
 ## License
 
