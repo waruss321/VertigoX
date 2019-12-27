@@ -144,6 +144,7 @@
 		BC21039023A7018B00DDE520 /* IGSectionControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037223A7018B00DDE520 /* IGSectionControllerFactory.swift */; };
 		BC21039123A7018B00DDE520 /* IGItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037323A7018B00DDE520 /* IGItemFactory.swift */; };
 		BC21039223A7018B00DDE520 /* AdapterViewModelTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037423A7018B00DDE520 /* AdapterViewModelTemplate.swift */; };
+		BC68376E23B67B4900537258 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68376D23B67B4900537258 /* UITextField.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8867B0024277300EA20B4BD1F4006C /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = A12A0B447B8FE582B55EAC1813A59D9C /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0C607338188A063133452E6C11A02 /* IGListIndexSetResult.m */; };
@@ -428,6 +429,7 @@
 		BC21037323A7018B00DDE520 /* IGItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGItemFactory.swift; sourceTree = "<group>"; };
 		BC21037423A7018B00DDE520 /* AdapterViewModelTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdapterViewModelTemplate.swift; sourceTree = "<group>"; };
 		BC590FFC9409ABA893BEB323054F77C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = FittedSheetsPod/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		BC68376D23B67B4900537258 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C087E682BB3BAAE72496F8D44A9E48A4 /* IGListBindingSectionController+DebugDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IGListBindingSectionController+DebugDescription.m"; path = "Source/IGListKit/Internal/IGListBindingSectionController+DebugDescription.m"; sourceTree = "<group>"; };
 		C626A31CFA1182D83F62A0F5F716C13C /* IGListCollectionViewLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListCollectionViewLayout.h; path = Source/IGListKit/IGListCollectionViewLayout.h; sourceTree = "<group>"; };
 		C7A2C775360F95491AE4E685F45BA1CA /* Yalta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Yalta.swift; path = FittedSheetsPod/Yalta.swift; sourceTree = "<group>"; };
@@ -891,6 +893,7 @@
 				BC21036723A7018B00DDE520 /* UIButton.swift */,
 				BC21036823A7018B00DDE520 /* UIImageView.swift */,
 				BC21036923A7018B00DDE520 /* UILabel.swift */,
+				BC68376D23B67B4900537258 /* UITextField.swift */,
 			);
 			path = "UI Construction";
 			sourceTree = "<group>";
@@ -1391,6 +1394,7 @@
 			files = (
 				96F73A745FD2532410C8DFC5C036BACD /* FittedSheets-dummy.m in Sources */,
 				8806921DD4A51C4C41C9B154519A082B /* InitialTouchPanGestureRecognizer.swift in Sources */,
+				BC68376E23B67B4900537258 /* UITextField.swift in Sources */,
 				1B87DAD9660487FB9A81215800183124 /* SheetSize.swift in Sources */,
 				8C91E1421BA7BE9A02E902B5AB8F6484 /* SheetViewController.swift in Sources */,
 				B1B913EDBD95A2C27F055D19EFB20169 /* UIViewControllerExtension.swift in Sources */,
