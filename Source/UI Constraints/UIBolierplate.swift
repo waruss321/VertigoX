@@ -134,6 +134,14 @@ public extension UIEdgeInsets {
         self.right = right
     }
     
+    init(_ top: CGFloat = .zero, _ left: CGFloat = .zero, _ bottom: CGFloat = .zero, _ right: CGFloat = .zero) {
+        self.init()
+        self.top = top
+        self.left = left
+        self.bottom = bottom
+        self.right = right
+    }
+    
     init(_ allSides: CGFloat) {
         self.init()
         self.top = allSides
