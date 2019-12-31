@@ -26,7 +26,7 @@ open class BaseAdapterViewController: ViewController, ListAdapterDataSource {
 
     //MARK: - Init
 
-    init(viewModel: AdapterViewModelTemplate) {
+    public init(viewModel: AdapterViewModelTemplate) {
         self.model = viewModel
         super.init()
     }

@@ -71,7 +71,7 @@ open class BaseSectionController: ListSectionController, SectionTemplate {
     
     //MARK: - Init
         
-    override init() {
+    public override init() {
         super.init()
         inset = UIEdgeInsets(top: topPadding, bottom: bottomPadding)
     }

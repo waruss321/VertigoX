@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VertigoX'
-  s.version          = '0.1.5'
-  s.summary          = 'A Swift ToolKit to help create clean efficient apps'
+  s.version          = '0.1.6'
+  s.summary          = 'A Swift ToolKit to help create clean, scalable and efficient apps'
   s.swift_version    = '5.0'
  
   s.homepage         = 'https://github.com/waruss321/VertigoX'

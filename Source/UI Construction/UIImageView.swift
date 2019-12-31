@@ -9,11 +9,16 @@
 import UIKit
 
 public extension UIImageView {
-    convenience init(image: UIImage? = nil, mode: UIView.ContentMode = .scaleAspectFit, color: UIColor = .black, backgroundColor: UIColor = .clear) {
+    convenience init(image: UIImage? = nil, mode: UIView.ContentMode = .scaleAspectFit, color: UIColor = .black, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
         self.init()
         self.image = image
         self.contentMode = mode
         self.tintColor = color
         self.backgroundColor = backgroundColor
+        
+        if cornerRadius > 0 {
+            self.layer.cornerRadius = cornerRadius
+            self.layer.masksToBounds = true
+        }
     }
 }

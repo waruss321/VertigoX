@@ -35,7 +35,16 @@ public extension UIView {
     
     //MARK: - Pin View
 
-    func pin(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, priority: UILayoutPrioritys? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+    func pin(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        pin(withPriority: nil, top: top, leading: leading, bottom: bottom, trailing: trailing, padding: padding, size: size)
+    }
+    
+    //MARK : - Pin With Priorty
+    
+    func pin(withPriority priority: UILayoutPrioritys? = nil, top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
         

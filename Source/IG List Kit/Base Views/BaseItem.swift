@@ -39,7 +39,7 @@ open class BaseVerticalItemCell: UICollectionViewCell, ViewTemplate {
         bindViewModel()
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         width.constant = bounds.size.width
         contentView.fillSuperview() //This needs to happen otherwise the cell will not adjust to auto size
