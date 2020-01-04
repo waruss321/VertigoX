@@ -19,18 +19,23 @@ enum RussDeepLinks: DeepLinkType {
 }
 
 final class ApplicationCoordinator: BaseCoordinator {
+    
+    //MARK: - Dependencies
 
     private let coordinatorFactory: CoordinatorFactory
+    
+    //MARK: - Init
     
     init(router: Router, coordinatorFactory: CoordinatorFactory) {
         self.coordinatorFactory = coordinatorFactory
         super.init(router: router)
     }
     
+    //MARK: - Start
+    
     override func start(with option: DeepLinkType?) {
         runLoginCoordinator(option: option)
     }
-
     
     //MARK: - Run Flows
     

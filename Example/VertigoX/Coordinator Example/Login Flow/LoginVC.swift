@@ -14,10 +14,16 @@ protocol LoginModule: BaseModule {
 
 class LoginVC: ViewController, LoginModule {
     
+    //MARK: - Signals
+    
     var loggedIn = VoidSignal()
     
-    let testLabel = UILabel(text: "Welcome to my App", font: UIFont.boldSystemFont(ofSize: 18), alignment: .center)
-    let loginButton = UIButton(text: "LOGIN")
+    //MARK: - Properties
+    
+    private let testLabel = UILabel(text: "Welcome to my App", font: UIFont.boldSystemFont(ofSize: 18), alignment: .center)
+    private let loginButton = UIButton(text: "LOGIN")
+    
+    //MARK: - Main View
     
     override func setConstraints(frame: CGRect) {
         view.addSubviews(testLabel, loginButton)
@@ -28,6 +34,8 @@ class LoginVC: ViewController, LoginModule {
                         padding: UIEdgeInsets(left: 40, bottom: 100, right: 40),
                         size: CGSize(h: 60))
     }
+    
+    //MARK: - Bind
     
     override func bindSignals() {
         loginButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in

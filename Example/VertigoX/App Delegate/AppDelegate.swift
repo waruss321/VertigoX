@@ -17,13 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var applicationCoordinator: Coordinator = makeCoordinator()
     
     var rootController: UINavigationController {
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UINavigationController()
         self.window?.makeKeyAndVisible()
         return self.window!.rootViewController as! UINavigationController
     }
-    
     
     //MARK: - UIApplicationDelegate
     
@@ -35,9 +33,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func makeCoordinator() -> Coordinator {
         return ApplicationCoordinator(router: RouterImp(rootController: rootController), coordinatorFactory: CoordinatorFactoryImp())
     }
-    
-    
-    
 }
-
-//RouterImp(rootController: UINavigationController()

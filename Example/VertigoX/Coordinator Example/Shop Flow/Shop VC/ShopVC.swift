@@ -15,14 +15,18 @@ protocol ShopModule: BaseModule {
 
 class ShopVC: ViewController, ShopModule {
     
+    //MARK: - Signals
+    
     var addItem = VoidSignal()
     var logout = VoidSignal()
     
-    let testLabel = UILabel(text: "Welcome to the shop", font: UIFont.boldSystemFont(ofSize: 18), alignment: .center)
-    let addButton = UIButton(text: "Add Item")
+    //MARK: - Properties
     
-    let logoutButton = UIButton(text: "Logout")
+    private let testLabel = UILabel(text: "Welcome to the shop", font: UIFont.boldSystemFont(ofSize: 18), alignment: .center)
+    private let addButton = UIButton(text: "Add Item")
+    private let logoutButton = UIButton(text: "Logout")
     
+    //MARK: - Main View
     
     override func styleView() {
         view.backgroundColor = .cyan
@@ -39,6 +43,8 @@ class ShopVC: ViewController, ShopModule {
         
         logoutButton.pin(top: view.topSafe, leading: view.leading, padding: UIEdgeInsets(top: 30, left: 30))
     }
+    
+    //MARK: - Bind
     
     override func bindSignals() {
         addButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in

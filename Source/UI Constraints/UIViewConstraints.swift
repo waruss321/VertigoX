@@ -13,22 +13,22 @@ public extension UIView {
     //MARK: - Fill to views
 
     func fillSuperview(safe: Bool = true) {
-        self.fillSuperview(padding: .zero, safe: safe)
+        self.fillSuperview(padding: .zero, usingSafeArea: safe)
     }
     
-    func fillSuperview(padding: UIEdgeInsets = .zero, size: CGSize = .zero, safe: Bool = true) {
+    func fillSuperview(padding: UIEdgeInsets = .zero, size: CGSize = .zero, usingSafeArea: Bool = true) {
         
         guard let superview = superview else { return }
 
-        self.fill(superview, padding: padding, size: size, safe: safe)
+        self.fill(superview, padding: padding, size: size, usingSafeArea: usingSafeArea)
     }
     
-    func fill(_ view: UIView, padding: UIEdgeInsets = .zero, size: CGSize = .zero, safe: Bool = true) {
+    func fill(_ view: UIView, padding: UIEdgeInsets = .zero, size: CGSize = .zero, usingSafeArea: Bool = true) {
         
-        let topAnchor = (safe) ? view.topSafe : view.top
-        let leadingAnchor = (safe) ? view.leadingSafe : view.leading
-        let bottomAnchor = (safe) ? view.bottomSafe : view.bottom
-        let trailingAnchor = (safe) ? view.trailingSafe : view.trailing
+        let topAnchor = (usingSafeArea) ? view.topSafe : view.top
+        let leadingAnchor = (usingSafeArea) ? view.leadingSafe : view.leading
+        let bottomAnchor = (usingSafeArea) ? view.bottomSafe : view.bottom
+        let trailingAnchor = (usingSafeArea) ? view.trailingSafe : view.trailing
         
         self.pin(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: padding, size: size)
     }
@@ -88,50 +88,49 @@ public extension UIView {
             anchor.isActive = true
         }
         
-        self.setSize(size)
+        self.size(size)
     }
 
     //MARK: - Center Views
     
-    func centerTo(_ view: UIView, size: CGSize = .zero) {
+    func centerTo(_ view: UIView, offset: CGPoint = .zero, size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        self.setSize(size)
+        centerXTo(view, offset: offset.x)
+        centerYTo(view, offset: offset.y)
+
+        self.size(size)
     }
     
-    @discardableResult func centerYTo(_ view: UIView, size: CGSize = .zero) -> NSLayoutConstraint? {
-        
+    @discardableResult func centerXTo(_ view: UIView, offset: CGFloat, size: CGSize = .zero) -> NSLayoutConstraint? {
+    
         translatesAutoresizingMaskIntoConstraints = false
         
-        let constraint: NSLayoutConstraint? = centerYAnchor.constraint(equalTo: view.centerYAnchor)
-
-        constraint?.isActive = true
+        let constraint: NSLayoutConstraint = centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: offset)
+        constraint.isActive = true
         
-        self.setSize(size)
+        self.size(size)
         
         return constraint
     }
     
-    @discardableResult func centerXTo(_ view: UIView, size: CGSize = .zero) -> NSLayoutConstraint? {
     
+    @discardableResult func centerYTo(_ view: UIView, offset: CGFloat, size: CGSize = .zero) -> NSLayoutConstraint? {
+        
         translatesAutoresizingMaskIntoConstraints = false
         
-        let constraint: NSLayoutConstraint? = centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let constraint: NSLayoutConstraint = centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: offset)
+        constraint.isActive = true
         
-        constraint?.isActive = true
-
-        self.setSize(size)
+        self.size(size)
         
         return constraint
     }
-    
+
     //MARK: - CGSize
     
-    @discardableResult func setHeight(_ height: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
+    @discardableResult func height(_ height: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -148,7 +147,7 @@ public extension UIView {
         return constraint
     }
     
-    @discardableResult func setWidth(_ width: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
+    @discardableResult func width(_ width: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -165,7 +164,7 @@ public extension UIView {
         return constraint
     }
     
-    func setSize(_ size: CGSize) {
+    func size(_ size: CGSize) {
         
         translatesAutoresizingMaskIntoConstraints = false
         

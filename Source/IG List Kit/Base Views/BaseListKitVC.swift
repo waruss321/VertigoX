@@ -1,5 +1,5 @@
 //
-//  BaseAdapterViewController.swift
+//  BaseListKitVC.swift
 //  RussTools
 //
 //  Created by Russell Warwick on 23/10/2019.
@@ -8,7 +8,7 @@
 
 import IGListKit
 
-open class BaseAdapterViewController: ViewController, ListAdapterDataSource {
+open class BaseListKitVC: ViewController, ListAdapterDataSource {
     
     //MARK: - Properties
     

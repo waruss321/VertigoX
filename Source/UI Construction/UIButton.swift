@@ -10,11 +10,11 @@ import UIKit
 
 public extension UIButton {
     
-    convenience init(font: UIFont = UIFont.systemFont(ofSize: 15), color: UIColor = .black, highlightedColor: UIColor = .lightGray, text: String? = nil, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
+    convenience init(font: UIFont = UIFont.systemFont(ofSize: 15), fontColor: UIColor = .black, highlightedColor: UIColor = .lightGray, text: String? = nil, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
         self.init()
         self.setTitle(text, for: .normal)
         self.titleLabel?.font = font
-        self.setTitleColor(color, for: .normal)
+        self.setTitleColor(fontColor, for: .normal)
         self.setTitleColor(highlightedColor, for: .highlighted)
         self.backgroundColor = backgroundColor
         
@@ -24,8 +24,14 @@ public extension UIButton {
         }
     }
 
-    convenience init(image: UIImage) {
+    convenience init(image: UIImage, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
         self.init()
         self.setImage(image, for: .normal)
+        self.backgroundColor = backgroundColor
+        
+        if cornerRadius > 0 {
+            self.layer.cornerRadius = cornerRadius
+            self.layer.masksToBounds = true
+        }
     }
 }

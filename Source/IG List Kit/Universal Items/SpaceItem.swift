@@ -41,6 +41,6 @@ open class SpaceCell: BaseVerticalItemCell {
     
     override public func bindViewModel() {
         guard let item = item as? SpaceModel else { return }
-        spaceView.setHeight(item.height)
+        spaceView.height(item.height)
     }
 }
