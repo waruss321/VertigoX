@@ -125,7 +125,7 @@ public extension UIView {
 
 //MARK: - UIStackView
 
-extension UIStackView {
+public extension UIStackView {
     func addArrangedSubviews(_ views: UIView...){
         views.forEach({ addArrangedSubview($0) })
     }
