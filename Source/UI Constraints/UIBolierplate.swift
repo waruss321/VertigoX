@@ -129,6 +129,17 @@ public extension UIStackView {
     func addArrangedSubviews(_ views: UIView...){
         views.forEach({ addArrangedSubview($0) })
     }
+    
+    @discardableResult
+    func removeAllArrangedSubviews() -> [UIView] {
+        let removedSubviews = arrangedSubviews.reduce([]) { (removedSubviews, subview) -> [UIView] in
+            self.removeArrangedSubview(subview)
+            NSLayoutConstraint.deactivate(subview.constraints)
+            subview.removeFromSuperview()
+            return removedSubviews + [subview]
+        }
+        return removedSubviews
+    }
 }
 
 //MARK: - UIEdgeInsets
