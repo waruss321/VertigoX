@@ -103,7 +103,7 @@ public extension UIView {
         self.size(size)
     }
     
-    @discardableResult func centerXTo(_ view: UIView, offset: CGFloat, size: CGSize = .zero) -> NSLayoutConstraint? {
+    @discardableResult func centerXTo(_ view: UIView, offset: CGFloat = .zero, size: CGSize = .zero) -> NSLayoutConstraint? {
     
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -116,7 +116,7 @@ public extension UIView {
     }
     
     
-    @discardableResult func centerYTo(_ view: UIView, offset: CGFloat, size: CGSize = .zero) -> NSLayoutConstraint? {
+    @discardableResult func centerYTo(_ view: UIView, offset: CGFloat = .zero, size: CGSize = .zero) -> NSLayoutConstraint? {
         
         translatesAutoresizingMaskIntoConstraints = false
         

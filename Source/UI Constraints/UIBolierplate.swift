@@ -123,6 +123,14 @@ public extension UIView {
     }
 }
 
+//MARK: - UIStackView
+
+extension UIStackView {
+    func addArrangedSubviews(_ views: UIView...){
+        views.forEach({ addArrangedSubview($0) })
+    }
+}
+
 //MARK: - UIEdgeInsets
 
 public extension UIEdgeInsets {
@@ -134,7 +142,7 @@ public extension UIEdgeInsets {
         self.right = right
     }
     
-    init(_ top: CGFloat = .zero, _ left: CGFloat = .zero, _ bottom: CGFloat = .zero, _ right: CGFloat = .zero) {
+    init(t top: CGFloat = .zero, l left: CGFloat = .zero, b bottom: CGFloat = .zero, r right: CGFloat = .zero) {
         self.init()
         self.top = top
         self.left = left
@@ -152,10 +160,6 @@ public extension UIEdgeInsets {
 }
 
 public extension CGSize {
-    init(_ width: CGFloat, _ height: CGFloat) {
-        self.init(width: width, height: height)
-    }
-
     init(w: CGFloat = .zero, h: CGFloat = .zero) {
         self.init(width: w, height: h)
     }

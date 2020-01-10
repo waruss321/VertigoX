@@ -12,7 +12,8 @@ open class BaseListKitVC: ViewController, ListAdapterDataSource {
     
     //MARK: - Properties
     
-    public let collectionView = UICollectionView(background: .clear, layout: UICollectionViewFlowLayout()) //Make sure to add collection view to parent view controller
+    //Make sure to add collection view to parent view controller
+    public let collectionView = UICollectionView(background: .clear, layout: UICollectionViewFlowLayout())
     
     public var automaticSize: Bool {
         return true
@@ -22,12 +23,12 @@ open class BaseListKitVC: ViewController, ListAdapterDataSource {
     
     //MARK: - Dependencies
     
-    public let model: AdapterViewModelTemplate
+    private let viewModel: ListVMTemplate
 
     //MARK: - Init
 
-    public init(viewModel: AdapterViewModelTemplate) {
-        self.model = viewModel
+    public init(viewModel: ListVMTemplate) {
+        self.viewModel = viewModel
         super.init()
     }
     
@@ -52,7 +53,7 @@ open class BaseListKitVC: ViewController, ListAdapterDataSource {
     //MARK: - ListAdapterDataSource
     
     public func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return model.sections
+        return viewModel.sections
     }
        
     public func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {

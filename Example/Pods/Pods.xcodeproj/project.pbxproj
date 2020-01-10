@@ -143,7 +143,7 @@
 		BC21038F23A7018B00DDE520 /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037023A7018B00DDE520 /* BaseItem.swift */; };
 		BC21039023A7018B00DDE520 /* IGSectionControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037223A7018B00DDE520 /* IGSectionControllerFactory.swift */; };
 		BC21039123A7018B00DDE520 /* IGItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037323A7018B00DDE520 /* IGItemFactory.swift */; };
-		BC21039223A7018B00DDE520 /* AdapterViewModelTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037423A7018B00DDE520 /* AdapterViewModelTemplate.swift */; };
+		BC21039223A7018B00DDE520 /* ListVMTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21037423A7018B00DDE520 /* ListVMTemplate.swift */; };
 		BC68376E23B67B4900537258 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68376D23B67B4900537258 /* UITextField.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8867B0024277300EA20B4BD1F4006C /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = A12A0B447B8FE582B55EAC1813A59D9C /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -427,7 +427,7 @@
 		BC21037023A7018B00DDE520 /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
 		BC21037223A7018B00DDE520 /* IGSectionControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGSectionControllerFactory.swift; sourceTree = "<group>"; };
 		BC21037323A7018B00DDE520 /* IGItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGItemFactory.swift; sourceTree = "<group>"; };
-		BC21037423A7018B00DDE520 /* AdapterViewModelTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdapterViewModelTemplate.swift; sourceTree = "<group>"; };
+		BC21037423A7018B00DDE520 /* ListVMTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVMTemplate.swift; sourceTree = "<group>"; };
 		BC590FFC9409ABA893BEB323054F77C7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = FittedSheetsPod/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BC68376D23B67B4900537258 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C087E682BB3BAAE72496F8D44A9E48A4 /* IGListBindingSectionController+DebugDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IGListBindingSectionController+DebugDescription.m"; path = "Source/IGListKit/Internal/IGListBindingSectionController+DebugDescription.m"; sourceTree = "<group>"; };
@@ -904,7 +904,7 @@
 				BC21036B23A7018B00DDE520 /* Universal Items */,
 				BC21036D23A7018B00DDE520 /* Base Views */,
 				BC21037123A7018B00DDE520 /* Factories */,
-				BC21037423A7018B00DDE520 /* AdapterViewModelTemplate.swift */,
+				BC21037423A7018B00DDE520 /* ListVMTemplate.swift */,
 			);
 			path = "IG List Kit";
 			sourceTree = "<group>";
@@ -1444,7 +1444,7 @@
 			files = (
 				BC21038D23A7018B00DDE520 /* BaseSectionController.swift in Sources */,
 				BC21038623A7018B00DDE520 /* UIView.swift in Sources */,
-				BC21039223A7018B00DDE520 /* AdapterViewModelTemplate.swift in Sources */,
+				BC21039223A7018B00DDE520 /* ListVMTemplate.swift in Sources */,
 				BC21037823A7018B00DDE520 /* UIViewExtension.swift in Sources */,
 				BC21038223A7018B00DDE520 /* RouterImp.swift in Sources */,
 				BC21037C23A7018B00DDE520 /* CAGradientLayer.swift in Sources */,
