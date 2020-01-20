@@ -15,11 +15,13 @@ extension ModuleFactoryImp: LoginModuleFactory {
 }
 
 extension ModuleFactoryImp: ShopModuleFactory {
-    func makeAddItemModule() -> AddItemModule {
-        return AddItemVC()
-    }
-    
     func makeShopModule() -> ShopModule {
         return ShopVC()
+    }
+}
+
+extension ModuleFactoryImp: AddItemModuleFactory {
+    func makeAddItemModule() -> AddItemModule {
+        return AddItemVC()
     }
 }

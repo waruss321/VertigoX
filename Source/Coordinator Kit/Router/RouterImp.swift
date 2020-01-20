@@ -45,12 +45,6 @@ public final class RouterImp: NSObject, Router {
         rootController?.present(controller, animated: animated, completion: nil)
     }
     
-    public func presentWithNavigation(_ module: Presentable?){
-        guard let controller = module?.toPresent() else { return }
-        let nav = UINavigationController(rootViewController: controller)
-        rootController?.present(nav, animated: true, completion: nil)
-    }
-    
     public func present(_ module: Presentable?, style: UIModalPresentationStyle) {
         guard let controller = module?.toPresent() else { return }
         controller.modalPresentationStyle = style

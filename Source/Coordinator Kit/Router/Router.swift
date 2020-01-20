@@ -19,7 +19,6 @@ public protocol Router: Presentable {
     
     func present(_ module: Presentable?, animated: Bool)
     func present(_ module: Presentable?, style: UIModalPresentationStyle)
-    func presentWithNavigation(_ module: Presentable?)
     func present(_ module: Presentable?, animated: Bool, onModule presentingModule: Presentable?, completion:  (() -> Void)?)
 
     func dismissModule(animated: Bool, completion: (() -> Void)?)

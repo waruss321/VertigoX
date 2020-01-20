@@ -10,6 +10,7 @@ import VertigoX
 
 protocol AddItemModule: BaseModule {
     var itemAdded: VoidSignal { get }
+    var push: VoidSignal { get }
 }
 
 class AddItemVC: ViewController, AddItemModule {
@@ -17,6 +18,7 @@ class AddItemVC: ViewController, AddItemModule {
     //MARK: - Signals
     
     var itemAdded = VoidSignal()
+    var push = VoidSignal()
     
     //MARK: - Propreties
     
@@ -57,6 +59,20 @@ class AddItemVC: ViewController, AddItemModule {
             UIViewPropertyAnimator(duration: 1, dampingRatio: 0.3) {
                 self?.view.layoutIfNeeded()
             }.startAnimation()
+            self?.push.fire(())
         }
+    }
+}
+
+protocol MoreInfoModule: BaseModule {
+    
+}
+
+class MoreInfoVC: ViewController, MoreInfoModule {
+    
+    
+    
+    override func styleView() {
+        view.backgroundColor = .cyan
     }
 }

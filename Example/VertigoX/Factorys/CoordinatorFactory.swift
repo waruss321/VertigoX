@@ -11,5 +11,7 @@ import VertigoX
 protocol CoordinatorFactory {
     func makeLoginCoordinator(router: Router) -> Coordinator & CoordinatorOutput
     func makeShopCoordinator(router: Router) -> Coordinator & CoordinatorOutput
+    func makeAddItemCoordinator() -> (coordinator: Coordinator & CoordinatorOutput, toPresent: Presentable)
+    
 }
 

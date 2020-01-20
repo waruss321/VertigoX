@@ -11,7 +11,6 @@ import Signals
 
 protocol ShopModuleFactory {
     func makeShopModule() -> ShopModule
-    func makeAddItemModule() -> AddItemModule
 }
 
 class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
@@ -37,6 +36,24 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
         showShop()
     }
     
+    //MARK: - Run Flows
+    
+    private func runAddItemCoordinator(){
+        let (coordinator, module) = coordinatorFactory.makeAddItemCoordinator()
+        
+        coordinator.finishFlow.subscribe(with: self) { [weak self, weak coordinator] _ in
+            self?.removeDependency(coordinator)
+            self?.router.dismissModule()
+        }
+        
+        addDependency(coordinator)
+        
+        coordinator.start()
+
+        router.present(module)
+        
+    }
+    
     //MARK: - Show Modules
     
     private func showShop(){
@@ -44,7 +61,7 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
         let module = moduleFactory.makeShopModule()
         
         module.addItem.subscribe(with: self) { [weak self] in
-            self?.showAddItem()
+            self?.runAddItemCoordinator()
         }
         
         module.logout.subscribe(with: self) { [weak finishFlow] _ in
@@ -54,13 +71,13 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
         router.setRootModule(module)
     }
     
-    private func showAddItem(){
-        let module = moduleFactory.makeAddItemModule()
-        
-        module.itemAdded.subscribe(with: self) { [weak router] in
-            router?.popModule()
-        }
-        
-        router.push(module)
-    }
+//    private func showAddItem(){
+//        let module = moduleFactory.makeAddItemModule()
+//
+//        module.itemAdded.subscribe(with: self) { [weak router] in
+//            router?.popModule()
+//        }
+//
+//        router.presentWithNavigation(module)
+//    }
 }

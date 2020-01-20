@@ -49,7 +49,7 @@ final class ApplicationCoordinator: BaseCoordinator {
         }
         
         addDependency(coordinator)
-        
+                
         coordinator.start(with: option)
     }
 
@@ -65,5 +65,6 @@ final class ApplicationCoordinator: BaseCoordinator {
         addDependency(coordinator)
         
         coordinator.start(with: option)
+
     }
 }
