@@ -1,6 +1,6 @@
 //
 //  SpaceItem.swift
-//  RussTools
+//  VertigoX
 //
 //  Created by Russell Warwick on 01/12/2019.
 //  Copyright © 2019 Russell Warwick. All rights reserved.
@@ -8,7 +8,7 @@
 
 import IGListKit
 
-open class SpaceModel: VerticalItem {
+public final class SpaceModel: VerticalItem {
 
     let height: CGFloat
     let color: UIColor
@@ -29,7 +29,7 @@ open class SpaceModel: VerticalItem {
     }
 }
 
-open class SpaceCell: BaseVerticalItemCell {
+public final class SpaceCell: VerticalItemCell {
     
     private let spaceView = UIView()
     
@@ -43,4 +43,5 @@ open class SpaceCell: BaseVerticalItemCell {
         guard let item = item as? SpaceModel else { return }
         spaceView.height(item.height)
     }
+
 }

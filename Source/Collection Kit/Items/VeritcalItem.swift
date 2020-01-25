@@ -1,72 +1,67 @@
 //
-//  ListItem.swift
-//  RussTools
+//  VeritcalItem.swift
+//  VertigoX
 //
-//  Created by Russell Warwick on 21/10/2019.
-//  Copyright © 2019 Russell Warwick. All rights reserved.
+//  Created by Russell Warwick on 25/01/2020.
 //
 
-import IGListKit
+import UIKit
 
-public protocol ItemTemplate {
-    var cellType: AnyClass { get }
+public protocol VerticalItem: Item {
+    //Might add some stuff here. Also might add a Horizontal Item
 }
 
-public protocol VerticalItem: ItemTemplate {
-    var cellHeight: CGFloat { get }
-    var showSeporator: Bool { get }
-}
- 
-public extension VerticalItem {
-    var cellHeight: CGFloat {
-        return .zero
+open class VerticalItemCell: UICollectionViewCell, ViewTemplate {
+    //MARK: - Public
+    
+    public var item: VerticalItem? {
+        didSet {
+            bindViewModel()
+        }
     }
-    var showSeporator: Bool {
-        return false
+    
+    public var cellWidth: CGFloat? = nil {
+        didSet {
+            guard let cellWidth = cellWidth else { return }
+            widthConstraint.isActive = true
+            widthConstraint.constant = cellWidth
+        }
     }
-}
+    
+    public var view: UIView {
+        return contentView
+    }
 
-//MARK: - Base Cell
-
-open class BaseVerticalItemCell: UICollectionViewCell, ViewTemplate {
+    //MARK: - Properties
     
-    public var item: VerticalItem?
-    
-    open func configure(withItem item: VerticalItem, controller: BaseSectionController, itemPosition: ItemCellPosition){
-        self.item = item
-        width.constant = (controller.collectionContext?.insetContainerSize.width ?? 375) - controller.margin
-        styleSectionCells(itemPosition: itemPosition, controller: controller, item: item)
-        bindViewModel()
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        width.constant = bounds.size.width
-        contentView.fillSuperview() //This needs to happen otherwise the cell will not adjust to auto size
-        run(frame: frame)
-    }
-    
-    private lazy var width: NSLayoutConstraint = {
+    private lazy var widthConstraint: NSLayoutConstraint = {
         let constraint = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
-        constraint.priority = .almostRequired
-        constraint.isActive = true
+        constraint.isActive = false
         return constraint
     }()
     
+    //MARK: - Configure
+   
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.fillSuperview() //This needs to happen otherwise the cell will not adjust to auto size
+        run(frame: frame)
+    }
+
     required public init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
         
     open func configureView(){}
     open func setConstraints(frame: CGRect){}
     open func styleView(){}
-    open func fetchRequests(){}
-    open func bindViewModel(){}
+
+    open func bindViewModel() {}
     open func bindViewModelSignals() {}
     open func bindSignals(){}
 }
 
-public extension BaseVerticalItemCell {
+internal extension VerticalItemCell {
        
-    private func styleSectionCells(itemPosition: ItemCellPosition, controller: BaseSectionController, item: VerticalItem) {
+    func styleSectionCell(item: VerticalItem, controller: SectionController, position: ItemCellPosition) {
       
         removeShadows()
         removeSeporators()
@@ -76,10 +71,10 @@ public extension BaseVerticalItemCell {
         let cornerRadius: CGFloat = controller.cornerRadius
         let doesNeedShadowViews: Bool = opacity != 0.0 || cornerRadius != 0.0
 
-        switch itemPosition {
+        switch position {
         case .firstItem:
-             
-            if item.showSeporator && controller.seporatorColor != .clear {
+
+            if controller.showSeporator && controller.seporatorColor != .clear {
                 let seporatorView = SeporatorView(color: controller.seporatorColor)
                 contentView.addSubview(seporatorView)
                 seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: CGSize(h: 1.25))
@@ -97,7 +92,7 @@ public extension BaseVerticalItemCell {
             
             insertSubviews(left, right, below: contentView)
                         
-            left.pin(leading: leading, bottom: bottom, padding: UIEdgeInsets(left: 1), size: CGSize(w: 1, h: 2))
+            left.pin(leading: leading, bottom: bottom, padding: UIEdgeInsets(leading: 1), size: CGSize(w: 1, h: 2))
             right.pin(bottom: bottom, trailing: trailing, size: CGSize(w: 1, h: 2))
             
             insertSubviews(topRightView, topLeftView, below: contentView)
@@ -110,7 +105,7 @@ public extension BaseVerticalItemCell {
 
         case .middleItem:
             
-            if item.showSeporator && controller.seporatorColor != .clear {
+            if controller.showSeporator && controller.seporatorColor != .clear {
                 let seporatorView = SeporatorView(color: controller.seporatorColor)
                 contentView.addSubview(seporatorView)
                 seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: CGSize(h: 1.25))
@@ -148,9 +143,11 @@ public extension BaseVerticalItemCell {
         case .onlyItem:
             guard doesNeedShadowViews else { return }
             contentView.applyRadius(cornerRadius, corners: [.all])
-
-            let shadowView = CollectionShadowView(offset: CGSize(), opacity: opacity, radius: 2.0, bounds: CGRect(w: width.constant, h: contentView.frame.height), cornerRadius: cornerRadius)
+            
+            let shadowView = CollectionShadowView(offset: CGSize(), opacity: opacity, radius: 1.5, cornerRadius: cornerRadius)
+            
             insertSubviews(shadowView, below: contentView)
+            
             shadowView.fillSuperview()
         }
     }

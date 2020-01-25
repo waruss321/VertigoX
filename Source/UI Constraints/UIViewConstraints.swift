@@ -1,6 +1,6 @@
 //
 //  UIViewConstraints.swift
-//  RussTools
+//  VertigoX
 //
 //  Created by Russell Warwick on 19/10/2019.
 //  Copyright © 2019 Russell Warwick. All rights reserved.
@@ -164,16 +164,16 @@ public extension UIView {
         return constraint
     }
     
-    func size(_ size: CGSize) {
+    func size(_ size: CGSize, priority: UILayoutPriority = .required) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
         if size.width != .zero {
-            widthAnchor.constraint(equalToConstant: size.width).isActive = true
+            width(size.width, priority: priority)
         }
         
         if size.height != .zero {
-            heightAnchor.constraint(equalToConstant: size.height).isActive = true
+            height(size.height, priority: priority)
         }
     }
     

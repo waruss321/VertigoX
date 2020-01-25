@@ -60,24 +60,14 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
         
         let module = moduleFactory.makeShopModule()
         
-        module.addItem.subscribe(with: self) { [weak self] in
-            self?.runAddItemCoordinator()
-        }
-        
-        module.logout.subscribe(with: self) { [weak finishFlow] _ in
-            finishFlow?.fire(.normal)
-        }
-        
-        router.setRootModule(module)
-    }
-    
-//    private func showAddItem(){
-//        let module = moduleFactory.makeAddItemModule()
-//
-//        module.itemAdded.subscribe(with: self) { [weak router] in
-//            router?.popModule()
+//        module.addItem.subscribe(with: self) { [weak self] in
+//            self?.runAddItemCoordinator()
 //        }
 //
-//        router.presentWithNavigation(module)
-//    }
+//        module.logout.subscribe(with: self) { [weak finishFlow] _ in
+//            finishFlow?.fire(.normal)
+//        }
+//
+        router.setRootModule(module)
+    }
 }

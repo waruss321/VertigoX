@@ -23,6 +23,8 @@
 		BC2103AC23A7024000DDE520 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2103A723A7024000DDE520 /* LoginCoordinator.swift */; };
 		BC2103AD23A7024000DDE520 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2103A823A7024000DDE520 /* LoginVC.swift */; };
 		BCA0A40723CCEB170046DB45 /* AddItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0A40623CCEB170046DB45 /* AddItemCoordinator.swift */; };
+		BCD9B77423DCFF7600D1B958 /* ShopVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B77323DCFF7600D1B958 /* ShopVM.swift */; };
+		BCD9B77623DD021F00D1B958 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B77523DD021F00D1B958 /* ShopItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		BC2103A723A7024000DDE520 /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BC2103A823A7024000DDE520 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BCA0A40623CCEB170046DB45 /* AddItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCoordinator.swift; sourceTree = "<group>"; };
+		BCD9B77323DCFF7600D1B958 /* ShopVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVM.swift; sourceTree = "<group>"; };
+		BCD9B77523DD021F00D1B958 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
 		C2B4B885A84B628415515AE4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D8FC32C006BD74513F31E7A3 /* Pods-VertigoX_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertigoX_Tests.release.xcconfig"; path = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DC8D3344E46E7343805DF844 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -217,7 +221,9 @@
 		BC2103A223A7024000DDE520 /* Shop VC */ = {
 			isa = PBXGroup;
 			children = (
+				BCD9B77323DCFF7600D1B958 /* ShopVM.swift */,
 				BC2103A323A7024000DDE520 /* ShopVC.swift */,
+				BCD9B77523DD021F00D1B958 /* ShopItem.swift */,
 			);
 			path = "Shop VC";
 			sourceTree = "<group>";
@@ -300,10 +306,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3BVQ33R2HW;
 						LastSwiftMigration = 1120;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3BVQ33R2HW;
 						LastSwiftMigration = 1120;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -311,10 +319,9 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "VertigoX" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -430,9 +437,11 @@
 				BC21039D23A7023900DDE520 /* CoordinatorFactoryImp.swift in Sources */,
 				BC21039623A7023000DDE520 /* AppDelegate.swift in Sources */,
 				BC2103AB23A7024000DDE520 /* AddItemVC.swift in Sources */,
+				BCD9B77423DCFF7600D1B958 /* ShopVM.swift in Sources */,
 				BC2103AD23A7024000DDE520 /* LoginVC.swift in Sources */,
 				BC21039C23A7023900DDE520 /* ModuleFactoryImp.swift in Sources */,
 				BC21039723A7023000DDE520 /* AppDelegateCoordinator.swift in Sources */,
+				BCD9B77623DD021F00D1B958 /* ShopItem.swift in Sources */,
 				BCA0A40723CCEB170046DB45 /* AddItemCoordinator.swift in Sources */,
 				BC2103AC23A7024000DDE520 /* LoginCoordinator.swift in Sources */,
 				BC2103A923A7024000DDE520 /* ShopCoordinator.swift in Sources */,
@@ -580,6 +589,7 @@
 			baseConfigurationReference = 9E564B49B307072340F95283 /* Pods-VertigoX_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BVQ33R2HW;
 				INFOPLIST_FILE = VertigoX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -596,6 +606,7 @@
 			baseConfigurationReference = EE8707F2279945BBC7315CED /* Pods-VertigoX_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BVQ33R2HW;
 				INFOPLIST_FILE = VertigoX/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -612,6 +623,7 @@
 			baseConfigurationReference = 810DC4AF9E84A4EDA140860C /* Pods-VertigoX_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3BVQ33R2HW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -635,6 +647,7 @@
 			baseConfigurationReference = D8FC32C006BD74513F31E7A3 /* Pods-VertigoX_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3BVQ33R2HW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

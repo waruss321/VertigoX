@@ -43,7 +43,7 @@ class AddItemVC: ViewController, AddItemModule {
         animatableButtonHeightConstraint = animatableButton.height(100)
         
         loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
-                        padding: UIEdgeInsets(left: 40, bottom: 100, right: 40),
+                        padding: UIEdgeInsets(leading: 40, bottom: 100, trailing: 40),
                         size: CGSize(h: 60))
     }
     

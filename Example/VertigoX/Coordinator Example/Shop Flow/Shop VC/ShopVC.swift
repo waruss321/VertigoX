@@ -7,52 +7,71 @@
 //
 
 import VertigoX
+import IGListKit
+import Signals
 
 protocol ShopModule: BaseModule {
-    var addItem: VoidSignal { get }
-    var logout: VoidSignal { get }
+
 }
 
-class ShopVC: ViewController, ShopModule {
-    
-    //MARK: - Signals
-    
-    var addItem = VoidSignal()
-    var logout = VoidSignal()
-    
+class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
+
     //MARK: - Properties
+
+    private let collectionView = UICollectionView(background: .clear)
     
-    private let testLabel = UILabel(text: "Welcome to the shop", font: UIFont.boldSystemFont(ofSize: 18), alignment: .center)
-    private let addButton = UIButton(text: "Add Item")
-    private let logoutButton = UIButton(text: "Logout")
+    private lazy var collectionController: CollectionController = {
+       return CollectionController(updater: ListAdapterUpdater(), viewController: self)
+    }()
     
-    //MARK: - Main View
+    private let viewModel: ShopVM
     
-    override func styleView() {
-        view.backgroundColor = .cyan
+    init(viewModel: ShopVM) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    //MARK: - Configure
+    
+    override func configureView() {
+        collectionController.target = collectionView
+        collectionController.delegate = self
     }
     
     override func setConstraints(frame: CGRect) {
-        view.addSubviews(testLabel, addButton, logoutButton)
-        testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
-                      padding: UIEdgeInsets(30))
-        
-        addButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
-                        padding: UIEdgeInsets(left: 40, bottom: 100, right: 40),
-                        size: CGSize(h: 60))
-        
-        logoutButton.pin(top: view.topSafe, leading: view.leading, padding: UIEdgeInsets(top: 30, left: 30))
+        view.addSubviews(collectionView)
+        collectionView.fillSuperview()
+    }
+    
+    override func styleView() {
+        view.backgroundColor = .white
     }
     
     //MARK: - Bind
     
-    override func bindSignals() {
-        addButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in
-            self?.addItem.fire(())
-        }
+    override func bindViewModel() {
+        collectionController.sections = viewModel.sections
+    }
+    
+    //MARK: - CollectionControllerDelegate
+    
+    func bindSectionController(_ controller: SectionController) {
         
-        logoutButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in
-            self?.logout.fire(())
-        }
+    }
+}
+
+class TestSection: SectionController {
+    override var margin: CGFloat {
+        return 50
+    }
+    
+    override var topPadding: CGFloat {
+        return 40
+    }
+    
+    override var estimatedCellHeight: CGFloat {
+        return 100
     }
 }

@@ -12,7 +12,7 @@ import VertigoX
 final class CoordinatorFactoryImp: CoordinatorFactory {
 
     func makeLoginCoordinator(router: Router) -> Coordinator & CoordinatorOutput {
-        let nav = UINavigationController()
+        //let nav = UINavigationController()
         return LoginCoordinator(router: router, factory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
     }
     

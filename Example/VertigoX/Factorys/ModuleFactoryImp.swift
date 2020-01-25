@@ -16,7 +16,7 @@ extension ModuleFactoryImp: LoginModuleFactory {
 
 extension ModuleFactoryImp: ShopModuleFactory {
     func makeShopModule() -> ShopModule {
-        return ShopVC()
+        return ShopVC(viewModel: ShopVM())
     }
 }
 

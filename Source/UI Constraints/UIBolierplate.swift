@@ -1,6 +1,6 @@
 //
 //  UIViewBolierplate.swift
-//  RussTools
+//  VertigoX
 //
 //  Created by Russell Warwick on 19/10/2019.
 //  Copyright © 2019 Russell Warwick. All rights reserved.
@@ -145,20 +145,12 @@ public extension UIStackView {
 //MARK: - UIEdgeInsets
 
 public extension UIEdgeInsets {
-    init(top: CGFloat = .zero, left: CGFloat = .zero, bottom: CGFloat = .zero, right: CGFloat = .zero) {
+    init(top: CGFloat = .zero, leading: CGFloat = .zero, bottom: CGFloat = .zero, trailing: CGFloat = .zero) {
         self.init()
         self.top = top
-        self.left = left
+        self.left = leading
         self.bottom = bottom
-        self.right = right
-    }
-    
-    init(t top: CGFloat = .zero, l left: CGFloat = .zero, b bottom: CGFloat = .zero, r right: CGFloat = .zero) {
-        self.init()
-        self.top = top
-        self.left = left
-        self.bottom = bottom
-        self.right = right
+        self.right = trailing
     }
     
     init(_ allSides: CGFloat) {

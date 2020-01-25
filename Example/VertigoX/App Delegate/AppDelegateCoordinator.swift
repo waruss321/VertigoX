@@ -34,7 +34,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     //MARK: - Start
     
     override func start(with option: DeepLinkType?) {
-        runLoginCoordinator(option: option)
+        runShopCoordinator(option: option)
     }
     
     //MARK: - Run Flows
@@ -44,7 +44,7 @@ final class ApplicationCoordinator: BaseCoordinator {
         let coordinator = coordinatorFactory.makeLoginCoordinator(router: router)
         
         coordinator.finishFlow.subscribe(with: self) { [weak self, weak coordinator] _ in
-            self?.runShopVC(option: nil)
+            self?.runShopCoordinator(option: nil)
             self?.removeDependency(coordinator)
         }
         
@@ -53,7 +53,7 @@ final class ApplicationCoordinator: BaseCoordinator {
         coordinator.start(with: option)
     }
 
-    private func runShopVC(option: DeepLinkType?){
+    private func runShopCoordinator(option: DeepLinkType?){
         
         let coordinator = coordinatorFactory.makeShopCoordinator(router: router)
         

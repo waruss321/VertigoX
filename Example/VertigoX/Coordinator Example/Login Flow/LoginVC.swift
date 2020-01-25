@@ -31,7 +31,7 @@ class LoginVC: ViewController, LoginModule {
                       padding: UIEdgeInsets(30))
         
         loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
-                        padding: UIEdgeInsets(left: 40, bottom: 100, right: 40),
+                        padding: UIEdgeInsets(leading: 40, bottom: 100, trailing: 40),
                         size: CGSize(h: 60))
         
         testView.pin(leading: view.leading, size: CGSize(w: 120, h: 100))
@@ -65,7 +65,7 @@ class TestView: View {
     
     override func setConstraints(frame: CGRect) {
         addSubview(testLabel)
-        testLabel.fillSuperview(padding: UIEdgeInsets(top: 20, left: 10))
+        testLabel.fillSuperview(padding: UIEdgeInsets(top: 20, leading: 10))
         testLabel.text = test
     }
 }

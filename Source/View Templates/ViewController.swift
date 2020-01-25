@@ -1,6 +1,6 @@
 //
 //  BaseViewController.swift
-//  RussTools
+//  VertigoX
 //
 //  Created by Russell Warwick on 20/10/2019.
 //  Copyright © 2019 Russell Warwick. All rights reserved.
