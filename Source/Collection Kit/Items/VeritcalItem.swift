@@ -11,7 +11,7 @@ public protocol VerticalItem: Item {
     //Might add some stuff here. Also might add a Horizontal Item
 }
 
-open class VerticalItemCell: UICollectionViewCell, ViewTemplate {
+open class VerticalCell: UICollectionViewCell, ViewTemplate {
     //MARK: - Public
     
     public var item: VerticalItem? {
@@ -59,7 +59,7 @@ open class VerticalItemCell: UICollectionViewCell, ViewTemplate {
     open func bindSignals(){}
 }
 
-internal extension VerticalItemCell {
+internal extension VerticalCell {
        
     func styleSectionCell(item: VerticalItem, controller: SectionController, position: ItemCellPosition) {
       

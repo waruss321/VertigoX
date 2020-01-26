@@ -30,7 +30,7 @@ struct ShopItemModel: VerticalItem {
     }
 }
 
-class ShopItemCell: VerticalItemCell {
+class ShopItemCell: VerticalCell {
     
     //MARK: - Properties
     

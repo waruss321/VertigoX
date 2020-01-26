@@ -55,7 +55,7 @@ open class SectionController: ListSectionController, Section {
         let itemPosition = position(index: index)
 
         if let item = items[safe: index] as? VerticalItem,
-           let cell = self.collectionContext?.dequeueReusableCell(of: item.cellType, for: self, at: index) as? VerticalItemCell {
+           let cell = self.collectionContext?.dequeueReusableCell(of: item.cellType, for: self, at: index) as? VerticalCell {
             
             cell.styleSectionCell(item: item, controller: self, position: itemPosition)
             cell.item = item

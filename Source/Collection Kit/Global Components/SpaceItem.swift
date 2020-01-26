@@ -29,7 +29,7 @@ public struct SpaceModel: VerticalItem {
     }
 }
 
-public final class SpaceCell: VerticalItemCell {
+public final class SpaceCell: VerticalCell {
     
     private let spaceView = UIView()
     
