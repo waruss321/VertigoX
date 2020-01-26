@@ -25,6 +25,7 @@
 		BCA0A40723CCEB170046DB45 /* AddItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0A40623CCEB170046DB45 /* AddItemCoordinator.swift */; };
 		BCD9B77423DCFF7600D1B958 /* ShopVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B77323DCFF7600D1B958 /* ShopVM.swift */; };
 		BCD9B77623DD021F00D1B958 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B77523DD021F00D1B958 /* ShopItem.swift */; };
+		BCD9B77823DDAB7100D1B958 /* TestSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B77723DDAB7100D1B958 /* TestSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		BCA0A40623CCEB170046DB45 /* AddItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCoordinator.swift; sourceTree = "<group>"; };
 		BCD9B77323DCFF7600D1B958 /* ShopVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVM.swift; sourceTree = "<group>"; };
 		BCD9B77523DD021F00D1B958 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
+		BCD9B77723DDAB7100D1B958 /* TestSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSection.swift; sourceTree = "<group>"; };
 		C2B4B885A84B628415515AE4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D8FC32C006BD74513F31E7A3 /* Pods-VertigoX_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertigoX_Tests.release.xcconfig"; path = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DC8D3344E46E7343805DF844 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				BCD9B77323DCFF7600D1B958 /* ShopVM.swift */,
 				BC2103A323A7024000DDE520 /* ShopVC.swift */,
 				BCD9B77523DD021F00D1B958 /* ShopItem.swift */,
+				BCD9B77723DDAB7100D1B958 /* TestSection.swift */,
 			);
 			path = "Shop VC";
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC2103AA23A7024000DDE520 /* ShopVC.swift in Sources */,
+				BCD9B77823DDAB7100D1B958 /* TestSection.swift in Sources */,
 				BC21039D23A7023900DDE520 /* CoordinatorFactoryImp.swift in Sources */,
 				BC21039623A7023000DDE520 /* AppDelegate.swift in Sources */,
 				BC2103AB23A7024000DDE520 /* AddItemVC.swift in Sources */,

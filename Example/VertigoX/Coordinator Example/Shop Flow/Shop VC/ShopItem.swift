@@ -7,10 +7,19 @@
 //
 
 import VertigoX
+import Signals
 
-class ShopItemModel: VerticalItem {
+struct ShopItemModel: VerticalItem {
+    
+    //MARK: - Signals
+    
+    var selectedItem = Signal<String>()
+    
+    //MARK: - Dependencies
     
     let title: String
+    
+    //MARK: - Init
     
     init(title: String){
         self.title = title
@@ -26,14 +35,16 @@ class ShopItemCell: VerticalItemCell {
     //MARK: - Properties
     
     private let itemLabel = UILabel()
+    private let button = UIButton(text: "++")
     
     //MARK: - Configure
     
     override func setConstraints(frame: CGRect) {
-        view.addSubview(itemLabel)
+        view.addSubviews(itemLabel, button)
         itemLabel.fillSuperview(padding: UIEdgeInsets(leading: 10))
-        itemLabel.height(35, relation: .greaterThan)
-        layoutIfNeeded()
+        itemLabel.height(55, relation: .greaterThan)
+        button.pin(bottom: view.bottom, trailing: view.trailing,
+                   size: CGSize(square: 30))
         layoutIfNeeded()
     }
     
@@ -43,9 +54,17 @@ class ShopItemCell: VerticalItemCell {
     
     //MARK: - Bind
     
-    override func bindViewModel() {
-        guard let item = item as? ShopItemModel else { return }
-        itemLabel.text = item.title
+    private var shopItem: ShopItemModel? {
+        return item as? ShopItemModel
     }
-    
+
+    override func bindViewModel() {
+        guard let item = shopItem else { return }
+        itemLabel.text = item.title
+        
+        button.onTouchUpInside.cancelAllSubscriptions()
+        button.onTouchUpInside.subscribe(with: self) { [weak self] _ in
+            item.selectedItem.fire("Hello from cell")
+        }
+    }
 }

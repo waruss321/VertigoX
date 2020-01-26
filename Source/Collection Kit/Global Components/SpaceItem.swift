@@ -8,7 +8,7 @@
 
 import IGListKit
 
-public final class SpaceModel: VerticalItem {
+public struct SpaceModel: VerticalItem {
 
     let height: CGFloat
     let color: UIColor

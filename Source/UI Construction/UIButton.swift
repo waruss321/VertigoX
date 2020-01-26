@@ -35,3 +35,9 @@ public extension UIButton {
         }
     }
 }
+
+public extension UIButton {
+    func setText(_ text: String){
+        self.setTitle(text, for: .normal)
+    }
+}

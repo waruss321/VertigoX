@@ -27,7 +27,7 @@ open class SectionController: ListSectionController, Section {
     open var margin: CGFloat { return .zero }
     open var estimatedCellHeight: CGFloat { return 100 }
     
-    open func bindItemSignals(){ }
+    open func bindSignalsForItem(_ item: Item){ }
     
     //MARK: - Init
         
@@ -67,7 +67,15 @@ open class SectionController: ListSectionController, Section {
         //TODO: Can add horizontal item support here
         
         return UICollectionViewCell()
-    } 
+    }
+    
+    //MARK: -
+    
+    override open func didUpdate(to object: Any) {
+        for item in items {
+            bindSignalsForItem(item)
+        }
+    }
 }
 
 //ROUND CORNERS
