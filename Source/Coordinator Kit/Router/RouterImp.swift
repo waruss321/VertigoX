@@ -7,7 +7,7 @@
 //
 
 import Signals
-import FittedSheets
+import PanModal
 
 public final class RouterImp: NSObject, Router {
     
@@ -139,30 +139,6 @@ public final class RouterImp: NSObject, Router {
         guard let controller = module?.toPresent() else { return }
         rootController?.setViewControllers([controller], animated: false)
         rootController?.isNavigationBarHidden = hideBar
-    }
-    
-    
-    //MARK: - Bottom Sheet
-    
-    public var currentSheetVC: SheetViewController?
-
-    public func presentSheet(_ module: Presentable?, animated: Bool){
-        if let vc = module?.toPresent() {
-            let sheetVC = SheetViewController(controller: vc)
-            sheetVC.topCornersRadius = 15
-            sheetVC.adjustForBottomSafeArea = false
-            sheetVC.extendBackgroundBehindHandle = false
-            self.currentSheetVC = sheetVC
-            rootController?.present(sheetVC, animated: animated, completion: nil)
-        }
-    }
-    
-    public func dismissSheet(){
-        if let sheetViewController = topModule?.toPresent()?.presentedViewController as? SheetViewController {
-            sheetViewController.dismiss(animated: true)
-        } else {
-            rootController?.dismiss(animated: true, completion: nil)
-        }
     }
 }
 

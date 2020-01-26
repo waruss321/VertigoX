@@ -39,11 +39,6 @@ public protocol Router: Presentable {
 
     func setRootModule(_ module: Presentable?)
     func setRootModule(_ module: Presentable?, hideBar: Bool)
-    
-    //MARK: - Bottom Sheet
-    
-    func presentSheet(_ module: Presentable?, animated: Bool)
-    func dismissSheet()
 }
 
 public extension Router {
@@ -78,11 +73,5 @@ public extension Router {
     
     func popToRootModule(animated: Bool = true, completion: (() -> Void)? = nil){
         self.popToRootModule(animated: animated, completion: completion)
-    }
-    
-    //MARK: - Bottom sheet
-    
-    func presentSheet(_ module: Presentable?, animated: Bool = false){
-        self.presentSheet(module, animated: animated)
     }
 }

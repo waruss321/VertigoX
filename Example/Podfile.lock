@@ -1,23 +1,19 @@
 PODS:
-  - FittedSheets (1.3.0)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - Signals (6.1.0)
-  - VertigoX (0.1.0):
-    - FittedSheets (~> 1.3.0)
+  - VertigoX (0.2.5):
     - IGListKit (~> 4.0.0)
     - Signals (~> 6.0)
 
 DEPENDENCIES:
-  - FittedSheets (~> 1.3.0)
   - IGListKit (~> 4.0.0)
   - Signals (~> 6.0)
   - VertigoX (from `../`)
 
 SPEC REPOS:
   trunk:
-    - FittedSheets
     - IGListDiffKit
     - IGListKit
     - Signals
@@ -27,12 +23,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FittedSheets: 15788dc0bc9d57eed1842e4ccb85ae82d6b352e2
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
-  VertigoX: 6c668e0c804915812364c9e24e5cb811fec82948
+  VertigoX: 29ffbc146080c2a707934e968369fea4b77166ca
 
-PODFILE CHECKSUM: 87b5e955738c1cd614e297c761081b534a91d3ce
+PODFILE CHECKSUM: 7b4aea409a5241ecece0075c9f9a8be6e6a239a1
 
 COCOAPODS: 1.8.4

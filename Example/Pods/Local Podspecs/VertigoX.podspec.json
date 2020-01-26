@@ -1,9 +1,8 @@
 {
   "name": "VertigoX",
-  "version": "0.1.0",
-  "summary": "A short description of VertigoX.",
+  "version": "0.2.5",
+  "summary": "A Swift ToolKit to help create clean, scalable and efficient apps",
   "swift_versions": "5.0",
-  "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/waruss321/VertigoX",
   "license": {
     "type": "MIT",
@@ -14,21 +13,19 @@
   },
   "source": {
     "git": "https://github.com/waruss321/VertigoX.git",
-    "tag": "0.1.0"
+    "branch": "master",
+    "tag": "0.2.5"
   },
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "VertigoX/Classes/**/*",
+  "source_files": "Source/**/*",
   "dependencies": {
     "IGListKit": [
       "~> 4.0.0"
     ],
     "Signals": [
       "~> 6.0"
-    ],
-    "FittedSheets": [
-      "~> 1.3.0"
     ]
   },
   "swift_version": "5.0"
