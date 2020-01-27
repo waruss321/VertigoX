@@ -22,7 +22,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     private let buttonTest = UIButton(text: "Scroll to", backgroundColor: .lightGray)
     
     private lazy var collectionController: CollectionController = {
-       return CollectionController(updater: ListAdapterUpdater(), viewController: self)
+       return CollectionController(viewController: self)
     }()
     
     //MARK: - Dependencies

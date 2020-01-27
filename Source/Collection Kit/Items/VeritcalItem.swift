@@ -27,10 +27,6 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
             widthConstraint.constant = cellWidth
         }
     }
-    
-    public var view: UIView {
-        return contentView
-    }
 
     //MARK: - Properties
     
@@ -46,6 +42,10 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
         super.init(frame: frame)
         contentView.fillSuperview() //This needs to happen otherwise the cell will not adjust to auto size
         run(frame: frame)
+    }
+    
+    public var view: UIView {
+        return contentView
     }
 
     required public init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }

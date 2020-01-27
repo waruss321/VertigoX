@@ -37,7 +37,7 @@ public final class CollectionController: NSObject {
     
     //MARK: - Init
      
-    public init(updater: ListAdapterUpdater, viewController: UIViewController, autoSize: Bool = true, animated: Bool = true) {
+    public init(updater: ListAdapterUpdater = ListAdapterUpdater(), viewController: UIViewController, autoSize: Bool = true, animated: Bool = true) {
         self.updater = updater
         self.viewController = viewController
         self.autoSize = autoSize
