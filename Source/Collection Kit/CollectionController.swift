@@ -56,7 +56,19 @@ public final class CollectionController: NSObject {
         }
     }
     
-   public var sections: [Section] = [] {
+    public var viewModel: CollectionViewModel? = nil {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            self.sections = viewModel.sections
+            
+            viewModel.updateSections.cancelAllSubscriptions()
+            viewModel.updateSections.subscribe(with: self) { [weak self] newSections in
+                self?.sections = newSections
+            }
+        }
+    }
+    
+    public var sections: [Section] = [] {
         didSet {
             guard let _ = target else { fatalError("Make sure your adapters collectionView has been set") }
             self.adapter.performUpdates(animated: animated)

@@ -59,12 +59,12 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     //MARK: - Bind
     
     override func bindViewModel() {
-        collectionController.sections = viewModel.sections
+        collectionController.viewModel = viewModel
     }
     
     override func bindSignals() {
         buttonTest.onTouchUpInside.subscribe(with: self) { _ in
-            self.collectionController.sections = self.viewModel.sections
+            self.viewModel.test.toggle()
         }
     }
     

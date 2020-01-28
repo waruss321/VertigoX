@@ -5,8 +5,9 @@
 //  Created by Russell Warwick on 25/01/2020.
 //
 
-import Foundation
+import Signals
 
 public protocol CollectionViewModel {
     var sections: [Section] { get }
+    var updateSections: Signal<[Section]> { get }
 }

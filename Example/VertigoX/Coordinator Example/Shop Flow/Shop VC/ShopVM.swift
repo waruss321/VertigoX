@@ -7,16 +7,31 @@
 //
 
 import VertigoX
+import Signals
 
 class ShopVM: CollectionViewModel {
     
-    //MARK: - Sections
+    
+    //MARK: - CollectionViewModel
+    
+    var updateSections = Signal<[Section]>()
     
     var sections: [Section] {
-        return [fruitSection, techSection, signleSection]
+        if test {
+            return [techSection]
+        } else {
+            return [fruitSection, techSection, signleSection]
+        }
+        
     }
     
-    
+    public var test: Bool = false {
+        didSet {
+            self.updateSections.fire(sections)
+        }
+    }
+
+    //MARK: - Section ViewModel
     
     var fruitSection: SectionController {
         return TestSection(items: [ShopItemModel(title: "Apples"), ShopItemModel(title: "Bananas"), ShopItemModel(title: "Carrots"), ShopItemModel(title: "Leeks"), ShopItemModel(title: "Melons"), ShopItemModel(title: "Pears"), ShopItemModel(title: "Apples"), ShopItemModel(title: "Bananas"), ShopItemModel(title: "Carrots"), ShopItemModel(title: "Leeks"), ShopItemModel(title: "Melons"), ShopItemModel(title: "Pears")])
