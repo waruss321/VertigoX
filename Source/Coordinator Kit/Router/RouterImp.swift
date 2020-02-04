@@ -7,152 +7,123 @@
 //
 
 import Signals
+import PanModal
 
 public final class RouterImp: NSObject, Router {
-    
-    //MARK: - Signals
-    
-    public let onBack = Signal<Presentable?>()
-    
-    //MARK: -
-        
+
+    //MARK: - Dependencies
+
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController : () -> Void]
-
+    
     //MARK: - Init
-        
+    
     public init(rootController: UINavigationController) {
         self.rootController = rootController
-        completions = [:]
+        self.completions = [:]
         super.init()
         self.rootController?.delegate = self
     }
+    
+    //MARK: - Presentable
     
     public func toPresent() -> UIViewController? {
         return rootController
     }
 
-    public var topModule: Presentable? {
-        return self.rootController?.topViewController
+    //MARK: -
+
+    public var currentController: UIViewController? {
+        return UIApplication.topViewController()?.toPresent()
+    }
+
+    //MARK: - Set Module To Root Of Navigation Controller
+
+    public func setRootModule(_ module: Presentable?) {
+        guard let controller = module?.toPresent() else { return }
+        rootController?.setViewControllers([controller], animated: true)
     }
     
-    //MARK: - Present/show
+    //MARK: - Present Sheets
+    
+    public func presentSheet(_ module: BaseSheetModule?, completion: (() -> Void)?) {
+        if let controller = module?.toSheetPresent() {
 
-    public func present(_ module: Presentable?, animated: Bool) {
+            module?.sheetDidDismiss.cancelAllSubscriptions()
+            module?.sheetDidDismiss.subscribe(with: self, callback: { _ in
+                completion?()
+            })
+
+            currentController?.presentPan(controller)
+        }
+    }
+    
+    //MARK: - Present Module & Dismiss
+    
+    public func presentModule(_ module: Presentable?, animated: Bool){
         guard let controller = module?.toPresent() else { return }
         controller.modalPresentationStyle = .fullScreen
-        rootController?.present(controller, animated: animated, completion: nil)
+        currentController?.present(controller, animated: animated, completion: nil)
     }
     
-    public func present(_ module: Presentable?, style: UIModalPresentationStyle) {
+    public func dismissModule(animated: Bool){
+        currentController?.dismiss(animated: animated, completion: nil)
+    }
+    
+    //MARK: - Show Module & Pop Navigation Stack
+    
+    public func showModule(_ module: Presentable?, animated: Bool, completion: (() -> Void)?){
+        
         guard let controller = module?.toPresent() else { return }
-        controller.modalPresentationStyle = style
-        rootController?.present(controller, animated: true, completion: nil)
-    }
-
-    public func present(_ module: Presentable?, animated: Bool, onModule presentingModule: Presentable?, completion: (() -> Void)?) {
-        guard let controller = module?.toPresent(), let presentingModule = presentingModule?.toPresent() else { return }
-        presentingModule.present(controller, animated: animated, completion: completion)
-    }
-
-    public func dismissModule() {
-        dismissModule(animated: true, completion: nil)
-    }
-
-    public func dismissModule(animated: Bool, completion: (() -> Void)?) {
         
-        //Not sure what this is doing. Should investigate
-        if let presented = topModule?.toPresent()?.presentedViewController {
-            onBack.fire(nil)
-            presented.dismiss(animated: animated, completion: completion)
-        } else {
-            onBack.fire(nil)
-            rootController?.dismiss(animated: animated, completion: completion)
-        }
-    }
-    
-
-    //MARK: - Push & pop
-    
-    public func pushViewController(_ vc: UIViewController, hideNavBar: Bool) {
-        rootController?.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
-    }
-    
-    public func push(_ module: Presentable?, animated: Bool = true, completion: (() -> Void)? = nil) {
-        push(module, animated: animated, hideBottomBar: false, completion: completion)
-    }
-    
-    public func push(_ module: Presentable?, animated: Bool = true, hideBottomBar: Bool, completion: (() -> Void)? = nil) {
-        guard let controller = module?.toPresent(), (controller is UINavigationController == false)
-            else { assertionFailure("Deprecated push UINavigationController."); return }
-    
         if let completion = completion {
             completions[controller] = completion
         }
         
-        controller.hidesBottomBarWhenPushed = hideBottomBar
-        rootController?.pushViewController(controller, animated: animated)
+        controller.modalPresentationStyle = .fullScreen
+        
+        currentController?.show(controller, sender: self)
     }
 
-    public func push(_ module: Presentable?, onModule presentingModule: Presentable?, completion: (() -> Void)?){
-        
-        guard let module = module, let controller = presentingModule?.toPresent(), (controller is UINavigationController == false) else { assertionFailure("Deprecated push UINavigationController."); return }
-        guard let moduleToPresent = module.toPresent() else { return }
-
-        if let completion = completion {
-            completions[controller] = completion
-        }
-        
-        controller.show(moduleToPresent, sender: presentingModule)
-    }
-    
     public func popModule(animated: Bool)  {
-        if let topViewController = rootController?.topViewController, let controller = rootController?.popViewController(animated: animated) {
-            onBack.fire(topViewController)
-            runCompletion(for: controller)
-        } else if let controller = rootController?.viewControllers[safe: 0] {
-            onBack.fire(controller)
-            runCompletion(for: controller)
-        } else {
-            onBack.fire(nil)
+        
+        if let poppedViewController = rootController?.popViewController(animated: animated) {
+            runCompletion(for: poppedViewController)
         }
+        
+        //TODO: - Come back to this and when i figure out wtf it's doing, document it properly!!
+//        if let topViewController = rootController?.topViewController, let controller = rootController?.popViewController(animated: animated) {
+//            onBack.fire(topViewController)
+//            runCompletion(for: controller)
+//        } else if let controller = rootController?.viewControllers[safe: 0] {
+//            onBack.fire(controller)
+//            runCompletion(for: controller)
+//        } else {
+//            onBack.fire(nil)
+//        }
     }
-
-    public func popToRootModule(animated: Bool, completion: (() -> Void)?) {
+    
+    public func popToRootModule(animated: Bool){
         if let controllers = rootController?.popToRootViewController(animated: animated) {
             controllers.forEach { controller in
                 runCompletion(for: controller)
             }
-            completion?()
         }
-    }
-    
-    
-    //MARK: - Set root of Navigation Controller
-    
-    public func setRootModule(_ module: Presentable?) {
-        setRootModule(module, hideBar: false)
-    }
-
-    public func setRootModule(_ module: Presentable?, hideBar: Bool) {
-        guard let controller = module?.toPresent() else { return }
-        rootController?.setViewControllers([controller], animated: false)
-        rootController?.isNavigationBarHidden = hideBar
     }
 }
 
 extension RouterImp: UINavigationControllerDelegate {
     
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+
+        guard let poppedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from), !navigationController.viewControllers.contains(poppedViewController) else { return }
+
+        runCompletion(for: poppedViewController)
+    }
+
     private func runCompletion(for controller: UIViewController) {
         guard let completion = completions[controller] else { return }
         completion()
         completions.removeValue(forKey: controller)
-    }
-    
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-           
-        guard let poppedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from), !navigationController.viewControllers.contains(poppedViewController) else { return }
-           
-        runCompletion(for: poppedViewController)
     }
 }

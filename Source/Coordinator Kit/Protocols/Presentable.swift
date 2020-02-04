@@ -1,4 +1,5 @@
 import Signals
+import PanModal
 
 public protocol Presentable: class {
     func toPresent() -> UIViewController?
@@ -7,5 +8,17 @@ public protocol Presentable: class {
 extension UIViewController: Presentable {
     public func toPresent() -> UIViewController? {
         return self
+    }
+}
+
+public typealias PanModalViewController = (UIViewController & PanModalPresentable)
+
+public protocol SheetPresentable: Presentable {
+    func toSheetPresent() -> PanModalViewController?
+}
+
+extension UIViewController: SheetPresentable {
+    public func toSheetPresent() -> PanModalViewController? {
+        return self as? PanModalViewController
     }
 }

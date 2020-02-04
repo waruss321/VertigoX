@@ -27,6 +27,11 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
         return (coordinator, nav)
     }
     
+    func makeItemDetailsCoordinator(router: Router) -> Coordinator & CoordinatorOutput {
+        let coordinator = ItemDetailsCoordinator(router: router, moduleFactory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
+        return coordinator
+    }
+    
     private func router(_ navController: UINavigationController) -> Router {
         navController.modalPresentationStyle = .fullScreen
         return RouterImp(rootController: navController)

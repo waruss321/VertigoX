@@ -10,10 +10,10 @@ import IGListKit
 
 public struct SpaceModel: VerticalItem {
 
-    let height: CGFloat
-    let color: UIColor
+    public let height: CGFloat
+    public let color: UIColor
     
-    init(height: CGFloat, color: UIColor = .white) {
+    public init(height: CGFloat, color: UIColor = .white) {
         self.height = height
         self.color = color
     }

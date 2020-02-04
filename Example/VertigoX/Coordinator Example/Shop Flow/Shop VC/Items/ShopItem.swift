@@ -34,7 +34,7 @@ class ShopItemCell: VerticalCell {
     
     //MARK: - Properties
     
-    private let itemLabel = UILabel()
+    private let itemLabel = UILabel(fontColor: .white)
     private let button = UIButton(text: "++")
     
     //MARK: - Configure
@@ -49,7 +49,8 @@ class ShopItemCell: VerticalCell {
     }
     
     override func styleView() {
-        view.backgroundColor = .white
+        backgroundColor = .black
+        view.backgroundColor = .black
     }
     
     //MARK: - Bind

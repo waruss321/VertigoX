@@ -6,6 +6,10 @@
 //  Copyright © 2019 Russell Warwick. All rights reserved.
 //
 
+import PanModal
+import Signals
+import VertigoX
+
 final class ModuleFactoryImp { }
 
 extension ModuleFactoryImp: LoginModuleFactory {
@@ -23,5 +27,15 @@ extension ModuleFactoryImp: ShopModuleFactory {
 extension ModuleFactoryImp: AddItemModuleFactory {
     func makeAddItemModule() -> AddItemModule {
         return AddItemVC()
+    }
+}
+
+extension ModuleFactoryImp: ItemDetailsModuleFactory {
+    func makeItemDetailsModule() -> ItemDetailsModule {
+         return ItemDetailsVC()
+    }
+    
+    func makeEditItemDetailsModule() -> EditItemDetailsModule {
+        return EditItemDetailsViewController()
     }
 }

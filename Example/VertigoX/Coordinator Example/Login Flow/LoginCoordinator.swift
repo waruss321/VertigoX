@@ -8,7 +8,8 @@
 
 import VertigoX
 import Signals
- 
+import PanModal
+
 protocol LoginModuleFactory {
     func makeLoginModule() -> LoginModule
 }

@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
   
   s.dependency 'IGListKit', '~> 4.0.0'
   s.dependency 'Signals', '~> 6.0'
-  
+  s.dependency 'PanModal'
 end

@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationCoordinator.start(with: nil)
         return true
     }
+    
+    //TODO: Look at trying to pass back router .toPresent(). Might solve some issues you were facing
 
     private func makeCoordinator() -> Coordinator {
         return ApplicationCoordinator(router: RouterImp(rootController: rootController), coordinatorFactory: CoordinatorFactoryImp())

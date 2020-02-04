@@ -11,18 +11,20 @@ import IGListKit
 import Signals
 
 protocol ShopModule: BaseModule {
-
+    var open: VoidSignal { get }
 }
 
 class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
+    
+    var open = VoidSignal()
 
     //MARK: - Properties
 
     private let collectionView = UICollectionView(background: .clear)
-    private let buttonTest = UIButton(text: "Scroll to", backgroundColor: .lightGray)
+    private let buttonTest = UIButton(text: "Refresh list", backgroundColor: .lightGray)
     
     private lazy var collectionController: CollectionController = {
-       return CollectionController(viewController: self)
+        return CollectionController(viewController: self)
     }()
     
     //MARK: - Dependencies
@@ -43,6 +45,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     override func configureView() {
         collectionController.target = collectionView
         collectionController.delegate = self
+        definesPresentationContext = true
     }
     
     override func setConstraints(frame: CGRect) {
@@ -53,7 +56,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     }
     
     override func styleView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .black
     }
 
     //MARK: - Bind
@@ -81,7 +84,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
             controller.selectedItem.cancelAllSubscriptions()
             
             controller.selectedItem.subscribe(with: self) { [weak self] title in
-                self?.buttonTest.setText(title)
+                self?.open.fire(())
             }
         }
     }

@@ -9,6 +9,8 @@
 import VertigoX
 import Signals
 
+
+
 protocol ShopModuleFactory {
     func makeShopModule() -> ShopModule
 }
@@ -21,12 +23,12 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
     
     //MARK: - Dependencies
     
-    private let moduleFactory: ShopModuleFactory
+    private let moduleFactory: ShopModuleFactory & LoginModuleFactory & AddItemModuleFactory
     private let coordinatorFactory: CoordinatorFactory
     
     //MARK: -
     
-    init(router: Router, factory: ShopModuleFactory, coordinatorFactory: CoordinatorFactory) {
+    init(router: Router, factory: ShopModuleFactory & LoginModuleFactory & AddItemModuleFactory, coordinatorFactory: CoordinatorFactory) {
         self.moduleFactory = factory
         self.coordinatorFactory = coordinatorFactory
         super.init(router: router)
@@ -50,7 +52,7 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
         
         coordinator.start()
 
-        router.present(module)
+        router.showModule(module)
         
     }
     
@@ -60,14 +62,26 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
         
         let module = moduleFactory.makeShopModule()
         
-//        module.addItem.subscribe(with: self) { [weak self] in
-//            self?.runAddItemCoordinator()
-//        }
-//
-//        module.logout.subscribe(with: self) { [weak finishFlow] _ in
-//            finishFlow?.fire(.normal)
-//        }
-//
+        module.open.subscribe(with: self) { _ in
+            self.runItemDetailsFlow()
+     
+        }
+        
         router.setRootModule(module)
     }
+    
+    private func runItemDetailsFlow(){
+        
+        let coordinator = coordinatorFactory.makeItemDetailsCoordinator(router: router)
+        
+        coordinator.finishFlow.subscribe(with: self) { [weak coordinator] _ in
+            self.removeDependency(coordinator)
+        }
+        
+        addDependency(coordinator)
+        
+        coordinator.start()
+
+    }
 }
+
