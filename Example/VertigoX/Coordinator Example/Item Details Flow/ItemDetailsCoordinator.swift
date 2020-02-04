@@ -46,9 +46,7 @@ class ItemDetailsCoordinator: BaseCoordinator, CoordinatorOutput {
             self?.showEditDetails(fromModule: module)
         }
         
-        
         router.presentSheet(module) {
-            print("present sheet complete")
             self.finishFlow.fire(.normal)
         }
     }

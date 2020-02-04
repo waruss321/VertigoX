@@ -1,8 +1,10 @@
 import Signals
+import PanModal
 
 public protocol BaseModule: NSObjectProtocol, Presentable { }
 
-public protocol BaseSheetModule: NSObjectProtocol, SheetPresentable {
+public protocol BaseSheetModule: NSObjectProtocol, SheetPresentable, PanModalPresentable {
     var sheetDidDismiss: VoidSignal { get }
 }
+
 

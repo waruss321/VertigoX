@@ -209,8 +209,8 @@
 		BC21039F23A7024000DDE520 /* Coordinator Example */ = {
 			isa = PBXGroup;
 			children = (
-				BC62BF9723E7A11900A520B0 /* Item Details Flow */,
 				BC2103A023A7024000DDE520 /* Shop Flow */,
+				BC62BF9723E7A11900A520B0 /* Item Details Flow */,
 				BCA0A40523CCEB090046DB45 /* Add Item Flow */,
 				BC2103A623A7024000DDE520 /* Login Flow */,
 			);

@@ -14,14 +14,13 @@ protocol ItemDetailsModule: BaseSheetModule {
     var newPage: VoidSignal { get }
 }
 
-class ItemDetailsVC: ViewController, ItemDetailsModule, PanModalPresentable {
+class ItemDetailsVC: ViewController, ItemDetailsModule {
     
     //MARK: - BaseSheetModule
 
     var sheetDidDismiss = VoidSignal()
     
     //MARK: -
-    
     
     var newPage = VoidSignal()
     
@@ -38,10 +37,6 @@ class ItemDetailsVC: ViewController, ItemDetailsModule, PanModalPresentable {
 
         testButton.onTouchUpInside.subscribe(with: self) { _ in
             self.newPage.fire(())
-            
-//            self.dismiss(animated: true) {
-//                self.panModalDidDismiss()
-//            }
         }
     }
     

@@ -10,25 +10,17 @@ import VertigoX
 import Signals
 import PanModal
 
-protocol EditItemDetailsModule: BaseSheetModule {
+protocol EditItemDetailsModule: BaseModule {
     
 }
 
-class EditItemDetailsViewController: PanModalViewController, EditItemDetailsModule {
-    var panScrollable: UIScrollView? {
-        return nil
-    }
-    
-    
-    var sheetDidDismiss = VoidSignal()
-    
+class EditItemDetailsViewController: ViewController, EditItemDetailsModule {
 
     let button: UIButton = {
         let label = UIButton()
         label.setTitle("back", for: .normal)
         return label
     }()
-    
     
 
     override func viewDidLoad() {

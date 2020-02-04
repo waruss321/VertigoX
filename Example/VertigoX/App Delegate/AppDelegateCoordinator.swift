@@ -34,7 +34,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     //MARK: - Start
     
     override func start(with option: DeepLinkType?) {
-        runShopCoordinator(option: option)
+        runLoginCoordinator(option: option)
     }
     
     //MARK: - Run Flows
