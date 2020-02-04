@@ -34,10 +34,23 @@ final class ApplicationCoordinator: BaseCoordinator {
     //MARK: - Start
     
     override func start(with option: DeepLinkType?) {
-        runLoginCoordinator(option: option)
+        runTestPushCoordinator()
     }
     
     //MARK: - Run Flows
+    
+    private func runTestPushCoordinator(){
+        let coordinator = coordinatorFactory.makePushTestCoordinator(router: router)
+        
+        coordinator.finishFlow.subscribe(with: self) { [weak self, weak coordinator] _ in
+            self?.runShopCoordinator(option: nil)
+            self?.removeDependency(coordinator)
+        }
+        
+        addDependency(coordinator)
+                
+        coordinator.start(with: nil)
+    }
     
     private func runLoginCoordinator(option: DeepLinkType?){
     

@@ -10,7 +10,7 @@ import VertigoX
 import Signals
 
 protocol PushTestModuleFactory {
-    func makeShopModule() -> ShopModule
+    func makePushTestModule() -> PushTestModule
 }
 
 class PushTestCoordinator: BaseCoordinator, CoordinatorOutput {
@@ -21,65 +21,49 @@ class PushTestCoordinator: BaseCoordinator, CoordinatorOutput {
     
     //MARK: - Dependencies
     
-    private let moduleFactory: ShopModuleFactory & LoginModuleFactory & AddItemModuleFactory
+    private let moduleFactory: PushTestModuleFactory
     private let coordinatorFactory: CoordinatorFactory
     
     //MARK: -
     
-    init(router: Router, factory: ShopModuleFactory & LoginModuleFactory & AddItemModuleFactory, coordinatorFactory: CoordinatorFactory) {
+    init(router: Router, factory: PushTestModuleFactory, coordinatorFactory: CoordinatorFactory) {
         self.moduleFactory = factory
         self.coordinatorFactory = coordinatorFactory
         super.init(router: router)
     }
 
     override func start(with option: DeepLinkType?) {
-        showShop()
+        showMain()
     }
     
-    //MARK: - Run Flows
-    
-    private func runAddItemCoordinator(){
-        let (coordinator, module) = coordinatorFactory.makeAddItemCoordinator()
-        
-        coordinator.finishFlow.subscribe(with: self) { [weak self, weak coordinator] _ in
-            self?.removeDependency(coordinator)
-            self?.router.dismissModule()
+    private func showMain(){
+        let module = moduleFactory.makePushTestModule()
+           
+        module.push.subscribe(with: self) { _ in
+            self.showNext()
         }
-        
-        addDependency(coordinator)
-        
-        coordinator.start()
-
-        router.showModule(module)
-        
-    }
-    
-    //MARK: - Show Modules
-    
-    private func showShop(){
-        
-        let module = moduleFactory.makeShopModule()
-        
-        module.open.subscribe(with: self) { _ in
-            self.runItemDetailsFlow()
-     
-        }
-        
+           
         router.setRootModule(module)
     }
     
-    private func runItemDetailsFlow(){
-        
-        let coordinator = coordinatorFactory.makeItemDetailsCoordinator(router: router)
-        
-        coordinator.finishFlow.subscribe(with: self) { [weak coordinator] _ in
-            self.removeDependency(coordinator)
+    private func showNext(){
+        let module = moduleFactory.makePushTestModule()
+           
+        module.push.subscribe(with: self) { _ in
+            self.showNext()
         }
         
-        addDependency(coordinator)
+        module.popToLast.subscribe(with: self) { _ in
+            self.router.popModule()
+        }
         
-        coordinator.start()
-
+        module.popToRoot.subscribe(with: self) { _ in
+            self.router.popToRootModule()
+        }
+           
+        router.showModule(module) {
+            print("Popped")
+        }
     }
 }
 

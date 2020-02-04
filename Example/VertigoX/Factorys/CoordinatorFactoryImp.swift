@@ -12,12 +12,10 @@ import VertigoX
 final class CoordinatorFactoryImp: CoordinatorFactory {
 
     func makeLoginCoordinator(router: Router) -> Coordinator & CoordinatorOutput {
-        //let nav = UINavigationController()
         return LoginCoordinator(router: router, factory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
     }
     
     func makeShopCoordinator(router: Router) -> Coordinator & CoordinatorOutput {
-        
         return ShopCoordinator(router: router, factory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
     }
     
@@ -28,8 +26,11 @@ final class CoordinatorFactoryImp: CoordinatorFactory {
     }
     
     func makeItemDetailsCoordinator(router: Router) -> Coordinator & CoordinatorOutput {
-        let coordinator = ItemDetailsCoordinator(router: router, moduleFactory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
-        return coordinator
+        return ItemDetailsCoordinator(router: router, moduleFactory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
+    }
+    
+    func makePushTestCoordinator(router: Router) -> Coordinator & CoordinatorOutput {
+        return PushTestCoordinator(router: router, factory: ModuleFactoryImp(), coordinatorFactory: CoordinatorFactoryImp())
     }
     
     private func router(_ navController: UINavigationController) -> Router {

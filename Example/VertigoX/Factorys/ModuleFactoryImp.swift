@@ -39,3 +39,10 @@ extension ModuleFactoryImp: ItemDetailsModuleFactory {
         return EditItemDetailsViewController()
     }
 }
+
+
+extension ModuleFactoryImp: PushTestModuleFactory {
+    func makePushTestModule() -> PushTestModule {
+        return PushTestVC()
+    }
+}
