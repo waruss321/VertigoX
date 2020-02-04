@@ -1,19 +1,19 @@
 //
-//  ShowCoordinator.swift
-//  RussTools
+//  PushTestCoordinator.swift
+//  VertigoX_Example
 //
-//  Created by Russell Warwick on 15/12/2019.
-//  Copyright © 2019 Russell Warwick. All rights reserved.
+//  Created by Russell Warwick on 04/02/2020.
+//  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
 import VertigoX
 import Signals
 
-protocol ShopModuleFactory {
+protocol PushTestModuleFactory {
     func makeShopModule() -> ShopModule
 }
 
-class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
+class PushTestCoordinator: BaseCoordinator, CoordinatorOutput {
     
     //MARK: - Signals
     
