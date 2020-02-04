@@ -11,6 +11,7 @@ import Signals
 
 protocol AddItemModuleFactory {
     func makeAddItemModule() -> AddItemModule
+    func makeMoreInfo() -> MoreInfoModule
 }
 
 class AddItemCoordinator: BaseCoordinator, CoordinatorOutput {
@@ -41,14 +42,27 @@ class AddItemCoordinator: BaseCoordinator, CoordinatorOutput {
     private func showAddItem(setRoot: Bool = false){
         let module = moduleFactory.makeAddItemModule()
         
-        module.itemAdded.subscribe(with: self) { [weak finishFlow] in
+        module.dismiss.subscribe(with: self) { [weak finishFlow] in
             finishFlow?.fire(.normal)
         }
         
         module.push.subscribe(with: self) { [weak self] _ in
-            self?.showAddItem()
+            self?.showMoreInfo()
         }
         
         router.setRootModule(module)
+    }
+    
+    private func showMoreInfo(){
+        let module = moduleFactory.makeMoreInfo()
+        
+        
+        module.dismiss.subscribe(with: self) { [weak finishFlow]_ in
+            finishFlow?.fire(.normal)
+        }
+        
+        router.showModule(module) {
+            print("Popped by self")
+        }
     }
 }

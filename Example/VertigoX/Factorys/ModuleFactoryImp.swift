@@ -28,6 +28,10 @@ extension ModuleFactoryImp: AddItemModuleFactory {
     func makeAddItemModule() -> AddItemModule {
         return AddItemVC()
     }
+    
+    func makeMoreInfo() -> MoreInfoModule {
+        return MoreInfoVC()
+    }
 }
 
 extension ModuleFactoryImp: ItemDetailsModuleFactory {

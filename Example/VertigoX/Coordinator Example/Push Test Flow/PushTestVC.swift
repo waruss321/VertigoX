@@ -10,6 +10,7 @@ import VertigoX
 import Signals
 
 protocol PushTestModule: BaseModule {
+    var addItemSig: VoidSignal { get }
     var push: VoidSignal { get }
     var popToLast: VoidSignal { get }
     var popToRoot: VoidSignal { get }
@@ -17,12 +18,14 @@ protocol PushTestModule: BaseModule {
 
 class PushTestVC: ViewController, PushTestModule {
     
+    var addItemSig = VoidSignal()
     var push = VoidSignal()
     var popToLast = VoidSignal()
     var popToRoot = VoidSignal()
 
     let vertStack = UIStackView(axis: .vertical)
     
+    let addItemButton = UIButton(text: "Add Item")
     let button = UIButton(text: "Push to next VC")
     let popButton = UIButton(text: "Go back")
     let popRootButton = UIButton(text: "Pop to root")
@@ -31,8 +34,9 @@ class PushTestVC: ViewController, PushTestModule {
         view.addSubviews(vertStack)
         vertStack.fillSuperview()
         
-        vertStack.addArrangedSubviews(button, popButton, popRootButton)
+        vertStack.addArrangedSubviews(addItemButton, button, popButton, popRootButton)
         
+        addItemButton.addTarget(self, action: #selector(addItemAction), for: .touchUpInside)
         button.addTarget(self, action: #selector(pushNext), for: .touchUpInside)
         popButton.addTarget(self, action: #selector(popToLastAct), for: .touchUpInside)
         popRootButton.addTarget(self, action: #selector(popToRootAct), for: .touchUpInside)
@@ -49,4 +53,10 @@ class PushTestVC: ViewController, PushTestModule {
     @objc func popToRootAct(){
         popToRoot.fire(())
     }
+    
+    @objc func addItemAction(){
+        addItemSig.fire(())
+    }
 }
+
+

@@ -39,8 +39,20 @@ class PushTestCoordinator: BaseCoordinator, CoordinatorOutput {
     private func showMain(){
         let module = moduleFactory.makePushTestModule()
            
-        module.push.subscribe(with: self) { _ in
-            self.showNext()
+        module.push.subscribe(with: self) { [weak self] _ in
+            self?.showNext()
+        }
+        
+        module.popToLast.subscribe(with: self) { [weak self] _ in
+            self?.router.popModule()
+        }
+        
+        module.popToRoot.subscribe(with: self) { [weak self] _ in
+            self?.router.popToRootModule()
+        }
+        
+        module.addItemSig.subscribe(with: self) { [weak self] _ in
+            self?.runAddItemFlow()
         }
            
         router.setRootModule(module)
@@ -49,21 +61,40 @@ class PushTestCoordinator: BaseCoordinator, CoordinatorOutput {
     private func showNext(){
         let module = moduleFactory.makePushTestModule()
            
-        module.push.subscribe(with: self) { _ in
-            self.showNext()
+        module.push.subscribe(with: self) { [weak self] _ in
+            self?.showNext()
         }
         
-        module.popToLast.subscribe(with: self) { _ in
-            self.router.popModule()
+        module.popToLast.subscribe(with: self) { [weak self] _ in
+            self?.router.popModule()
         }
         
-        module.popToRoot.subscribe(with: self) { _ in
-            self.router.popToRootModule()
+        module.popToRoot.subscribe(with: self) { [weak self] _ in
+            self?.router.popToRootModule()
+        }
+        
+        module.addItemSig.subscribe(with: self) { [weak self] _ in
+            self?.runAddItemFlow()
         }
            
         router.showModule(module) {
             print("Popped")
         }
+    }
+    
+    private func runAddItemFlow(){
+        
+        let (coordinator, module) = coordinatorFactory.makeAddItemCoordinator()
+        
+        coordinator.finishFlow.subscribe(with: self) { [weak self, weak coordinator] _ in
+            self?.router.dismissModule()
+            self?.removeDependency(coordinator)
+        }
+        
+        addDependency(coordinator)
+        coordinator.start()
+        
+        router.showModule(module)
     }
 }
 

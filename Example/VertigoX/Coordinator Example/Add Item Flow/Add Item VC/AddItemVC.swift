@@ -9,7 +9,7 @@
 import VertigoX
 
 protocol AddItemModule: BaseModule {
-    var itemAdded: VoidSignal { get }
+    var dismiss: VoidSignal { get }
     var push: VoidSignal { get }
 }
 
@@ -17,7 +17,7 @@ class AddItemVC: ViewController, AddItemModule {
     
     //MARK: - Signals
     
-    var itemAdded = VoidSignal()
+    var dismiss = VoidSignal()
     var push = VoidSignal()
     
     //MARK: - Propreties
@@ -25,6 +25,7 @@ class AddItemVC: ViewController, AddItemModule {
     private let testLabel = UILabel(text: "Please add a item", alignment: .center)
     private let animatableButton = UIButton(text: "Change my height ??!", backgroundColor: .green)
     private let loginButton = UIButton(text: "Save")
+    
     
     //MARK: - Main View
     
@@ -51,9 +52,9 @@ class AddItemVC: ViewController, AddItemModule {
     
     override func bindSignals() {
         loginButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in
-            self?.itemAdded.fire(())
+            self?.dismiss.fire(())
         }
-        
+
         animatableButton.onTouchUpInside.subscribe(with: self) { [weak self, weak animatableButtonHeightConstraint] in
             animatableButtonHeightConstraint?.constant = (animatableButtonHeightConstraint?.constant == 100) ? 400 : 100
             UIViewPropertyAnimator(duration: 1, dampingRatio: 0.3) {
@@ -65,14 +66,18 @@ class AddItemVC: ViewController, AddItemModule {
 }
 
 protocol MoreInfoModule: BaseModule {
-    
+    var dismiss: VoidSignal { get }
 }
 
 class MoreInfoVC: ViewController, MoreInfoModule {
     
-    
+    var dismiss = VoidSignal()
     
     override func styleView() {
         view.backgroundColor = .cyan
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss.fire(())
     }
 }
