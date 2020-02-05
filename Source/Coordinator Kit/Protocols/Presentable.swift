@@ -12,18 +12,13 @@ extension UIViewController: Presentable {
 }
 
 public typealias PanModalViewController = (UIViewController & PanModalPresentable)
-public typealias PanModalPresenterVC = (UIViewController & PanModalPresenter)
 
 public protocol SheetPresentable: Presentable {
     func toSheetPresent() -> PanModalViewController?
-    func toSheetPresenter() -> PanModalPresenterVC?
 }
 
 extension UIViewController: SheetPresentable {
     public func toSheetPresent() -> PanModalViewController? {
         return self as? PanModalViewController
-    }
-    public func toSheetPresenter() -> PanModalPresenterVC? {
-        return self as PanModalPresenterVC
     }
 }

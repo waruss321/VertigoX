@@ -6,7 +6,7 @@ target 'VertigoX_Example' do
   
   pod 'IGListKit', '~> 4.0.0'
   pod 'Signals', '~> 6.0'
-  pod 'PanModal', :git => 'https://github.com/waruss321/PanModal.git'
+  pod 'PanModal'
   
   target 'VertigoX_Tests' do
     inherit! :search_paths
