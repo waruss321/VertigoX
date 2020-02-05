@@ -7,9 +7,12 @@
 //
 
 /* DOCS
- • Use show to show a view controller
- • Use runFlow to start a new coordinator
- */
+    NAMING
+    • Use show to show a view controller
+    • Use runFlow to start a new coordinator
+    USAGE
+    • When we want to create a new page that has a new NavgiationController. We need to pass back a module and a coorindator
+*/
 
 import UIKit
 

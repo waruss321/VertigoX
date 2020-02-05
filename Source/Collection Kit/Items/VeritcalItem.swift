@@ -77,23 +77,23 @@ internal extension VerticalCell {
             if controller.showSeporator && controller.seporatorColor != .clear {
                 let seporatorView = SeporatorView(color: controller.seporatorColor)
                 contentView.addSubview(seporatorView)
-                seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: CGSize(h: 1.25))
+                seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: .size(h: 1.25))
             }
             
             guard doesNeedShadowViews else { return }
             
             contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
             
-            let topRightView = CollectionShadowView(offset: CGSize(w: 1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topRight)
-            let topLeftView = CollectionShadowView(offset: CGSize(w: -1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topLeft)
+            let topRightView = CollectionShadowView(offset: .size(w: 1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topRight)
+            let topLeftView = CollectionShadowView(offset: .size(w: -1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topLeft)
 
-            let left = CollectionShadowView(offset: CGSize(w: -1), opacity: opacity, bounds: CGRect(w: -1, h: 2))
-            let right = CollectionShadowView(offset: CGSize(w: 1), opacity: opacity, bounds: CGRect(w: 1, h: 2))
+            let left = CollectionShadowView(offset: .size(w: -1), opacity: opacity, bounds: CGRect(w: -1, h: 2))
+            let right = CollectionShadowView(offset: .size(w: 1), opacity: opacity, bounds: CGRect(w: 1, h: 2))
             
             insertSubviews(left, right, below: contentView)
                         
-            left.pin(leading: leading, bottom: bottom, padding: UIEdgeInsets(leading: 1), size: CGSize(w: 1, h: 2))
-            right.pin(bottom: bottom, trailing: trailing, size: CGSize(w: 1, h: 2))
+            left.pin(leading: leading, bottom: bottom, padding: .padding(left: 10), size: .size(w: 1, h: 2))
+            right.pin(bottom: bottom, trailing: trailing, size: .size(w: 1, h: 2))
             
             insertSubviews(topRightView, topLeftView, below: contentView)
 
@@ -108,36 +108,36 @@ internal extension VerticalCell {
             if controller.showSeporator && controller.seporatorColor != .clear {
                 let seporatorView = SeporatorView(color: controller.seporatorColor)
                 contentView.addSubview(seporatorView)
-                seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: CGSize(h: 1.25))
+                seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: .size(h: 1.25))
             }
             
             guard doesNeedShadowViews else { return }
             
             contentView.applyRadius(.zero, corners: [.all])
 
-            let left = CollectionShadowView(offset: CGSize(w: -1), opacity: opacity)
-            let right = CollectionShadowView(offset: CGSize(w: 1), opacity: opacity)
+            let left = CollectionShadowView(offset: .size(w: -1), opacity: opacity)
+            let right = CollectionShadowView(offset: .size(w: 1), opacity: opacity)
 
             insertSubviews(left, right, below: contentView)
                         
-            left.pin(top: top, leading: leading, bottom: bottom, size: CGSize(w: 1))
+            left.pin(top: top, leading: leading, bottom: bottom, size: .size(w: 1))
             
-            right.pin(top: top, bottom: bottom, trailing: trailing, size: CGSize(w: 1))
+            right.pin(top: top, bottom: bottom, trailing: trailing, size: .size(w: 1))
         
         case .lastItem:
             guard doesNeedShadowViews else { return }
             
             contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
             
-            let bottomRightView = CollectionShadowView(offset: CGSize(w: 1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomRight)
-            let bottomLeftView = CollectionShadowView(offset: CGSize(w: -1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomLeft)
+            let bottomRightView = CollectionShadowView(offset: .size(w: 1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomRight)
+            let bottomLeftView = CollectionShadowView(offset: .size(w: -1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomLeft)
             
             insertSubviews(bottomRightView, bottomLeftView, below: contentView)
 
-            bottomRightView.pin(top: top, bottom: bottom, trailing: trailing, padding: UIEdgeInsets(top: 0, bottom: -1))
+            bottomRightView.pin(top: top, bottom: bottom, trailing: trailing, padding: .padding(top: 0, bottom: -1))
             bottomRightView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
             
-            bottomLeftView.pin(top: top, leading: leading, bottom: bottom, padding: UIEdgeInsets(top: 0, bottom: -1))
+            bottomLeftView.pin(top: top, leading: leading, bottom: bottom, padding: .padding(top: 0, bottom: -1))
             bottomLeftView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
             
         case .onlyItem:

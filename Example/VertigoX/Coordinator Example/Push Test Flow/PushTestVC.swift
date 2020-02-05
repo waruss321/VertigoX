@@ -18,28 +18,27 @@ protocol PushTestModule: BaseModule {
 
 class PushTestVC: ViewController, PushTestModule {
     
+    //MARK: - PushTestModule
+    
     var addItemSig = VoidSignal()
     var push = VoidSignal()
     var popToLast = VoidSignal()
     var popToRoot = VoidSignal()
 
-    let vertStack = UIStackView(axis: .vertical)
+    //MARK: -
     
-    let addItemButton = UIButton(text: "Add Item")
-    let button = UIButton(text: "Push to next VC")
-    let popButton = UIButton(text: "Go back")
-    let popRootButton = UIButton(text: "Pop to root")
+    private let addItemButton = UIButton(text: "Add Item")
+    private let button = UIButton(text: "Push to next VC")
+    private let popButton = UIButton(text: "Go back")
+    private let popRootButton = UIButton(text: "Pop to root")
     
     override func configureView() {
         navigationController?.navigationBar.isHidden = true
     }
 
     override func setConstraints(frame: CGRect) {
-        view.addSubviews(vertStack)
-        vertStack.fillSuperview()
-        
-        vertStack.addArrangedSubviews(addItemButton, button, popButton, popRootButton)
-        
+        view.stack(addItemButton, button, popButton, popRootButton, distribution: .fillEqually)
+                
         addItemButton.addTarget(self, action: #selector(addItemAction), for: .touchUpInside)
         button.addTarget(self, action: #selector(pushNext), for: .touchUpInside)
         popButton.addTarget(self, action: #selector(popToLastAct), for: .touchUpInside)

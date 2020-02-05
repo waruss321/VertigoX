@@ -1,6 +1,6 @@
 //
 //  RouterAnimations.swift
-//  IGListDiffKit
+//  VertigoX
 //
 //  Created by Russell Warwick on 05/02/2020.
 //

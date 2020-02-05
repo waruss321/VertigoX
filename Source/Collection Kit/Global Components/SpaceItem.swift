@@ -36,7 +36,7 @@ public final class SpaceCell: VerticalCell {
     override public func setConstraints(frame: CGRect) {
         super.setConstraints(frame: frame)
         contentView.addSubview(spaceView)
-        spaceView.fillSuperview(size: CGSize(h: 1))
+        spaceView.fillSuperview(size: .size(h: 1))
     }
     
     override public func bindViewModel() {

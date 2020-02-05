@@ -145,30 +145,23 @@ public extension UIStackView {
 //MARK: - UIEdgeInsets
 
 public extension UIEdgeInsets {
-    init(top: CGFloat = .zero, leading: CGFloat = .zero, bottom: CGFloat = .zero, trailing: CGFloat = .zero) {
-        self.init()
-        self.top = top
-        self.left = leading
-        self.bottom = bottom
-        self.right = trailing
+    static func allSides(_ side: CGFloat) -> UIEdgeInsets {
+        return .init(top: side, left: side, bottom: side, right: side)
     }
     
-    init(_ allSides: CGFloat) {
-        self.init()
-        self.top = allSides
-        self.left = allSides
-        self.bottom = allSides
-        self.right = allSides
+    static func padding(top: CGFloat = .zero, left: CGFloat = .zero, bottom: CGFloat = .zero, right: CGFloat = .zero) -> UIEdgeInsets{
+        return .init(top: top, left: left, bottom: bottom, right: right)
     }
 }
 
 public extension CGSize {
-    init(w: CGFloat = .zero, h: CGFloat = .zero) {
-        self.init(width: w, height: h)
+    
+    static func square(_ v: CGFloat) -> CGSize {
+        return .init(width: v, height: v)
     }
-
-    init(square: CGFloat) {
-        self.init(width: square, height: square)
+    
+    static func size(w: CGFloat = .zero, h: CGFloat = .zero) -> CGSize {
+        return .init(width: w, height: h)
     }
 }
 

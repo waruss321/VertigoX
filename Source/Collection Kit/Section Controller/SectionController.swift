@@ -33,7 +33,7 @@ open class SectionController: ListSectionController, Section {
         
     public override init() {
         super.init()
-        inset = UIEdgeInsets(top: topPadding, bottom: bottomPadding)
+        inset = .padding(top: topPadding, bottom: bottomPadding)
     }
     
     //MARK: - ListSectionController
@@ -47,7 +47,7 @@ open class SectionController: ListSectionController, Section {
     }
     
     override open func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(w: sectionWidth, h: estimatedCellHeight)
+        return .size(w: sectionWidth, h: estimatedCellHeight)
     }
 
     override open func cellForItem(at index: Int) -> UICollectionViewCell {

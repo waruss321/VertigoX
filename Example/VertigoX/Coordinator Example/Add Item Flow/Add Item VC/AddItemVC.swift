@@ -38,14 +38,14 @@ class AddItemVC: ViewController, AddItemModule {
     override func setConstraints(frame: CGRect) {
         view.addSubviews(testLabel, animatableButton, loginButton)
         testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
-                      padding: UIEdgeInsets(30))
+                      padding: .allSides(30))
         
-        animatableButton.pin(top: testLabel.bottom, leading: testLabel.leading, trailing: testLabel.trailing, padding: UIEdgeInsets(top: 10))
+        animatableButton.pin(top: testLabel.bottom, leading: testLabel.leading, trailing: testLabel.trailing, padding: .padding(top: 10))
         animatableButtonHeightConstraint = animatableButton.height(100)
         
         loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
-                        padding: UIEdgeInsets(leading: 40, bottom: 100, trailing: 40),
-                        size: CGSize(h: 60))
+                        padding: .padding(left: 40, bottom: 100, right: 40),
+                        size: .size(h: 60))
     }
     
     //MARK: - Bind

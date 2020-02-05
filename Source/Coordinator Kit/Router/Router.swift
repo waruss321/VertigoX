@@ -6,6 +6,11 @@
 //  Copyright © 2019 Russell Warwick. All rights reserved.
 //
 
+/* DOCS
+    • Use showModule for everything unless you want to break away from a Navigation Controller.
+    • Show will attempt to push a VC but if fails will present
+*/
+
 import Signals
 import PanModal
 

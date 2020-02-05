@@ -41,10 +41,10 @@ class ShopItemCell: VerticalCell {
     
     override func setConstraints(frame: CGRect) {
         view.addSubviews(itemLabel, button)
-        itemLabel.fillSuperview(padding: UIEdgeInsets(leading: 10))
+        itemLabel.fillSuperview(padding: .padding(left: 10))
         itemLabel.height(55, relation: .greaterThan)
         button.pin(bottom: view.bottom, trailing: view.trailing,
-                   size: CGSize(square: 30))
+                   size: .square(30))
         layoutIfNeeded()
     }
     
@@ -64,7 +64,7 @@ class ShopItemCell: VerticalCell {
         itemLabel.text = item.title
         
         button.onTouchUpInside.cancelAllSubscriptions()
-        button.onTouchUpInside.subscribe(with: self) { [weak self] _ in
+        button.onTouchUpInside.subscribe(with: self) { _ in
             item.selectedItem.fire("Hello from cell")
         }
     }

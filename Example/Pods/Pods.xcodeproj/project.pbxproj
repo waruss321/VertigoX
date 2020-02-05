@@ -128,7 +128,6 @@
 		93C1556DDAED08BE604B2B685155F553 /* PanModalPresentable+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB4FEDF875D0D0FC6CF671F7EFCDC9 /* PanModalPresentable+LayoutHelpers.swift */; };
 		9480E1A961B904AFDF4A9EBFB3AEEBC6 /* IGListBindingSectionController+DebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 804E3A9920180DBF42B11E10540B1A44 /* IGListBindingSectionController+DebugDescription.m */; };
 		94E886263BE0800269CB606C8D91DB49 /* IGListAdapter+DebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF04317A8B89E2DAE1BE860890EA73 /* IGListAdapter+DebugDescription.m */; };
-		9945FC721A65B20DD0CD47FFA3AD8937 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF6764EBE7135DB3F86FCF2E5009ECC /* UIStackView.swift */; };
 		9D80D09BEFBBA90B41DFD9EA2DE2FBD5 /* IGListDiff.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA166A27DEA134C3A59D87CAB1834D /* IGListDiff.mm */; };
 		9FBCE4EC2D33CBF102A2771E45842ED1 /* IGListCollectionViewLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B67B08E0DAD4474933AA42E84B1E45C /* IGListCollectionViewLayout.mm */; };
 		A0639B38DF3937A81BAC4961161677E0 /* IGListScrollDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AFBD656EE0363689A6D07C1159595C6 /* IGListScrollDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,6 +148,7 @@
 		B60B6DA1044E13BAE8A0D4BF520A843B /* IGListAdapterMoveDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5EBB20BCF9E3F4673067079A65F369 /* IGListAdapterMoveDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6BB92BA275CC24A8AF6DA6F21573D05 /* IGListMoveIndexPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 10D5A9D8FA78711C2CCEB50728EB43B2 /* IGListMoveIndexPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCB06FC823EA437A00243CF9 /* RouterAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB06FC623EA40F600243CF9 /* RouterAnimations.swift */; };
+		BCB06FCB23EA4BF500243CF9 /* UIView+Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB06FC923EA4B9A00243CF9 /* UIView+Stacks.swift */; };
 		BD030684DB491453C175AA7F99C5DE13 /* PanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = C5D1D474103DED6E00EBE30A0BE78F59 /* PanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = A54F27EA6501AD604070B4B914DBF819 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F166B43E1DC3D9681715C1F48A231D7 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -353,7 +353,6 @@
 		5801F57BFDFCC413789E5392179EA83F /* VeritcalItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VeritcalItem.swift; sourceTree = "<group>"; };
 		5D6586C2D77AFBF341B78484170C3E5F /* IGListDisplayHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDisplayHandler.h; path = Source/IGListKit/Internal/IGListDisplayHandler.h; sourceTree = "<group>"; };
 		5F3AF2658D53051B84211D0E176A9903 /* IGListMoveIndex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMoveIndex.h; path = Source/IGListDiffKit/IGListMoveIndex.h; sourceTree = "<group>"; };
-		5FF6764EBE7135DB3F86FCF2E5009ECC /* UIStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		5FFCFAA14B1EA6A2D77614B748026984 /* NSNumber+IGListDiffable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+IGListDiffable.h"; path = "Source/IGListDiffKit/NSNumber+IGListDiffable.h"; sourceTree = "<group>"; };
 		60855374263252217326496AC856A7DB /* IGListUpdatingDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListUpdatingDelegate.h; path = Source/IGListKit/IGListUpdatingDelegate.h; sourceTree = "<group>"; };
 		60DFCE042AAC40186E232A9AEC4BED9C /* IGListKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGListKit.xcconfig; sourceTree = "<group>"; };
@@ -438,6 +437,7 @@
 		BB79052757F95F19C29B23E8585C254F /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signal.swift; path = Signals/Signal.swift; sourceTree = "<group>"; };
 		BC922D77A8D26C9E4DCF336EBD04847F /* IGListSectionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionController.h; path = Source/IGListKit/IGListSectionController.h; sourceTree = "<group>"; };
 		BCB06FC623EA40F600243CF9 /* RouterAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAnimations.swift; sourceTree = "<group>"; };
+		BCB06FC923EA4B9A00243CF9 /* UIView+Stacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Stacks.swift"; sourceTree = "<group>"; };
 		BCC1642B93CF32D749936FB85CC25B03 /* PanModal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PanModal.modulemap; sourceTree = "<group>"; };
 		BED69F5B9DF3C6B6AB546FFB8BF0A340 /* IGListIndexSetResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListIndexSetResult.m; path = Source/IGListDiffKit/IGListIndexSetResult.m; sourceTree = "<group>"; };
 		BEF5129751F53A4F42B89A40369EB486 /* IGListKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IGListKit-dummy.m"; sourceTree = "<group>"; };
@@ -752,9 +752,9 @@
 				E76A09B546D40658871D0D0A283852AA /* UICollectionView.swift */,
 				DB5D7C96FB2FADC70111459050A010F4 /* UIImageView.swift */,
 				42AF01299807F3728DBBEB510F419CAB /* UILabel.swift */,
-				5FF6764EBE7135DB3F86FCF2E5009ECC /* UIStackView.swift */,
 				C324678E0063A9B08C9DCEBAD7B9C451 /* UITextField.swift */,
 				455D52A72E8D62FD1E474D07CFFE2A5A /* UIView.swift */,
+				BCB06FC923EA4B9A00243CF9 /* UIView+Stacks.swift */,
 			);
 			name = "UI Construction";
 			path = "Source/UI Construction";
@@ -1488,6 +1488,7 @@
 				7AD4B226133200AC0A1A29112EF0F25A /* Section.swift in Sources */,
 				30E9FD480DEEDC758CBB02570C8A98E6 /* SectionController.swift in Sources */,
 				29BF567B612160341A558437C9836016 /* SpaceItem.swift in Sources */,
+				BCB06FCB23EA4BF500243CF9 /* UIView+Stacks.swift in Sources */,
 				A9F5A573A4278C9BB7ECBAF1980F042E /* UIApplication.swift in Sources */,
 				762F7AE5F418D49412C530F5548C9BF9 /* UIBolierplate.swift in Sources */,
 				71CF622C3B41A22E1FC932277969954D /* UIButton.swift in Sources */,
@@ -1495,7 +1496,6 @@
 				BCB06FC823EA437A00243CF9 /* RouterAnimations.swift in Sources */,
 				1C4451984AB5BFBBD5005C76A9F64A0B /* UIImageView.swift in Sources */,
 				CEAE8FA98DA828BCBCA02993B257BE2B /* UILabel.swift in Sources */,
-				9945FC721A65B20DD0CD47FFA3AD8937 /* UIStackView.swift in Sources */,
 				AA7F9BFF481F55BA4200D3A0889CE82D /* UITextField.swift in Sources */,
 				4EC1F347C45B8B2B40D04A9BF64744E1 /* UIView.swift in Sources */,
 				CEA8A0850C73E9ADD0BE4D93C8F9764E /* UIViewConstraints.swift in Sources */,

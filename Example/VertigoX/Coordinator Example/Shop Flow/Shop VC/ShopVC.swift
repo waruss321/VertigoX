@@ -52,7 +52,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
         view.addSubviews(collectionView, buttonTest)
         collectionView.pin(top: view.topSafe, leading: view.leadingAnchor, bottom: buttonTest.top, trailing: view.trailing)
         buttonTest.pin(leading: view.leading, bottom: view.bottomSafe, trailing: view.trailing,
-                       size: CGSize(h: 40))
+                       size: .size(h: 40))
     }
     
     override func styleView() {

@@ -103,7 +103,8 @@ public extension UIView {
         self.size(size)
     }
     
-    @discardableResult func centerXTo(_ view: UIView, offset: CGFloat = .zero, size: CGSize = .zero) -> NSLayoutConstraint? {
+    @discardableResult
+    func centerXTo(_ view: UIView, offset: CGFloat = .zero, size: CGSize = .zero) -> NSLayoutConstraint? {
     
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -115,7 +116,8 @@ public extension UIView {
         return constraint
     }
     
-    @discardableResult func centerYTo(_ view: UIView, offset: CGFloat = .zero, size: CGSize = .zero) -> NSLayoutConstraint? {
+    @discardableResult
+    func centerYTo(_ view: UIView, offset: CGFloat = .zero, size: CGSize = .zero) -> NSLayoutConstraint? {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -129,7 +131,8 @@ public extension UIView {
 
     //MARK: - CGSize
     
-    @discardableResult func height(_ height: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
+    @discardableResult
+    func height(_ height: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -146,7 +149,8 @@ public extension UIView {
         return constraint
     }
     
-    @discardableResult func width(_ width: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
+    @discardableResult
+    func width(_ width: CGFloat, relation: RelationType = .equalTo, priority: UILayoutPriority = .required) -> NSLayoutConstraint? {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -176,7 +180,8 @@ public extension UIView {
         }
     }
     
-    @discardableResult func setWidthTo(_ layoutDiminesion: NSLayoutDimension, multiplier: CGFloat = 1.0) -> NSLayoutConstraint? {
+    @discardableResult
+    func setWidthTo(_ layoutDiminesion: NSLayoutDimension, multiplier: CGFloat = 1.0) -> NSLayoutConstraint? {
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint: NSLayoutConstraint? = widthAnchor.constraint(equalTo: layoutDiminesion, multiplier: multiplier)
@@ -186,7 +191,8 @@ public extension UIView {
         return constraint
     }
     
-    @discardableResult func setHeightTo(_ layoutDiminesion: NSLayoutDimension, multiplier: CGFloat = 1.0) -> NSLayoutConstraint? {
+    @discardableResult
+    func setHeightTo(_ layoutDiminesion: NSLayoutDimension, multiplier: CGFloat = 1.0) -> NSLayoutConstraint? {
         translatesAutoresizingMaskIntoConstraints = false
         
         let constraint: NSLayoutConstraint? = heightAnchor.constraint(equalTo: layoutDiminesion, multiplier: multiplier)
