@@ -4,7 +4,7 @@ PODS:
     - IGListDiffKit (= 4.0.0)
   - PanModal (1.2.5)
   - Signals (6.1.0)
-  - VertigoX (0.2.10):
+  - VertigoX (0.3.0):
     - IGListKit (~> 4.0.0)
     - PanModal (~> 1.2.5)
     - Signals (~> 6.0)
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   PanModal: 7c5af3ad4fe22b91508040965bebffb89fb607ae
   Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
-  VertigoX: 583c8c9179ed0b665096242f4bc7ae4a5667683d
+  VertigoX: fc970b7dfe6163162c8955c6982df2bd20549315
 
 PODFILE CHECKSUM: c025c513faebd809472ca9644614c390bc375b7b
 

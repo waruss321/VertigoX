@@ -34,7 +34,7 @@ public final class RouterImp: NSObject, Router {
     //MARK: -
 
     public var currentController: UIViewController? {
-        return UIApplication.topViewController()?.toPresent()
+        return UIApplication.topViewController()
     }
 
     //MARK: - Set Module To Root Of Navigation Controller
@@ -54,7 +54,7 @@ public final class RouterImp: NSObject, Router {
                 completion?()
             })
 
-            currentController?.presentPan(controller)
+            currentController?.toSheetPresent()?.presentPan(controller)
         }
     }
     
