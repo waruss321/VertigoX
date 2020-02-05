@@ -4,14 +4,14 @@ PODS:
     - IGListDiffKit (= 4.0.0)
   - PanModal (1.2.5)
   - Signals (6.1.0)
-  - VertigoX (0.3.0):
+  - VertigoX (0.3.3):
     - IGListKit (~> 4.0.0)
-    - PanModal (~> 1.2.5)
+    - PanModal
     - Signals (~> 6.0)
 
 DEPENDENCIES:
   - IGListKit (~> 4.0.0)
-  - PanModal (~> 1.2.5)
+  - PanModal (from `https://github.com/waruss321/PanModal.git`)
   - Signals (~> 6.0)
   - VertigoX (from `../`)
 
@@ -19,20 +19,26 @@ SPEC REPOS:
   trunk:
     - IGListDiffKit
     - IGListKit
-    - PanModal
     - Signals
 
 EXTERNAL SOURCES:
+  PanModal:
+    :git: https://github.com/waruss321/PanModal.git
   VertigoX:
     :path: "../"
+
+CHECKOUT OPTIONS:
+  PanModal:
+    :commit: d4a2407a005b384d7d42d7741b1c45b1a5429b0d
+    :git: https://github.com/waruss321/PanModal.git
 
 SPEC CHECKSUMS:
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   PanModal: 7c5af3ad4fe22b91508040965bebffb89fb607ae
   Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
-  VertigoX: fc970b7dfe6163162c8955c6982df2bd20549315
+  VertigoX: 938a0b37715cf8778c12347bc5ef910bab48d2bf
 
-PODFILE CHECKSUM: c025c513faebd809472ca9644614c390bc375b7b
+PODFILE CHECKSUM: 40ef904046e4c2315ce69862e15b2ad734272d49
 
 COCOAPODS: 1.8.4
