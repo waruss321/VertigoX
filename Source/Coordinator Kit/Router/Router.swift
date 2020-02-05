@@ -26,6 +26,7 @@ public protocol Router: Presentable {
     //MARK: - Present Module & Dismiss
     
     func presentModule(_ module: Presentable?, animated: Bool)
+    func presentModuleCustom(_ module: Presentable?, animated: Bool, style: PresentAnimation)
     
     func dismissModule(animated: Bool)
     
@@ -44,6 +45,10 @@ public extension Router {
     
     func presentModule(_ module: Presentable?, animated: Bool = true){
         self.presentModule(module, animated: animated)
+    }
+    
+    func presentModuleCustom(_ module: Presentable?, animated: Bool = true, style: PresentAnimation = .slideLeft) {
+        self.presentModuleCustom(module, animated: animated, style: style)
     }
     
     func dismissModule(animated: Bool = true){

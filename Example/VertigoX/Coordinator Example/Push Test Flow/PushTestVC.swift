@@ -29,6 +29,10 @@ class PushTestVC: ViewController, PushTestModule {
     let button = UIButton(text: "Push to next VC")
     let popButton = UIButton(text: "Go back")
     let popRootButton = UIButton(text: "Pop to root")
+    
+    override func configureView() {
+        navigationController?.navigationBar.isHidden = true
+    }
 
     override func setConstraints(frame: CGRect) {
         view.addSubviews(vertStack)

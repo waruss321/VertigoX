@@ -58,12 +58,32 @@ public final class RouterImp: NSObject, Router {
         }
     }
     
+    internal var presentTransition: UIViewControllerAnimatedTransitioning?
+    internal var dismissTransition: UIViewControllerAnimatedTransitioning?
+    
     //MARK: - Present Module & Dismiss
     
     public func presentModule(_ module: Presentable?, animated: Bool){
         guard let controller = module?.toPresent() else { return }
         controller.modalPresentationStyle = .fullScreen
+
         currentController?.present(controller, animated: animated, completion: nil)
+    }
+    
+    public func presentModuleCustom(_ module: Presentable?, animated: Bool, style: PresentAnimation) {
+        //Note: Not making use of style yet
+        
+        guard let controller = module?.toPresent() else { return }
+        
+        presentTransition = RightToLeftTransition()
+        dismissTransition = LeftToRightTransition()
+
+        controller.modalPresentationStyle = .custom
+        controller.transitioningDelegate = self
+        
+        currentController?.present(controller, animated: animated, completion: { [weak self] in
+            self?.presentTransition = nil
+        })
     }
     
     public func dismissModule(animated: Bool){
@@ -90,17 +110,6 @@ public final class RouterImp: NSObject, Router {
         if let poppedViewController = rootController?.popViewController(animated: animated) {
             runCompletion(for: poppedViewController)
         }
-        
-        //TODO: - Come back to this and when i figure out wtf it's doing, document it properly!!
-//        if let topViewController = rootController?.topViewController, let controller = rootController?.popViewController(animated: animated) {
-//            onBack.fire(topViewController)
-//            runCompletion(for: controller)
-//        } else if let controller = rootController?.viewControllers[safe: 0] {
-//            onBack.fire(controller)
-//            runCompletion(for: controller)
-//        } else {
-//            onBack.fire(nil)
-//        }
     }
     
     public func popToRootModule(animated: Bool){
@@ -125,5 +134,15 @@ extension RouterImp: UINavigationControllerDelegate {
         guard let completion = completions[controller] else { return }
         completion()
         completions.removeValue(forKey: controller)
+    }
+}
+
+extension RouterImp: UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentTransition
+    }
+
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return dismissTransition
     }
 }

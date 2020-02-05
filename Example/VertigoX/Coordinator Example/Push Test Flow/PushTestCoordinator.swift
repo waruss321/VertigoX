@@ -94,7 +94,7 @@ class PushTestCoordinator: BaseCoordinator, CoordinatorOutput {
         addDependency(coordinator)
         coordinator.start()
         
-        router.showModule(module)
+        router.presentModuleCustom(module)
     }
 }
 
