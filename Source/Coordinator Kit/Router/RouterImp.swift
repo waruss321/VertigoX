@@ -54,7 +54,7 @@ public final class RouterImp: NSObject, Router {
                 completion?()
             })
 
-            currentController?.toSheetPresent()?.presentPan(controller)
+            currentController?.toSheetPresenter()?.presentPan(controller)
         }
     }
     
