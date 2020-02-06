@@ -45,7 +45,6 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     override func configureView() {
         collectionController.target = collectionView
         collectionController.delegate = self
-        definesPresentationContext = true
     }
     
     override func setConstraints(frame: CGRect) {

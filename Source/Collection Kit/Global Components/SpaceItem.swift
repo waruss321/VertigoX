@@ -36,12 +36,14 @@ public final class SpaceCell: VerticalCell {
     override public func setConstraints(frame: CGRect) {
         super.setConstraints(frame: frame)
         contentView.addSubview(spaceView)
-        spaceView.fillSuperview(size: .size(h: 1))
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
     }
     
     override public func bindViewModel() {
         guard let item = item as? SpaceModel else { return }
         spaceView.height(item.height)
+        spaceView.backgroundColor = item.color
     }
 
 }
