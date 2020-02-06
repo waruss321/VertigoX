@@ -19,36 +19,14 @@ import UIKit
  ```
  */
 public class PanModalPresentationDelegate: NSObject {
-    
-    public enum PresentationStyle {
-        case modal
-        case push
-        
-        var transitionStyle: PanModalPresentationAnimator.TransitionStyle {
-            switch self {
-                case .modal: return .modally
-                case .push: return .push
-            }
-        }
-    }
 
-    private let presentationStyle: PresentationStyle
-    
-    public init(presentationStyle: PresentationStyle) {
-        self.presentationStyle = presentationStyle
-    }
-    
     /**
      Returns an instance of the delegate, retained for the duration of presentation
      */
-    
-    public static var modal: PanModalPresentationDelegate = {
-           return PanModalPresentationDelegate(presentationStyle: .modal)
-       }()
-    
-    public static var push: PanModalPresentationDelegate = {
-        return PanModalPresentationDelegate(presentationStyle: .push)
+    public static var `default`: PanModalPresentationDelegate = {
+        return PanModalPresentationDelegate()
     }()
+
 }
 
 extension PanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
@@ -57,14 +35,14 @@ extension PanModalPresentationDelegate: UIViewControllerTransitioningDelegate {
      Returns a modal presentation animator configured for the presenting state
      */
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PanModalPresentationAnimator(transitionStyle: presentationStyle.transitionStyle)
+        return PanModalPresentationAnimator(transitionStyle: .presentation)
     }
 
     /**
      Returns a modal presentation animator configured for the dismissing state
      */
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PanModalPresentationAnimator(transitionStyle: presentationStyle.transitionStyle, dismissal: true)
+        return PanModalPresentationAnimator(transitionStyle: .dismissal)
     }
 
     /**

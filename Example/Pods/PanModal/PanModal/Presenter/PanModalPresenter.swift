@@ -18,7 +18,7 @@ import UIKit
                                              sourceRect: .zero)
  ```
  */
-public protocol PanModalPresenter: AnyObject {
+protocol PanModalPresenter: AnyObject {
 
     /**
      A flag that returns true if the current presented view controller
@@ -29,8 +29,7 @@ public protocol PanModalPresenter: AnyObject {
     /**
      Presents a view controller that conforms to the PanModalPresentable protocol
      */
-    func presentPan(_ viewControllerToPresent: PanModalPresentable.LayoutType, sourceView: UIView?, sourceRect: CGRect)
-    func pushPan(_ viewControllerToPresent: PanModalPresentable.LayoutType, sourceView: UIView?, sourceRect: CGRect)
+    func presentPanModal(_ viewControllerToPresent: PanModalPresentable.LayoutType, sourceView: UIView?, sourceRect: CGRect)
 
 }
 #endif
