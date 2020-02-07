@@ -38,6 +38,7 @@ public final class SpaceCell: VerticalCell {
         contentView.addSubview(spaceView)
         backgroundColor = .clear
         contentView.backgroundColor = .clear
+        spaceView.fillSuperview()
     }
     
     override public func bindViewModel() {
