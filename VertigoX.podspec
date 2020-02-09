@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VertigoX'
-  s.version          = '0.3.12'
+  s.version          = '0.3.13'
   s.summary          = 'A Swift ToolKit to help create clean, scalable and efficient apps'
   s.swift_version    = '5.0'
  
@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Source/**/*'
   
-  s.dependency 'PanModal', :git => 'https://github.com/waruss321/PanModal.git', :branch => 'master'
   s.dependency 'IGListKit', '~> 4.0.0'
   s.dependency 'Signals', '~> 6.0'
   
