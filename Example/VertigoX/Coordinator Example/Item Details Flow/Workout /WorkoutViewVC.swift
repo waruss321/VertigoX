@@ -7,7 +7,6 @@
 //
 
 import VertigoX
-import PanModal
 
 protocol WorkoutViewModule: BaseSheetModule {
     

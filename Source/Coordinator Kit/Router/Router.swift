@@ -12,7 +12,6 @@
 */
 
 import Signals
-import PanModal
 
 public protocol Router: Presentable {
     

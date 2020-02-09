@@ -1,5 +1,4 @@
 import Signals
-import PanModal
 
 public protocol Presentable: class {
     func toPresent() -> UIViewController?

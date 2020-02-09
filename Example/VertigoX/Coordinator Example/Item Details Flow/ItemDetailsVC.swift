@@ -8,7 +8,6 @@
 
 import VertigoX
 import Signals
-import PanModal
 
 protocol ItemDetailsModule: BaseSheetModule {
     var newPage: VoidSignal { get }

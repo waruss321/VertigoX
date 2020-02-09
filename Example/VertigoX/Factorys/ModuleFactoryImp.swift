@@ -6,7 +6,6 @@
 //  Copyright © 2019 Russell Warwick. All rights reserved.
 //
 
-import PanModal
 import Signals
 import VertigoX
 

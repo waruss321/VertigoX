@@ -7,7 +7,6 @@
 //
 
 import Signals
-import PanModal
 
 public final class RouterImp: NSObject, Router {
 
