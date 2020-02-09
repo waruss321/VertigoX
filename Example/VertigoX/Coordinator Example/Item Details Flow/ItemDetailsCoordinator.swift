@@ -10,7 +10,7 @@ import Signals
 import VertigoX
 
 protocol ItemDetailsModuleFactory {
-    func makeItemDetailsModule() -> ItemDetailsModule
+    func makeItemDetailsModule() -> WorkoutViewModule
     func makeEditItemDetailsModule() -> EditItemDetailsModule 
 }
 
@@ -41,10 +41,10 @@ class ItemDetailsCoordinator: BaseCoordinator, CoordinatorOutput {
     
     private func showVC(){
         let module = moduleFactory.makeItemDetailsModule()
-        
-        module.newPage.subscribe(with: self) { [weak self] _ in
-            self?.showEditDetails(fromModule: module)
-        }
+//        
+//        module.newPage.subscribe(with: self) { [weak self] _ in
+//            self?.showEditDetails(fromModule: module)
+//        }
         
         router.presentSheet(module) {
             self.finishFlow.fire(.normal)

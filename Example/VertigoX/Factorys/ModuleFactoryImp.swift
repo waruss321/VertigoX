@@ -35,8 +35,8 @@ extension ModuleFactoryImp: AddItemModuleFactory {
 }
 
 extension ModuleFactoryImp: ItemDetailsModuleFactory {
-    func makeItemDetailsModule() -> ItemDetailsModule {
-         return ItemDetailsVC()
+    func makeItemDetailsModule() -> WorkoutViewModule {
+         return WorkoutViewVC(viewModel: WorkoutViewVM(headerHeight: 100))
     }
     
     func makeEditItemDetailsModule() -> EditItemDetailsModule {

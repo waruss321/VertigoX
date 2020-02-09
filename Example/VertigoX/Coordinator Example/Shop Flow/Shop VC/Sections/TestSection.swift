@@ -18,15 +18,15 @@ final class TestSection: SectionController {
     //MARK: - Settings
     
     override var margin: CGFloat {
-        return 50
+        return 0
     }
     
     override var topPadding: CGFloat {
-        return 40
+        return 0
     }
     
     override var estimatedCellHeight: CGFloat {
-        return 55
+        return 100
     }
     
     override var showSeporator: Bool {

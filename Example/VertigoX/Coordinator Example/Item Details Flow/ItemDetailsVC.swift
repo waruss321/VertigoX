@@ -55,7 +55,7 @@ class ItemDetailsVC: ViewController, ItemDetailsModule {
     }
 
     var topOffset: CGFloat {
-        return 50.0
+        return 0
     }
 
     var springDamping: CGFloat {
