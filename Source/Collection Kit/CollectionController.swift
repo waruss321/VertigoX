@@ -10,6 +10,13 @@ import IGListKit
 
 public protocol CollectionControllerDelegate {
     func bindSectionController(_ controller: SectionController)
+    func didScroll(_ scrollView: UIScrollView)
+}
+
+public extension CollectionControllerDelegate {
+    func didScroll(_ scrollView: UIScrollView) {
+        
+    }
 }
 
 public final class CollectionController: NSObject {
@@ -50,6 +57,7 @@ public final class CollectionController: NSObject {
         didSet {
             self.adapter.collectionView = target
             self.adapter.dataSource = self
+            self.adapter.scrollViewDelegate = self
             self.adapter.collectionView?.collectionViewLayout = (autoSize)
                 ? UICollectionViewFlowLayout(estimatedItemSize: UICollectionViewFlowLayout.automaticSize)
                 : UICollectionViewFlowLayout()
@@ -96,4 +104,10 @@ extension CollectionController: ListAdapterDataSource {
     }
 
     public func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
+}
+
+extension CollectionController: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.delegate?.didScroll(scrollView)
+    }
 }

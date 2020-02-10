@@ -55,7 +55,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     }
     
     override func styleView() {
-        view.backgroundColor = .black
+        view.backgroundColor = .blue
     }
 
     //MARK: - Bind
@@ -87,4 +87,9 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
             }
         }
     }
+    
+    func didScroll(_ scrollView: UIScrollView) {
+        print("scroll")
+    }
 }
+
