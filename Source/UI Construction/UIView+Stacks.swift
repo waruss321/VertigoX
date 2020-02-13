@@ -60,38 +60,38 @@ public extension UIView {
     }
 }
 
-extension UIStackView {
+public extension UIStackView {
     
     @discardableResult
-    open func padding(_ margins: UIEdgeInsets) -> UIStackView {
+    func margin(_ margins: UIEdgeInsets) -> UIStackView {
         layoutMargins = margins
         isLayoutMarginsRelativeArrangement = true
         return self
     }
     
     @discardableResult
-    open func padLeft(_ left: CGFloat) -> UIStackView {
+    func padLeft(_ left: CGFloat) -> UIStackView {
         isLayoutMarginsRelativeArrangement = true
         layoutMargins.left = left
         return self
     }
     
     @discardableResult
-    open func padTop(_ top: CGFloat) -> UIStackView {
+    func padTop(_ top: CGFloat) -> UIStackView {
         isLayoutMarginsRelativeArrangement = true
         layoutMargins.top = top
         return self
     }
     
     @discardableResult
-    open func padBottom(_ bottom: CGFloat) -> UIStackView {
+    func padBottom(_ bottom: CGFloat) -> UIStackView {
         isLayoutMarginsRelativeArrangement = true
         layoutMargins.bottom = bottom
         return self
     }
     
     @discardableResult
-    open func padRight(_ right: CGFloat) -> UIStackView {
+    func padRight(_ right: CGFloat) -> UIStackView {
         isLayoutMarginsRelativeArrangement = true
         layoutMargins.right = right
         return self
