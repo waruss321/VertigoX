@@ -55,7 +55,7 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     }
     
     override func styleView() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .purple
     }
 
     //MARK: - Bind

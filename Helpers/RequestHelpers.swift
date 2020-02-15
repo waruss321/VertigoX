@@ -1,5 +1,5 @@
 //
-//  Helpers.swift
+//  RequestHelpers.swift
 //  VertigoX
 //
 //  Created by Russell Warwick on 24/10/2019.

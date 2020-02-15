@@ -29,7 +29,7 @@ struct ExerciseModel: VerticalItem {
 
 final class ExerciseCell: VerticalCell {
     
-    private let spaceView = UIView(color: .red)
+    private let spaceView = UIView(backgroundColor: .red)
     
     override public func setConstraints(frame: CGRect) {
         super.setConstraints(frame: frame)

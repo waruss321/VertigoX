@@ -126,6 +126,7 @@ public extension UIView {
 //MARK: - UIStackView
 
 public extension UIStackView {
+    
     func addArrangedSubviews(_ views: UIView...){
         views.forEach({ addArrangedSubview($0) })
     }
@@ -145,6 +146,7 @@ public extension UIStackView {
 //MARK: - UIEdgeInsets
 
 public extension UIEdgeInsets {
+    
     static func allSides(_ side: CGFloat) -> UIEdgeInsets {
         return .init(top: side, left: side, bottom: side, right: side)
     }
@@ -166,6 +168,7 @@ public extension CGSize {
 }
 
 public extension CGRect {
+    
     init(x: CGFloat = .zero, y: CGFloat = .zero, w: CGFloat = .zero, h: CGFloat = .zero) {
         self.init(x: x, y: y, width: w, height: h)
     }
@@ -180,6 +183,7 @@ public extension CGRect {
 }
 
 public extension CACornerMask {
+    
     static var topLeft: CACornerMask {
         return .layerMinXMinYCorner
     }
@@ -208,6 +212,7 @@ public extension CACornerMask {
 }
 
 public extension UIView {
+    
     func applyRadius(_ radius: CGFloat, corners: CACornerMask){
         if #available(iOS 11, *) {
             layer.cornerRadius = radius

@@ -43,10 +43,6 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
         contentView.fillSuperview() //This needs to happen otherwise the cell will not adjust to auto size
         run(frame: frame)
     }
-    
-    public var view: UIView {
-        return contentView
-    }
 
     required public init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
         
@@ -69,21 +65,21 @@ internal extension VerticalCell {
 
         let opacity: Float = controller.shadowOpacity
         let cornerRadius: CGFloat = controller.cornerRadius
-        let doesNeedShadowViews: Bool = opacity != 0.0 || cornerRadius != 0.0
+        let doesNeedShadowViews: Bool = opacity != 0.0
 
         switch position {
         case .firstItem:
 
             if controller.showSeporator && controller.seporatorColor != .clear {
-                let seporatorView = SeporatorView(color: controller.seporatorColor)
+                let seporatorView = SeporatorView(backgroundColor: controller.seporatorColor)
                 contentView.addSubview(seporatorView)
                 seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: .size(h: 1.25))
             }
             
-            guard doesNeedShadowViews else { return }
-            
             contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
             
+            guard doesNeedShadowViews else { return }
+ 
             let topRightView = CollectionShadowView(offset: .size(w: 1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topRight)
             let topLeftView = CollectionShadowView(offset: .size(w: -1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topLeft)
 
@@ -106,14 +102,14 @@ internal extension VerticalCell {
         case .middleItem:
             
             if controller.showSeporator && controller.seporatorColor != .clear {
-                let seporatorView = SeporatorView(color: controller.seporatorColor)
+                let seporatorView = SeporatorView(backgroundColor: controller.seporatorColor)
                 contentView.addSubview(seporatorView)
                 seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: .size(h: 1.25))
             }
             
-            guard doesNeedShadowViews else { return }
-            
             contentView.applyRadius(.zero, corners: [.all])
+            
+            guard doesNeedShadowViews else { return }
 
             let left = CollectionShadowView(offset: .size(w: -1), opacity: opacity)
             let right = CollectionShadowView(offset: .size(w: 1), opacity: opacity)
@@ -125,10 +121,11 @@ internal extension VerticalCell {
             right.pin(top: top, bottom: bottom, trailing: trailing, size: .size(w: 1))
         
         case .lastItem:
-            guard doesNeedShadowViews else { return }
             
             contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
             
+            guard doesNeedShadowViews else { return }
+
             let bottomRightView = CollectionShadowView(offset: .size(w: 1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomRight)
             let bottomLeftView = CollectionShadowView(offset: .size(w: -1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomLeft)
             
@@ -141,8 +138,10 @@ internal extension VerticalCell {
             bottomLeftView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
             
         case .onlyItem:
-            guard doesNeedShadowViews else { return }
+            
             contentView.applyRadius(cornerRadius, corners: [.all])
+            
+            guard doesNeedShadowViews else { return }
             
             let shadowView = CollectionShadowView(offset: CGSize(), opacity: opacity, radius: 1.5, cornerRadius: cornerRadius)
             

@@ -40,17 +40,17 @@ class ShopItemCell: VerticalCell {
     //MARK: - Configure
     
     override func setConstraints(frame: CGRect) {
-        view.addSubviews(itemLabel, button)
+        contentView.addSubviews(itemLabel, button)
         itemLabel.fillSuperview(padding: .padding(left: 10))
         itemLabel.height(55, relation: .greaterThan)
-        button.pin(bottom: view.bottom, trailing: view.trailing,
+        button.pin(bottom: contentView.bottom, trailing: contentView.trailing,
                    size: .square(30))
         layoutIfNeeded()
     }
     
     override func styleView() {
-        backgroundColor = .black
-        view.backgroundColor = .black
+        backgroundColor = .blue
+        contentView.backgroundColor = .black
     }
     
     //MARK: - Bind

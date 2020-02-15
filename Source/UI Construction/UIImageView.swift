@@ -9,6 +9,7 @@
 import UIKit
 
 public extension UIImageView {
+    
     convenience init(image: UIImage?, contentMode: UIView.ContentMode = .scaleAspectFill) {
         self.init(image: image)
         self.contentMode = contentMode

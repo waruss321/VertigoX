@@ -9,14 +9,30 @@
 import UIKit
 
 public extension UIView {
-    convenience init(color: UIColor = .clear, alpha: CGFloat = 1.0, cornerRadius: CGFloat = 0) {
+    
+    convenience init(backgroundColor: UIColor = .clear, alpha: CGFloat = 1.0, cornerRadius: CGFloat = 0) {
         self.init(frame: .zero)
-        self.backgroundColor = color
+        self.backgroundColor = backgroundColor
         self.alpha = alpha
         
         if cornerRadius > 0 {
             self.layer.cornerRadius = cornerRadius
             self.layer.masksToBounds = true
         }
+    }
+}
+
+//Safe Areas Heights
+
+extension UIView {
+    
+    var deviceTopSafeHeight: CGFloat {
+        guard let height = UIApplication.shared.keyWindow?.safeAreaInsets.top else { return 0 }
+        return height
+    }
+    
+    var deviceBottomSafeHeight: CGFloat {
+        guard let height = UIApplication.shared.keyWindow?.safeAreaInsets.bottom else { return 0 }
+        return height
     }
 }

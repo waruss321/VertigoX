@@ -10,13 +10,18 @@ import UIKit
 
 public extension UIButton {
     
-    convenience init(font: UIFont = UIFont.systemFont(ofSize: 15), fontColor: UIColor = .black, highlightedColor: UIColor = .lightGray, text: String? = nil, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
+    convenience init(font: UIFont = UIFont.systemFont(ofSize: 15), fontColor: UIColor = .black,
+                     alignment: UIControl.ContentHorizontalAlignment = .left,
+                     highlightedColor: UIColor = .gray, disabledColor: UIColor = .gray,
+                     text: String? = nil, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
         self.init()
         self.setTitle(text, for: .normal)
         self.titleLabel?.font = font
         self.setTitleColor(fontColor, for: .normal)
         self.setTitleColor(highlightedColor, for: .highlighted)
+        self.setTitleColor(disabledColor, for: .disabled)
         self.backgroundColor = backgroundColor
+        self.contentHorizontalAlignment = alignment
         
         if cornerRadius > 0 {
             self.layer.cornerRadius = cornerRadius
@@ -37,7 +42,7 @@ public extension UIButton {
 }
 
 public extension UIButton {
-    func setText(_ text: String){
+    func setTitle(_ text: String){
         self.setTitle(text, for: .normal)
     }
 }

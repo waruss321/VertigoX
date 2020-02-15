@@ -25,7 +25,7 @@ class ItemDetailsVC: ViewController, ItemDetailsModule {
     
     var loggedIn = VoidSignal()
 
-    let testView = UIView(color: .red)
+    let testView = UIView(backgroundColor: .red)
     
     let testButton = UIButton(backgroundColor: .clear)
     
