@@ -143,8 +143,8 @@
 		BC24926923F057A600099CDE /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926823F057A600099CDE /* PanModalPresentationController.swift */; };
 		BC24926C23F057B300099CDE /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926A23F057B300099CDE /* PanContainerView.swift */; };
 		BC24926D23F057B300099CDE /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926B23F057B300099CDE /* DimmedView.swift */; };
-		BC3585C023F852D700AD0788 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585BF23F852D700AD0788 /* Helpers.swift */; };
 		BC3585C223F852E700AD0788 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585C123F852E700AD0788 /* StringHelpers.swift */; };
+		BCFECA6523F856710051B57A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFECA6423F856700051B57A /* Helpers.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B571E132A42F6028A89BDFC2304B231 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F61AA06D0DF9073F0C6ECC3020D600 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B108B18231AA13B74633311642117F /* IGListIndexSetResult.m */; };
@@ -425,10 +425,10 @@
 		BC24926823F057A600099CDE /* PanModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationController.swift; sourceTree = "<group>"; };
 		BC24926A23F057B300099CDE /* PanContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanContainerView.swift; sourceTree = "<group>"; };
 		BC24926B23F057B300099CDE /* DimmedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
-		BC3585BF23F852D700AD0788 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		BC3585C123F852E700AD0788 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		BC4B2D14CACCAD3BCFBC04373D6709D4 /* UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		BC62EC0AA1C764F9803B1FFB9AB628BB /* IGListSectionMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionMap.h; path = Source/IGListKit/Internal/IGListSectionMap.h; sourceTree = "<group>"; };
+		BCFECA6423F856700051B57A /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Source/Helpers.swift; sourceTree = "<group>"; };
 		BD8390FB6CA9994C7CFB10CF53B17D37 /* IGListIndexPathResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResultInternal.h; path = Source/IGListDiffKit/Internal/IGListIndexPathResultInternal.h; sourceTree = "<group>"; };
 		BE8F9D50BB04C9A0E30320043131F350 /* IGListWorkingRangeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListWorkingRangeHandler.h; path = Source/IGListKit/Internal/IGListWorkingRangeHandler.h; sourceTree = "<group>"; };
 		BE9F1DF17F680E9C17AB9E23B3B087D3 /* UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -816,7 +816,7 @@
 				120430B8A3FB4A719ECE03107D1C8E36 /* UI Constraints */,
 				8E68403FD4FEA25140B5D94C6EE79C33 /* UI Construction */,
 				0740FA2B8C88DA8C2599BD5D0CA5B98D /* View Templates */,
-				BC3585BF23F852D700AD0788 /* Helpers.swift */,
+				BCFECA6423F856700051B57A /* Helpers.swift */,
 				BC3585C123F852E700AD0788 /* StringHelpers.swift */,
 			);
 			name = VertigoX;
@@ -1503,6 +1503,7 @@
 				A29A48CD199B6925EDBB2FFD9455E914 /* UIBolierplate.swift in Sources */,
 				3299A81EE23A18C9B0A5E365F8631E5D /* UIButton.swift in Sources */,
 				C163A72ECCFF1BD748D300803FDA0267 /* UICollectionView.swift in Sources */,
+				BCFECA6523F856710051B57A /* Helpers.swift in Sources */,
 				BC24926123F0577700099CDE /* UIViewController+PanModalPresenter.swift in Sources */,
 				F9010A8EFB824CBAE9F5B5F54FC09DEA /* UIImageView.swift in Sources */,
 				F5968A25E10E54DFB19B6C84AF9EC5BD /* UILabel.swift in Sources */,
@@ -1518,7 +1519,6 @@
 				A311A1C3537DE1A8B3F35E158CAE922C /* VeritcalItem.swift in Sources */,
 				059F62271910F0E1881F2DC4AB353D06 /* VertigoX-dummy.m in Sources */,
 				BC24926923F057A600099CDE /* PanModalPresentationController.swift in Sources */,
-				BC3585C023F852D700AD0788 /* Helpers.swift in Sources */,
 				A48D10DAB296E8A857782505386D5577 /* View.swift in Sources */,
 				AFFC5A4880396F5915DF88120FCC9A11 /* ViewController.swift in Sources */,
 				BC24925923F0575300099CDE /* PanModalPresentable+Defaults.swift in Sources */,
