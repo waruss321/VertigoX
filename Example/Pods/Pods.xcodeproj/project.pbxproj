@@ -143,8 +143,8 @@
 		BC24926923F057A600099CDE /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926823F057A600099CDE /* PanModalPresentationController.swift */; };
 		BC24926C23F057B300099CDE /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926A23F057B300099CDE /* PanContainerView.swift */; };
 		BC24926D23F057B300099CDE /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926B23F057B300099CDE /* DimmedView.swift */; };
-		BC3585BB23F851C300AD0788 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585B923F83A2B00AD0788 /* StringHelpers.swift */; };
-		BC3585BC23F851C600AD0788 /* RequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5933236681323AB2C0854FB3E078EAE /* RequestHelpers.swift */; };
+		BC3585C023F852D700AD0788 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585BF23F852D700AD0788 /* Helpers.swift */; };
+		BC3585C223F852E700AD0788 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585C123F852E700AD0788 /* StringHelpers.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B571E132A42F6028A89BDFC2304B231 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F61AA06D0DF9073F0C6ECC3020D600 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B108B18231AA13B74633311642117F /* IGListIndexSetResult.m */; };
@@ -425,7 +425,8 @@
 		BC24926823F057A600099CDE /* PanModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanModalPresentationController.swift; sourceTree = "<group>"; };
 		BC24926A23F057B300099CDE /* PanContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanContainerView.swift; sourceTree = "<group>"; };
 		BC24926B23F057B300099CDE /* DimmedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmedView.swift; sourceTree = "<group>"; };
-		BC3585B923F83A2B00AD0788 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
+		BC3585BF23F852D700AD0788 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		BC3585C123F852E700AD0788 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		BC4B2D14CACCAD3BCFBC04373D6709D4 /* UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		BC62EC0AA1C764F9803B1FFB9AB628BB /* IGListSectionMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionMap.h; path = Source/IGListKit/Internal/IGListSectionMap.h; sourceTree = "<group>"; };
 		BD8390FB6CA9994C7CFB10CF53B17D37 /* IGListIndexPathResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResultInternal.h; path = Source/IGListDiffKit/Internal/IGListIndexPathResultInternal.h; sourceTree = "<group>"; };
@@ -458,7 +459,6 @@
 		E3FD6E1181EB45E746C2A6A28A82C144 /* IGListSingleSectionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListSingleSectionController.m; path = Source/IGListKit/IGListSingleSectionController.m; sourceTree = "<group>"; };
 		E4558510B1E8BFB3DF8958B6C41E0E20 /* IGListIndexSetResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexSetResultInternal.h; path = Source/IGListDiffKit/Internal/IGListIndexSetResultInternal.h; sourceTree = "<group>"; };
 		E4B78A405E221D1BA5CAC5C22AD17D9D /* IGListKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGListKit-prefix.pch"; sourceTree = "<group>"; };
-		E5933236681323AB2C0854FB3E078EAE /* RequestHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestHelpers.swift; sourceTree = "<group>"; };
 		E5C166225EFF500F1041A0104B51968D /* IGListKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGListKit.xcconfig; sourceTree = "<group>"; };
 		E75A4AA42FCA44EF23B19156949B408C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E86C844185F97E885BCE5BD2D87466B0 /* IGListScrollDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListScrollDelegate.h; path = Source/IGListKit/IGListScrollDelegate.h; sourceTree = "<group>"; };
@@ -807,7 +807,6 @@
 		9A6CF31748A747E84C5F8F4914782663 /* VertigoX */ = {
 			isa = PBXGroup;
 			children = (
-				BC3585B823F839FD00AD0788 /* Helpers */,
 				3930CCCAE3EC7AF77C29E27DEEEF1B71 /* Collection Kit */,
 				BC24922F23F056EC00099CDE /* PanModal */,
 				4600019B028F97000B7E34561F2FE460 /* Coordinator Kit */,
@@ -817,6 +816,8 @@
 				120430B8A3FB4A719ECE03107D1C8E36 /* UI Constraints */,
 				8E68403FD4FEA25140B5D94C6EE79C33 /* UI Construction */,
 				0740FA2B8C88DA8C2599BD5D0CA5B98D /* View Templates */,
+				BC3585BF23F852D700AD0788 /* Helpers.swift */,
+				BC3585C123F852E700AD0788 /* StringHelpers.swift */,
 			);
 			name = VertigoX;
 			path = ../..;
@@ -917,15 +918,6 @@
 				BC24926A23F057B300099CDE /* PanContainerView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BC3585B823F839FD00AD0788 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				E5933236681323AB2C0854FB3E078EAE /* RequestHelpers.swift */,
-				BC3585B923F83A2B00AD0788 /* StringHelpers.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C06F8C1DDE2326C9618CD4DF105E7B84 /* Items */ = {
@@ -1484,13 +1476,13 @@
 			files = (
 				3DB26307AF3BC99B6DE42C6A6172BE86 /* BaseCoordinator.swift in Sources */,
 				FC644EC12A0EBF903B738A574FB670D5 /* BaseModule.swift in Sources */,
+				BC3585C223F852E700AD0788 /* StringHelpers.swift in Sources */,
 				7E376CD967D37CC5FC5278434DCA5210 /* Bundle.swift in Sources */,
 				2A1892E741B7C77F9C210C7D40297056 /* CAGradientLayer.swift in Sources */,
 				BC24925723F0575300099CDE /* PanModalHeight.swift in Sources */,
 				F355D2EFA8BB4E06BE5BDC7836E261DE /* Collection.swift in Sources */,
 				BC24926D23F057B300099CDE /* DimmedView.swift in Sources */,
 				A8437017466395C1B866FC6D802922D4 /* CollectionController.swift in Sources */,
-				BC3585BB23F851C300AD0788 /* StringHelpers.swift in Sources */,
 				31D89E2B2769060F9DC88362AED2F664 /* CollectionViewModel.swift in Sources */,
 				EE1F2824E67B0895B6DE5720B179E5C4 /* Color.swift in Sources */,
 				CB07BA97534591A95803F8CD0A5C18EA /* Coordinator.swift in Sources */,
@@ -1505,7 +1497,6 @@
 				7A20572D1A504580618FACAD07061434 /* RouterAnimations.swift in Sources */,
 				0FEF37506BAFE74FD3A9DF6757BDC3FC /* RouterImp.swift in Sources */,
 				5379A34B4813593D76BDB5E12457C388 /* Section.swift in Sources */,
-				BC3585BC23F851C600AD0788 /* RequestHelpers.swift in Sources */,
 				996B8AD6AFB88C40CA5AF74F5B3A22EF /* SectionController.swift in Sources */,
 				23A0C56B0B10FD815F78F9D1ED46F819 /* SpaceItem.swift in Sources */,
 				66C0D3446FCD8DB9E5D2ADE17F3EC579 /* UIApplication.swift in Sources */,
@@ -1527,6 +1518,7 @@
 				A311A1C3537DE1A8B3F35E158CAE922C /* VeritcalItem.swift in Sources */,
 				059F62271910F0E1881F2DC4AB353D06 /* VertigoX-dummy.m in Sources */,
 				BC24926923F057A600099CDE /* PanModalPresentationController.swift in Sources */,
+				BC3585C023F852D700AD0788 /* Helpers.swift in Sources */,
 				A48D10DAB296E8A857782505386D5577 /* View.swift in Sources */,
 				AFFC5A4880396F5915DF88120FCC9A11 /* ViewController.swift in Sources */,
 				BC24925923F0575300099CDE /* PanModalPresentable+Defaults.swift in Sources */,

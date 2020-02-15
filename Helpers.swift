@@ -1,9 +1,8 @@
 //
-//  RequestHelpers.swift
+//  Helpers.swift
 //  VertigoX
 //
-//  Created by Russell Warwick on 24/10/2019.
-//  Copyright © 2019 Russell Warwick. All rights reserved.
+//  Created by Russell Warwick on 15/02/2020.
 //
 
 import Signals

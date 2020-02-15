@@ -1,6 +1,6 @@
 //
 //  StringHelpers.swift
-//  IGListDiffKit
+//  VertigoX
 //
 //  Created by Russell Warwick on 15/02/2020.
 //
