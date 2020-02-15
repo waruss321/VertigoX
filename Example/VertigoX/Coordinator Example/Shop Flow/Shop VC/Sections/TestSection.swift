@@ -33,6 +33,10 @@ final class TestSection: SectionController {
         return 0
     }
     
+    override var cornerRadiusOption: CornerOptions {
+        return .bottom
+    }
+    
     override var showSeporator: Bool {
         return false
     }

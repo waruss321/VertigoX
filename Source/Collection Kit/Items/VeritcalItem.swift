@@ -76,8 +76,13 @@ internal extension VerticalCell {
                 seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: .size(h: 1.25))
             }
             
-            contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
-            
+            if controller.cornerRadiusOption == CornerOptions.topBottom ||
+                controller.cornerRadiusOption == CornerOptions.top {
+                contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
+            } else {
+                contentView.applyRadius(.zero, corners: [.all])
+            }
+ 
             guard doesNeedShadowViews else { return }
  
             let topRightView = CollectionShadowView(offset: .size(w: 1, h: -1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .topRight)
@@ -122,8 +127,13 @@ internal extension VerticalCell {
         
         case .lastItem:
             
-            contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
-            
+            if controller.cornerRadiusOption == CornerOptions.topBottom ||
+                controller.cornerRadiusOption == CornerOptions.bottom {
+                contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
+            } else {
+                contentView.applyRadius(.zero, corners: [.all])
+            }
+                        
             guard doesNeedShadowViews else { return }
 
             let bottomRightView = CollectionShadowView(offset: .size(w: 1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomRight)
@@ -138,6 +148,14 @@ internal extension VerticalCell {
             bottomLeftView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
             
         case .onlyItem:
+            
+            if controller.cornerRadiusOption == CornerOptions.topBottom {
+                contentView.applyRadius(cornerRadius, corners: [.all])
+            } else if controller.cornerRadiusOption == CornerOptions.top {
+                contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
+            } else if controller.cornerRadiusOption == CornerOptions.topBottom {
+                contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
+            }
             
             contentView.applyRadius(cornerRadius, corners: [.all])
             

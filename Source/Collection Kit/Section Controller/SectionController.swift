@@ -26,6 +26,7 @@ open class SectionController: ListSectionController, Section {
     
     open var margin: CGFloat { return .zero }
     open var estimatedCellHeight: CGFloat { return 100 }
+    open var cornerRadiusOption: CornerOptions { return .topBottom}
     
     open func bindSignalsForItem(_ item: Item){ }
     
@@ -116,4 +117,10 @@ public extension SectionController {
     func isOnlyItem(index: Int) -> Bool {
         return numberOfItems() == 1 && index == 0
     }
+}
+
+public enum CornerOptions {
+    case topBottom
+    case top
+    case bottom
 }
