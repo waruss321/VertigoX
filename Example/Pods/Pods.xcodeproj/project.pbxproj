@@ -143,7 +143,8 @@
 		BC24926923F057A600099CDE /* PanModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926823F057A600099CDE /* PanModalPresentationController.swift */; };
 		BC24926C23F057B300099CDE /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926A23F057B300099CDE /* PanContainerView.swift */; };
 		BC24926D23F057B300099CDE /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24926B23F057B300099CDE /* DimmedView.swift */; };
-		BC3585BA23F83A2B00AD0788 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585B923F83A2B00AD0788 /* StringHelpers.swift */; };
+		BC3585BB23F851C300AD0788 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3585B923F83A2B00AD0788 /* StringHelpers.swift */; };
+		BC3585BC23F851C600AD0788 /* RequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5933236681323AB2C0854FB3E078EAE /* RequestHelpers.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B571E132A42F6028A89BDFC2304B231 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F61AA06D0DF9073F0C6ECC3020D600 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B108B18231AA13B74633311642117F /* IGListIndexSetResult.m */; };
@@ -159,7 +160,6 @@
 		CEC3A1FCF3CD945FCCE63E0FA57CFEF7 /* IGListCollectionContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E739973ADB4F859B9DD612D50823C9 /* IGListCollectionContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF76F3746361F29790BF6312A2537638 /* IGListGenericSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31A74A186D27EA6B95A19CE3BE32B54 /* IGListGenericSectionController.m */; };
 		CFFEF771BF720FF58B38FD0F7DE1430D /* IGListAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6337CAA50AED51762DC07DEC38B784FA /* IGListAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3EDE5CF6F9B586CA73BB61C19160AC0 /* RequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5933236681323AB2C0854FB3E078EAE /* RequestHelpers.swift */; };
 		D60EDFA34A0324EF3091F124139159BB /* UICollectionView+IGListBatchUpdateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 769EF90089562B3B833226DE1AC5F47D /* UICollectionView+IGListBatchUpdateData.m */; };
 		D88D3852D8EA11B12FD668EB7AC1BAB2 /* IGListBatchUpdateData+DebugDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A6C6843FAB418F69A1615FF73C01B93 /* IGListBatchUpdateData+DebugDescription.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D997B1364C6831FEF99654BB28DB1FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F95F61B9EF066A9D1741CB7E77FED2 /* Foundation.framework */; };
@@ -1431,7 +1431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC3585BA23F83A2B00AD0788 /* StringHelpers.swift in Sources */,
 				10EBC928ED396109D97DB48AB758987D /* IGListBatchUpdateData.mm in Sources */,
 				9D80D09BEFBBA90B41DFD9EA2DE2FBD5 /* IGListDiff.mm in Sources */,
 				4583B5F6F374723533851C5E79014BAC /* IGListDiffKit-dummy.m in Sources */,
@@ -1491,12 +1490,12 @@
 				F355D2EFA8BB4E06BE5BDC7836E261DE /* Collection.swift in Sources */,
 				BC24926D23F057B300099CDE /* DimmedView.swift in Sources */,
 				A8437017466395C1B866FC6D802922D4 /* CollectionController.swift in Sources */,
+				BC3585BB23F851C300AD0788 /* StringHelpers.swift in Sources */,
 				31D89E2B2769060F9DC88362AED2F664 /* CollectionViewModel.swift in Sources */,
 				EE1F2824E67B0895B6DE5720B179E5C4 /* Color.swift in Sources */,
 				CB07BA97534591A95803F8CD0A5C18EA /* Coordinator.swift in Sources */,
 				BC24926623F0579700099CDE /* PanModalPresentationAnimator.swift in Sources */,
 				A069A7BE55486A0AF40D145C99BE9687 /* DateExtensions.swift in Sources */,
-				D3EDE5CF6F9B586CA73BB61C19160AC0 /* RequestHelpers.swift in Sources */,
 				CC62262DF90B54E7F007826BD75F3B49 /* Item.swift in Sources */,
 				BC24925823F0575300099CDE /* PanModalPresentable.swift in Sources */,
 				BC24926323F0578300099CDE /* PanModalPresentationDelegate.swift in Sources */,
@@ -1506,6 +1505,7 @@
 				7A20572D1A504580618FACAD07061434 /* RouterAnimations.swift in Sources */,
 				0FEF37506BAFE74FD3A9DF6757BDC3FC /* RouterImp.swift in Sources */,
 				5379A34B4813593D76BDB5E12457C388 /* Section.swift in Sources */,
+				BC3585BC23F851C600AD0788 /* RequestHelpers.swift in Sources */,
 				996B8AD6AFB88C40CA5AF74F5B3A22EF /* SectionController.swift in Sources */,
 				23A0C56B0B10FD815F78F9D1ED46F819 /* SpaceItem.swift in Sources */,
 				66C0D3446FCD8DB9E5D2ADE17F3EC579 /* UIApplication.swift in Sources */,
