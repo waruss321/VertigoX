@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     var isEmptyOrWhitespace: Bool {
         if(isEmpty) { return true }
         return trimmingCharacters(in: .whitespaces) == ""

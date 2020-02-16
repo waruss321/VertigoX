@@ -24,15 +24,12 @@ public extension UIView {
 
 //Safe Areas Heights
 
-extension UIView {
-    
-    var deviceTopSafeHeight: CGFloat {
-        guard let height = UIApplication.shared.keyWindow?.safeAreaInsets.top else { return 0 }
-        return height
-    }
-    
-    var deviceBottomSafeHeight: CGFloat {
-        guard let height = UIApplication.shared.keyWindow?.safeAreaInsets.bottom else { return 0 }
-        return height
-    }
+public var deviceTopSafeHeight: CGFloat {
+    guard let height = UIApplication.shared.keyWindow?.safeAreaInsets.top else { return 0 }
+    return height
+}
+
+public var deviceBottomSafeHeight: CGFloat {
+    guard let height = UIApplication.shared.keyWindow?.safeAreaInsets.bottom else { return 0 }
+    return height
 }
