@@ -1,6 +1,6 @@
 {
   "name": "VertigoX",
-  "version": "0.3.13",
+  "version": "0.3.3",
   "summary": "A Swift ToolKit to help create clean, scalable and efficient apps",
   "swift_versions": "5.0",
   "homepage": "https://github.com/waruss321/VertigoX",
@@ -14,7 +14,7 @@
   "source": {
     "git": "https://github.com/waruss321/VertigoX.git",
     "branch": "master",
-    "tag": "0.3.13"
+    "tag": "0.3.3"
   },
   "platforms": {
     "ios": "11.0"

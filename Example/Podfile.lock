@@ -3,7 +3,7 @@ PODS:
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - Signals (6.1.0)
-  - VertigoX (0.3.13):
+  - VertigoX (0.3.3):
     - IGListKit (~> 4.0.0)
     - Signals (~> 6.0)
 
@@ -26,7 +26,7 @@ SPEC CHECKSUMS:
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
-  VertigoX: 3ac39cf0d71403cca218e705f925583e54276839
+  VertigoX: c7b160012c74bf1917c396769f83be9569af299c
 
 PODFILE CHECKSUM: 97be046ed9903310c7075caa6e51d222896b02d1
 

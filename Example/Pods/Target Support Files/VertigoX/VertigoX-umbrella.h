@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "PanModal.h"
 
 FOUNDATION_EXPORT double VertigoXVersionNumber;
 FOUNDATION_EXPORT const unsigned char VertigoXVersionString[];
