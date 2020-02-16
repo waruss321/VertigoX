@@ -124,5 +124,9 @@ public extension PanModalPresentable where Self: UIViewController {
     func panModalDidDismiss() {
 
     }
+    
+    var contentBottomInset: CGFloat {
+        return .zero
+    }
 }
 #endif
