@@ -45,6 +45,12 @@ public protocol Router: Presentable {
 
 public extension Router {
     
+    //MARK: - Present Sheets
+    
+    func presentSheet(_ module: BaseSheetModule?, completion: (() -> Void)? = nil){
+        self.presentSheet(module, completion: completion)
+    }
+    
     //MARK: - Present Module & Dismiss
     
     func presentModule(_ module: Presentable?, animated: Bool = true){
