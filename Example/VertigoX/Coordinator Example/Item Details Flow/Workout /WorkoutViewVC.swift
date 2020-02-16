@@ -100,5 +100,9 @@ final class WorkoutViewVC: ViewController, WorkoutViewModule, CollectionControll
     }
     
     
+    var contentBottomInset: CGFloat {
+        return -deviceBottomSafeHeight
+    }
+    
 }
 
