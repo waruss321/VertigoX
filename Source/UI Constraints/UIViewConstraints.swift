@@ -34,13 +34,6 @@ public extension UIView {
     }
     
     //MARK: - Pin View
-
-    func pin(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, relations: UILayoutRelations? = nil, size: CGSize = .zero) {
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        pin(top: top, leading: leading, bottom: bottom, trailing: trailing, padding: padding, relations: relations, prioritys: nil, size: size)
-    }
     
     //MARK : - Pin With Priorty
     
@@ -74,7 +67,7 @@ public extension UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        var constraint: NSLayoutConstraint?
+        var constraint: NSLayoutConstraint? = topAnchor.constraint(equalTo: anchor, constant: constant)
         
         if let relation = relation {
             switch relation {
@@ -100,7 +93,7 @@ public extension UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        var constraint: NSLayoutConstraint?
+        var constraint: NSLayoutConstraint? = leadingAnchor.constraint(equalTo: anchor, constant: constant)
         
         if let relation = relation {
             switch relation {
@@ -126,7 +119,7 @@ public extension UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        var constraint: NSLayoutConstraint?
+        var constraint: NSLayoutConstraint? = bottomAnchor.constraint(equalTo: anchor, constant: constant)
         
         if let relation = relation {
             switch relation {
@@ -152,7 +145,7 @@ public extension UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        var constraint: NSLayoutConstraint?
+        var constraint: NSLayoutConstraint? = trailingAnchor.constraint(equalTo: anchor, constant: constant)
         
         if let relation = relation {
             switch relation {
