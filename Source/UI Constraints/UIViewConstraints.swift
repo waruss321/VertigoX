@@ -50,11 +50,11 @@ public extension UIView {
         }
         
         if let bottom = bottom {
-            pinBottom(bottom, constant: padding.bottom, relation: relations?.bottom, priority: prioritys?.bottom)
+            pinBottom(bottom, constant: -padding.bottom, relation: relations?.bottom, priority: prioritys?.bottom)
         }
         
         if let trailing = trailing {
-            pinTrailing(trailing, constant: padding.right, relation: relations?.trailing, priority: prioritys?.trailing)
+            pinTrailing(trailing, constant: -padding.right, relation: relations?.trailing, priority: prioritys?.trailing)
         }
         
         self.size(size)
