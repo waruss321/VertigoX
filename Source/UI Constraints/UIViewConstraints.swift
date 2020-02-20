@@ -35,60 +35,139 @@ public extension UIView {
     
     //MARK: - Pin View
 
-    func pin(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+    func pin(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, relations: UILayoutRelations? = nil, size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        pin(withPriority: nil, top: top, leading: leading, bottom: bottom, trailing: trailing, padding: padding, size: size)
+        pin(top: top, leading: leading, bottom: bottom, trailing: trailing, padding: padding, relations: relations, prioritys: nil, size: size)
     }
     
     //MARK : - Pin With Priorty
     
-    func pin(withPriority priority: UILayoutPrioritys? = nil, top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+    func pin(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, relations: UILayoutRelations? = nil, prioritys: UILayoutPrioritys? = nil, size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
         if let top = top {
-            var anchor = topAnchor.constraint(equalTo: top, constant: padding.top)
-            
-            if let topPriority = priority?.top {
-                anchor = anchor.usingPriority(topPriority)
-            }
-            
-            anchor.isActive = true
+            pinTop(top, constant: padding.top, relation: relations?.top, priority: prioritys?.top)
         }
         
         if let leading = leading {
-            var anchor = leadingAnchor.constraint(equalTo: leading, constant: padding.left)
-            
-            if let leadingPriority = priority?.leading {
-                anchor = anchor.usingPriority(leadingPriority)
-            }
-            
-            anchor.isActive = true
+            pinLeading(leading, constant: padding.left, relation: relations?.leading, priority: prioritys?.leading)
         }
         
         if let bottom = bottom {
-            var anchor = bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom)
-            
-            if let bottomPriority = priority?.bottom {
-                anchor = anchor.usingPriority(bottomPriority)
-            }
-            
-            anchor.isActive = true
+            pinBottom(bottom, constant: padding.bottom, relation: relations?.bottom, priority: prioritys?.bottom)
         }
         
         if let trailing = trailing {
-            var anchor = trailingAnchor.constraint(equalTo: trailing, constant: -padding.right)
-            
-            if let trailingPriority = priority?.trailing {
-                anchor = anchor.usingPriority(trailingPriority)
-            }
-            
-            anchor.isActive = true
+            pinTrailing(trailing, constant: padding.right, relation: relations?.trailing, priority: prioritys?.trailing)
         }
         
         self.size(size)
+    }
+    
+    //MARK: - Pin Top
+    
+    @discardableResult
+    func pinTop(_ anchor: NSLayoutYAxisAnchor, constant: CGFloat, relation: RelationType? = .equalTo, priority: UILayoutPriority? = .required) -> NSLayoutConstraint? {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraint: NSLayoutConstraint?
+        
+        if let relation = relation {
+            switch relation {
+                case .equalTo: constraint = topAnchor.constraint(equalTo: anchor, constant: constant)
+                case .greaterThan: constraint = topAnchor.constraint(greaterThanOrEqualTo: anchor, constant: constant)
+                case .lessThan: constraint = topAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant)
+            }
+        }
+
+        if let priority = priority {
+            constraint = constraint?.usingPriority(priority)
+        }
+        
+        constraint?.isActive = true
+        
+        return constraint
+    }
+    
+    //MARK: - Pin Leading
+    
+    @discardableResult
+    func pinLeading(_ anchor: NSLayoutXAxisAnchor, constant: CGFloat, relation: RelationType? = .equalTo, priority: UILayoutPriority? = .required) -> NSLayoutConstraint? {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraint: NSLayoutConstraint?
+        
+        if let relation = relation {
+            switch relation {
+                case .equalTo: constraint = leadingAnchor.constraint(equalTo: anchor, constant: constant)
+                case .greaterThan: constraint = leadingAnchor.constraint(greaterThanOrEqualTo: anchor, constant: constant)
+                case .lessThan: constraint = leadingAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant)
+            }
+        }
+
+        if let priority = priority {
+            constraint = constraint?.usingPriority(priority)
+        }
+        
+        constraint?.isActive = true
+        
+        return constraint
+    }
+    
+    //MARK: - Pin Bottom
+    
+    @discardableResult
+    func pinBottom(_ anchor: NSLayoutYAxisAnchor, constant: CGFloat, relation: RelationType? = .equalTo, priority: UILayoutPriority? = .required) -> NSLayoutConstraint? {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraint: NSLayoutConstraint?
+        
+        if let relation = relation {
+            switch relation {
+                case .equalTo: constraint = bottomAnchor.constraint(equalTo: anchor, constant: constant)
+                case .greaterThan: constraint = bottomAnchor.constraint(greaterThanOrEqualTo: anchor, constant: constant)
+                case .lessThan: constraint = bottomAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant)
+            }
+        }
+
+        if let priority = priority {
+            constraint = constraint?.usingPriority(priority)
+        }
+        
+        constraint?.isActive = true
+        
+        return constraint
+    }
+    
+    //MARK: - Pin Trailing
+    
+    @discardableResult
+    func pinTrailing(_ anchor: NSLayoutXAxisAnchor, constant: CGFloat, relation: RelationType? = .equalTo, priority: UILayoutPriority? = .required) -> NSLayoutConstraint? {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraint: NSLayoutConstraint?
+        
+        if let relation = relation {
+            switch relation {
+                case .equalTo: constraint = trailingAnchor.constraint(equalTo: anchor, constant: constant)
+                case .greaterThan: constraint = trailingAnchor.constraint(greaterThanOrEqualTo: anchor, constant: constant)
+                case .lessThan: constraint = trailingAnchor.constraint(lessThanOrEqualTo: anchor, constant: constant)
+            }
+        }
+
+        if let priority = priority {
+            constraint = constraint?.usingPriority(priority)
+        }
+        
+        constraint?.isActive = true
+        return constraint
     }
 
     //MARK: - Center Views

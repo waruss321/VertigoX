@@ -50,8 +50,9 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     override func setConstraints(frame: CGRect) {
         view.addSubviews(collectionView, buttonTest)
         collectionView.pin(top: view.topSafe, leading: view.leadingAnchor, bottom: buttonTest.top, trailing: view.trailing)
-        buttonTest.pin(leading: view.leading, bottom: view.bottomSafe, trailing: view.trailing,
-                       size: .size(h: 40))
+        buttonTest.pinLeading(view.leading, constant: 50, relation: .equalTo)
+        buttonTest.pinBottom(view.bottom, constant: 0)
+        buttonTest.size(.size(w: 100, h: 200))
     }
     
     override func styleView() {

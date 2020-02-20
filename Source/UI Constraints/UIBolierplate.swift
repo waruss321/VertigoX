@@ -10,6 +10,21 @@ import UIKit
 
 //MARK: - RelationType
 
+open class UILayoutRelations {
+    
+    let top: RelationType?
+    let leading: RelationType?
+    let bottom: RelationType?
+    let trailing: RelationType?
+    
+    init(top: RelationType? = nil, leading: RelationType? = nil, bottom: RelationType? = nil, trailing: RelationType? = nil){
+        self.top = top
+        self.leading = leading
+        self.bottom = bottom
+        self.trailing = trailing
+    }
+}
+
 public enum RelationType {
     case equalTo
     case greaterThan
@@ -45,6 +60,7 @@ public extension UILayoutPriority {
         return UILayoutPriority(rawValue: 0)
     }
 }
+
 
 //MARK: - UIView
 
