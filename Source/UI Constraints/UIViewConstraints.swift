@@ -50,11 +50,11 @@ public extension UIView {
         }
         
         if let bottom = bottom {
-            pinBottom(bottom, constant: -padding.bottom, relation: relations?.bottom, priority: prioritys?.bottom)
+            pinBottom(bottom, constant: padding.bottom, relation: relations?.bottom, priority: prioritys?.bottom)
         }
         
         if let trailing = trailing {
-            pinTrailing(trailing, constant: -padding.right, relation: relations?.trailing, priority: prioritys?.trailing)
+            pinTrailing(trailing, constant: padding.right, relation: relations?.trailing, priority: prioritys?.trailing)
         }
         
         self.size(size)
@@ -117,6 +117,8 @@ public extension UIView {
     @discardableResult
     func pinBottom(_ anchor: NSLayoutYAxisAnchor, constant: CGFloat, relation: RelationType? = .equalTo, priority: UILayoutPriority? = .required) -> NSLayoutConstraint? {
         
+        let constant = -constant
+        
         translatesAutoresizingMaskIntoConstraints = false
         
         var constraint: NSLayoutConstraint? = bottomAnchor.constraint(equalTo: anchor, constant: constant)
@@ -142,6 +144,8 @@ public extension UIView {
     
     @discardableResult
     func pinTrailing(_ anchor: NSLayoutXAxisAnchor, constant: CGFloat, relation: RelationType? = .equalTo, priority: UILayoutPriority? = .required) -> NSLayoutConstraint? {
+        
+        let constant = -constant
         
         translatesAutoresizingMaskIntoConstraints = false
         
