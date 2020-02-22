@@ -42,7 +42,7 @@ class ShopItemCell: VerticalCell {
     override func setConstraints(frame: CGRect) {
         contentView.addSubviews(itemLabel, button)
         itemLabel.fillSuperview(padding: .padding(left: 10))
-        itemLabel.height(55, relation: .greaterThan)
+        itemLabel.setHeight(55, relation: .equalOrGreater)
         button.pin(bottom: contentView.bottom, trailing: contentView.trailing,
                    size: .square(30))
         layoutIfNeeded()

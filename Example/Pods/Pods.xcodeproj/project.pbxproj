@@ -52,7 +52,7 @@
 		34DBBDB05C88F4ADC7C53052AF11F450 /* RouterAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718BF2A1CF2671165313378E9DF2D8F8 /* RouterAnimations.swift */; };
 		35FCFE68AA8276956DCFEA2E68B209EB /* PanModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0CF549BDBBAD1D3DE5E87BAB81E46 /* PanModalPresentationDelegate.swift */; };
 		3AFB07C641A825F8AED07B3CF5832C5E /* IGListKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 838E4291B5F554841A41D7F314AC7E27 /* IGListKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E36B86ED96AA5BBF8F7F2A8D8A829B2 /* UIBolierplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209085C8BF339C12FF14349C3C6FAD6 /* UIBolierplate.swift */; };
+		3E36B86ED96AA5BBF8F7F2A8D8A829B2 /* ConstraintBolierplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209085C8BF339C12FF14349C3C6FAD6 /* ConstraintBolierplate.swift */; };
 		3E8312A4CF2B756BE7A897822D86FF37 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525E46BE51B26DC42D870F6E307C46C /* Presentable.swift */; };
 		40BA8947BCB36389AA9E7DCE12EE836C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122364FF175E680D16769DF1348F9939 /* Helpers.swift */; };
 		42CC34AE992E1A36B126A1360F4B592C /* IGListAdapterUpdater+DebugDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = A79606DC26AC45B49A74EFD932658836 /* IGListAdapterUpdater+DebugDescription.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -62,7 +62,6 @@
 		47CC63D889EFAB60155B90A3C0676546 /* IGListBindingSectionControllerSelectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 867126AEFE4166227A2A371AA098EB1B /* IGListBindingSectionControllerSelectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48809D6ECBC7B4E2D504B2668BACF286 /* IGListBindingSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB19E7D71976AC9BA51FB70170F12F8 /* IGListBindingSectionController.m */; };
 		4C2EB9F52379B49FA9C18BF0BACA827E /* Pods-VertigoX_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B431AF5E4C15E1418ED30A770A2A9FA /* Pods-VertigoX_Tests-dummy.m */; };
-		4F450221E7B2508E41CD68A443D2EA4E /* UIViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3E6A578E302C8616CF583AAEDF2BB /* UIViewConstraints.swift */; };
 		5060C3CF1D06D93BCA1ADF35C13CB77B /* IGListGenericSectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 656783474A13B96F8B90AA1BA79EF921 /* IGListGenericSectionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509C2CD032C62CD3A687283595E73C49 /* IGListExperiments.h in Headers */ = {isa = PBXBuildFile; fileRef = E0B6B73E4855500B4893AEC29D6DF999 /* IGListExperiments.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		515C3F528007A01CAAE726FF7139C56C /* Pods-VertigoX_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2373B209F9F2268F4B3A1EE9835EA6B9 /* Pods-VertigoX_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -144,6 +143,10 @@
 		B6BB92BA275CC24A8AF6DA6F21573D05 /* IGListMoveIndexPath.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB26DA55882135F54022F0CA2F51CA5 /* IGListMoveIndexPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8CA63A6AB0666AAF796443E16CFC308 /* VertigoX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB37C23C5911A84A608A2965D004E19 /* VertigoX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAAE349DAD7EE9B7DC02A5C003508A32 /* PanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 87FCC1D4680320AC2524C301EE51C0DC /* PanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC09D4812400D37E00389B9B /* PinningConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D47F2400C99400389B9B /* PinningConstraints.swift */; };
+		BC09D4862400DDE700389B9B /* SizeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D4842400DDD400389B9B /* SizeConstraints.swift */; };
+		BC09D4872400DDEA00389B9B /* AlignmentConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D4822400DDC900389B9B /* AlignmentConstraints.swift */; };
+		BC09D4882400E09A00389B9B /* ConstraintHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D47B2400C8C700389B9B /* ConstraintHelpers.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B571E132A42F6028A89BDFC2304B231 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F61AA06D0DF9073F0C6ECC3020D600 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B108B18231AA13B74633311642117F /* IGListIndexSetResult.m */; };
@@ -258,7 +261,6 @@
 		002532DB3CB114811E94596F171BA566 /* IGListReloadIndexPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListReloadIndexPath.h; path = Source/IGListKit/Internal/IGListReloadIndexPath.h; sourceTree = "<group>"; };
 		00657E5E826277443B6526F9BCCC372B /* Pods-VertigoX_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Example.release.xcconfig"; sourceTree = "<group>"; };
 		024B882E65B4C0986DACD53AFD0002BC /* Pods-VertigoX_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VertigoX_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		02B3E6A578E302C8616CF583AAEDF2BB /* UIViewConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewConstraints.swift; sourceTree = "<group>"; };
 		074C7523A58E887FBDD2BD424F69F1C0 /* IGListCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListCompatibility.h; path = Source/IGListDiffKit/IGListCompatibility.h; sourceTree = "<group>"; };
 		08FDD2A6325C35B2D0FA1D2451C37194 /* Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		0A1C282A089A7B980EC7763FE6E4662A /* IGListAdapterProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListAdapterProxy.m; path = Source/IGListKit/Internal/IGListAdapterProxy.m; sourceTree = "<group>"; };
@@ -315,7 +317,7 @@
 		4CAD1517C98E7315A0BF0FA3DFEA5538 /* PanModalPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PanModalPresenter.swift; sourceTree = "<group>"; };
 		4DB13745C3D9F5CBB4EFE5CB16D68203 /* IGListCollectionViewLayoutCompatible.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListCollectionViewLayoutCompatible.h; path = Source/IGListKit/IGListCollectionViewLayoutCompatible.h; sourceTree = "<group>"; };
 		4DDD2B8D530DEE8CE15832A0A6CCD795 /* NSString+IGListDiffable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+IGListDiffable.m"; path = "Source/IGListDiffKit/NSString+IGListDiffable.m"; sourceTree = "<group>"; };
-		5209085C8BF339C12FF14349C3C6FAD6 /* UIBolierplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIBolierplate.swift; sourceTree = "<group>"; };
+		5209085C8BF339C12FF14349C3C6FAD6 /* ConstraintBolierplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConstraintBolierplate.swift; sourceTree = "<group>"; };
 		52A479B213CDC4EE433AA6FE2A583497 /* IGListDebuggingUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDebuggingUtilities.h; path = Source/IGListKit/Internal/IGListDebuggingUtilities.h; sourceTree = "<group>"; };
 		542BDABB3B34784F1A6ECB4468540E2E /* IGListMoveIndexInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMoveIndexInternal.h; path = Source/IGListDiffKit/Internal/IGListMoveIndexInternal.h; sourceTree = "<group>"; };
 		550840BD729F79B593237825AAD43C48 /* IGListDiffKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDiffKit.h; path = Source/IGListDiffKit/IGListDiffKit.h; sourceTree = "<group>"; };
@@ -420,6 +422,10 @@
 		BB0ABD1A43AEA2A9597D7C2875BAC544 /* BaseCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		BB43362B6F1177A4E22B9F8E1188E99F /* UIView+Stacks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Stacks.swift"; sourceTree = "<group>"; };
 		BB5D8833DF477FC309DBC4EDE6D3CB2A /* Pods-VertigoX_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VertigoX_Tests.modulemap"; sourceTree = "<group>"; };
+		BC09D47B2400C8C700389B9B /* ConstraintHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintHelpers.swift; sourceTree = "<group>"; };
+		BC09D47F2400C99400389B9B /* PinningConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinningConstraints.swift; sourceTree = "<group>"; };
+		BC09D4822400DDC900389B9B /* AlignmentConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentConstraints.swift; sourceTree = "<group>"; };
+		BC09D4842400DDD400389B9B /* SizeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstraints.swift; sourceTree = "<group>"; };
 		BC62EC0AA1C764F9803B1FFB9AB628BB /* IGListSectionMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionMap.h; path = Source/IGListKit/Internal/IGListSectionMap.h; sourceTree = "<group>"; };
 		BD8390FB6CA9994C7CFB10CF53B17D37 /* IGListIndexPathResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResultInternal.h; path = Source/IGListDiffKit/Internal/IGListIndexPathResultInternal.h; sourceTree = "<group>"; };
 		BE8F9D50BB04C9A0E30320043131F350 /* IGListWorkingRangeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListWorkingRangeHandler.h; path = Source/IGListKit/Internal/IGListWorkingRangeHandler.h; sourceTree = "<group>"; };
@@ -726,7 +732,7 @@
 				C988EE77798C20235BEF1D716059F4E3 /* PanModal */,
 				B4D8B677E8E4926C2C5D86467285E9CB /* Pod */,
 				196CC39AE158C3FB71EBCBC839B6CB39 /* Support Files */,
-				F0DB62A3CD00FEC2C10EE5316558B8BF /* UI Constraints */,
+				F0DB62A3CD00FEC2C10EE5316558B8BF /* Constraints */,
 				28CEA468DA5863206D45008449DB7EBF /* UI Construction */,
 				1C1F23D9F32CA1BE2971EDEBDA3475A6 /* View Templates */,
 			);
@@ -1036,14 +1042,17 @@
 			path = Presentable;
 			sourceTree = "<group>";
 		};
-		F0DB62A3CD00FEC2C10EE5316558B8BF /* UI Constraints */ = {
+		F0DB62A3CD00FEC2C10EE5316558B8BF /* Constraints */ = {
 			isa = PBXGroup;
 			children = (
-				5209085C8BF339C12FF14349C3C6FAD6 /* UIBolierplate.swift */,
-				02B3E6A578E302C8616CF583AAEDF2BB /* UIViewConstraints.swift */,
+				5209085C8BF339C12FF14349C3C6FAD6 /* ConstraintBolierplate.swift */,
+				BC09D47B2400C8C700389B9B /* ConstraintHelpers.swift */,
+				BC09D47F2400C99400389B9B /* PinningConstraints.swift */,
+				BC09D4842400DDD400389B9B /* SizeConstraints.swift */,
+				BC09D4822400DDC900389B9B /* AlignmentConstraints.swift */,
 			);
-			name = "UI Constraints";
-			path = "Source/UI Constraints";
+			name = Constraints;
+			path = Source/Constraints;
 			sourceTree = "<group>";
 		};
 		F44BE79BEDAC1CD0CA09B57295E0ED6B /* Collection Kit */ = {
@@ -1315,6 +1324,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					2D07A05F514BF9C5434DAC907988C708 = {
+						LastSwiftMigration = 1130;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1438,6 +1452,7 @@
 				CA1322848CB18B9411E9D659D19E900B /* CAGradientLayer.swift in Sources */,
 				81CAF1FC4AD2BFFF30158FB88C4A4523 /* Collection.swift in Sources */,
 				714007F40494FB07F889F7A39DCB1DA9 /* CollectionController.swift in Sources */,
+				BC09D4812400D37E00389B9B /* PinningConstraints.swift in Sources */,
 				29E859F254FE57BB7FBB6D498508C457 /* CollectionViewModel.swift in Sources */,
 				EAD07B1943B0DB456FA97674B227A1A4 /* Color.swift in Sources */,
 				6A88AC5D8F827FFB0E8FFE04FD007937 /* Coordinator.swift in Sources */,
@@ -1447,6 +1462,7 @@
 				DDB8D0D3B7CE36375DFAC5B6C92CA95E /* Item.swift in Sources */,
 				662AE2F1625EC1D683DF17FF4CFD9258 /* NSObjectDiffable.swift in Sources */,
 				1688308B4079A8EBF258691538F81AB2 /* PanContainerView.swift in Sources */,
+				BC09D4872400DDEA00389B9B /* AlignmentConstraints.swift in Sources */,
 				FFDE7B3F86BE041F6EC35D75536271B2 /* PanModalAnimator.swift in Sources */,
 				147F01F23A4376C212F6E8D4628E29C2 /* PanModalHeight.swift in Sources */,
 				DE1601BE2E812ED6819FEBFE5FBDD281 /* PanModalPresentable+Defaults.swift in Sources */,
@@ -1465,18 +1481,19 @@
 				5445699636101A8B2006376AA50DE6DE /* SectionController.swift in Sources */,
 				67634EFC419293F4F977B109E8FFED5C /* SpaceItem.swift in Sources */,
 				9D157753C07862E519029EC06ED05AC4 /* UIApplication.swift in Sources */,
-				3E36B86ED96AA5BBF8F7F2A8D8A829B2 /* UIBolierplate.swift in Sources */,
+				3E36B86ED96AA5BBF8F7F2A8D8A829B2 /* ConstraintBolierplate.swift in Sources */,
 				249A389772F9214C66AE53018E4029C6 /* UIButton.swift in Sources */,
 				93666694E72C6AA510EF1649008214E3 /* UICollectionView.swift in Sources */,
 				72D2948A7456E7E5629289D9C9A6A996 /* UIImageView.swift in Sources */,
 				7FA7D92AE59EC1A1509031707F72E16C /* UILabel.swift in Sources */,
+				BC09D4862400DDE700389B9B /* SizeConstraints.swift in Sources */,
 				18134A1AF7F160F0C16EA429C3F0A818 /* UITextField.swift in Sources */,
 				9E6BD7F118792F8DEBEC39A4EA0CC59C /* UIView+Stacks.swift in Sources */,
 				CCAB3C96708B656C7F7FE70740A153D6 /* UIView.swift in Sources */,
-				4F450221E7B2508E41CD68A443D2EA4E /* UIViewConstraints.swift in Sources */,
 				0E637474C1247D831BEF11296C960AB1 /* UIViewController+PanModalPresenter.swift in Sources */,
 				A4C1D613915E526B980E6BA0B91591A6 /* UIViewExtension.swift in Sources */,
 				532B0BD35BCD257310D1F7DD2BCD6DCD /* VeritcalItem.swift in Sources */,
+				BC09D4882400E09A00389B9B /* ConstraintHelpers.swift in Sources */,
 				EA2B59F223B3C398BB91DAF0BF6C5F5C /* VertigoX-dummy.m in Sources */,
 				201B6DCD592D75B54B6F6984A943EAAE /* View.swift in Sources */,
 				EAA51C7FE73780A9D2FF5E4D30BD0B10 /* ViewController.swift in Sources */,
@@ -1577,6 +1594,7 @@
 			baseConfigurationReference = 68D65A14A9339FD01464AA16D637E2B7 /* IGListDiffKit.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1610,6 +1628,7 @@
 			baseConfigurationReference = 68D65A14A9339FD01464AA16D637E2B7 /* IGListDiffKit.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1630,6 +1649,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

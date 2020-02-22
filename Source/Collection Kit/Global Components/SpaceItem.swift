@@ -43,7 +43,7 @@ public final class SpaceCell: VerticalCell {
     
     override public func bindViewModel() {
         guard let item = item as? SpaceModel else { return }
-        spaceView.height(item.height)
+        spaceView.setHeight(item.height)
         spaceView.backgroundColor = item.color
     }
 

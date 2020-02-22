@@ -41,24 +41,9 @@ final class ExerciseCell: VerticalCell {
     }
     
     override public func bindViewModel() {
-        guard let item = item as? ExerciseModel else { return }
+        guard let _ = item as? ExerciseModel else { return }
         contentView.backgroundColor = .random()
         
     }
 
-}
-
-extension UIColor {
-    static func random() -> UIColor {
-        return UIColor(red:   .random(),
-                       green: .random(),
-                       blue:  .random(),
-                       alpha: CGFloat(1.0))
-    }
-}
-
-extension CGFloat {
-    static func random() -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
 }

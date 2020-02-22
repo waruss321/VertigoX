@@ -61,7 +61,8 @@ internal extension VerticalCell {
       
         removeShadows()
         removeSeporators()
-        contentView.applyRadius(.zero, corners: [.all])
+        
+        contentView.setCornerRadius(.zero)
 
         let opacity: Float = controller.shadowOpacity
         let cornerRadius: CGFloat = controller.cornerRadius
@@ -78,9 +79,9 @@ internal extension VerticalCell {
             
             if controller.cornerRadiusOption == CornerOptions.topBottom ||
                 controller.cornerRadiusOption == CornerOptions.top {
-                contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
+                contentView.setCornerRadius(cornerRadius, corners: [.topLeft, .topRight])
             } else {
-                contentView.applyRadius(.zero, corners: [.all])
+                contentView.setCornerRadius(.zero, corners: [.all])
             }
  
             guard doesNeedShadowViews else { return }
@@ -91,18 +92,18 @@ internal extension VerticalCell {
             let left = CollectionShadowView(offset: .size(w: -1), opacity: opacity, bounds: CGRect(w: -1, h: 2))
             let right = CollectionShadowView(offset: .size(w: 1), opacity: opacity, bounds: CGRect(w: 1, h: 2))
             
-            insertSubviews(left, right, below: contentView)
+            addSubviews(left, right, below: contentView)
                         
             left.pin(leading: leading, bottom: bottom, padding: .padding(left: 10), size: .size(w: 1, h: 2))
             right.pin(bottom: bottom, trailing: trailing, size: .size(w: 1, h: 2))
             
-            insertSubviews(topRightView, topLeftView, below: contentView)
+            addSubviews(topRightView, topLeftView, below: contentView)
 
             topRightView.pin(top: top, bottom: bottom, trailing: trailing)
-            topRightView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
+            topRightView.equalWidth(contentView, multiplier: 0.503)
             
             topLeftView.pin(top: top, leading: leading, bottom: bottom)
-            topLeftView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
+            topLeftView.equalWidth(contentView, multiplier: 0.503)
 
         case .middleItem:
             
@@ -112,14 +113,14 @@ internal extension VerticalCell {
                 seporatorView.pin(leading: contentView.leading, bottom: contentView.bottom, trailing: contentView.trailing, size: .size(h: 1.25))
             }
             
-            contentView.applyRadius(.zero, corners: [.all])
+            contentView.setCornerRadius(.zero, corners: [.all])
             
             guard doesNeedShadowViews else { return }
 
             let left = CollectionShadowView(offset: .size(w: -1), opacity: opacity)
             let right = CollectionShadowView(offset: .size(w: 1), opacity: opacity)
 
-            insertSubviews(left, right, below: contentView)
+            addSubviews(left, right, below: contentView)
                         
             left.pin(top: top, leading: leading, bottom: bottom, size: .size(w: 1))
             
@@ -129,9 +130,9 @@ internal extension VerticalCell {
             
             if controller.cornerRadiusOption == CornerOptions.topBottom ||
                 controller.cornerRadiusOption == CornerOptions.bottom {
-                contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
+                contentView.setCornerRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
             } else {
-                contentView.applyRadius(.zero, corners: [.all])
+                contentView.setCornerRadius(.zero)
             }
                         
             guard doesNeedShadowViews else { return }
@@ -139,31 +140,31 @@ internal extension VerticalCell {
             let bottomRightView = CollectionShadowView(offset: .size(w: 1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomRight)
             let bottomLeftView = CollectionShadowView(offset: .size(w: -1, h: 1), opacity: opacity * 0.6, cornerRadius: cornerRadius, corners: .bottomLeft)
             
-            insertSubviews(bottomRightView, bottomLeftView, below: contentView)
+            addSubviews(bottomRightView, bottomLeftView, below: contentView)
 
             bottomRightView.pin(top: top, bottom: bottom, trailing: trailing, padding: .padding(top: 0, bottom: -1))
-            bottomRightView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
+            bottomRightView.equalWidth(contentView, multiplier: 0.503)
             
             bottomLeftView.pin(top: top, leading: leading, bottom: bottom, padding: .padding(top: 0, bottom: -1))
-            bottomLeftView.setWidthTo(contentView.widthAnchor, multiplier: 0.503)
+            bottomLeftView.equalWidth(contentView, multiplier: 0.503)
             
         case .onlyItem:
             
             if controller.cornerRadiusOption == CornerOptions.topBottom {
-                contentView.applyRadius(cornerRadius, corners: [.all])
+                contentView.setCornerRadius(cornerRadius)
             } else if controller.cornerRadiusOption == CornerOptions.top {
-                contentView.applyRadius(cornerRadius, corners: [.topLeft, .topRight])
+                contentView.setCornerRadius(cornerRadius, corners: [.topLeft, .topRight])
             } else if controller.cornerRadiusOption == CornerOptions.topBottom {
-                contentView.applyRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
+                contentView.setCornerRadius(cornerRadius, corners: [.bottomLeft, .bottomRight])
             }
             
-            contentView.applyRadius(cornerRadius, corners: [.all])
+            contentView.setCornerRadius(cornerRadius)
             
             guard doesNeedShadowViews else { return }
             
             let shadowView = CollectionShadowView(offset: CGSize(), opacity: opacity, radius: 1.5, cornerRadius: cornerRadius)
             
-            insertSubviews(shadowView, below: contentView)
+            addSubviews(shadowView, below: contentView)
             
             shadowView.fillSuperview()
         }
@@ -205,7 +206,7 @@ internal class CollectionShadowView: UIView {
                 self.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
             }
         }
-        self.applyRadius(cornerRadius, corners: [corners])
+        self.setCornerRadius(cornerRadius, corners: [corners])
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

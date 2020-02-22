@@ -8,65 +8,30 @@
 
 import UIKit
 
-//MARK: - RelationType
+//MARK: - ConstraintRelation
 
-open class UILayoutRelations {
-    
-    let top: RelationType?
-    let leading: RelationType?
-    let bottom: RelationType?
-    let trailing: RelationType?
-    
-    init(top: RelationType? = nil, leading: RelationType? = nil, bottom: RelationType? = nil, trailing: RelationType? = nil){
-        self.top = top
-        self.leading = leading
-        self.bottom = bottom
-        self.trailing = trailing
-    }
+public enum ConstraintRelation {
+    case equal
+    case equalOrLess
+    case equalOrGreater
 }
 
-public enum RelationType {
-    case equalTo
-    case greaterThan
-    case lessThan
-}
-
-open class UILayoutPrioritys {
-    
-    let top: UILayoutPriority?
-    let leading: UILayoutPriority?
-    let bottom: UILayoutPriority?
-    let trailing: UILayoutPriority?
-    
-    init(top: UILayoutPriority? = nil, leading: UILayoutPriority? = nil, bottom: UILayoutPriority? = nil, trailing: UILayoutPriority? = nil){
-        self.top = top
-        self.leading = leading
-        self.bottom = bottom
-        self.trailing = trailing
-    }
-}
+//MARK: - Layout
 
 public extension UILayoutPriority {
     
-    static var almostRequired: UILayoutPriority {
+    static var almost: UILayoutPriority {
         return UILayoutPriority(rawValue: 999)
     }
     
     static func custom(_ value: Float) -> UILayoutPriority {
         return UILayoutPriority(rawValue: value)
     }
-    
-    static var notRequired: UILayoutPriority {
-        return UILayoutPriority(rawValue: 0)
-    }
 }
 
-
-//MARK: - UIView
+//MARK: - Add Subviews
 
 public extension UIView {
-    
-    //MARK: - Removal of boilerplate + cleaner
     
     func addSubviews(_ views: UIView...) {
         views.reversed().forEach({
@@ -74,19 +39,22 @@ public extension UIView {
         })
     }
     
-    func insertSubviews(_ views: UIView..., below: UIView){
+    func addSubviews(_ views: UIView..., below: UIView){
         views.forEach({
             insertSubview($0, belowSubview: below)
         })
     }
     
-    func insertSubviews(_ views: UIView..., above: UIView){
+    func addSubviews(_ views: UIView..., above: UIView){
         views.forEach({
             insertSubview($0, aboveSubview: above)
         })
     }
-    
-    //MARK: - Layout
+}
+
+//MARK: - Anchors
+
+public extension UIView {
 
     var top: NSLayoutYAxisAnchor {
         return topAnchor
@@ -163,8 +131,8 @@ public extension UIStackView {
 
 public extension UIEdgeInsets {
     
-    static func allSides(_ side: CGFloat) -> UIEdgeInsets {
-        return .init(top: side, left: side, bottom: side, right: side)
+    static func square(_ value: CGFloat) -> UIEdgeInsets {
+        return .init(top: value, left: value, bottom: value, right: value)
     }
     
     static func padding(top: CGFloat = .zero, left: CGFloat = .zero, bottom: CGFloat = .zero, right: CGFloat = .zero) -> UIEdgeInsets{
@@ -172,16 +140,28 @@ public extension UIEdgeInsets {
     }
 }
 
+//MARK: - CGSize
+ 
 public extension CGSize {
     
-    static func square(_ v: CGFloat) -> CGSize {
-        return .init(width: v, height: v)
+    static func square(_ value: CGFloat) -> CGSize {
+        return .init(width: value, height: value)
+    }
+    
+    static func width(_ value: CGFloat) -> CGSize {
+        return .init(width: value, height: .zero)
+    }
+    
+    static func height(_ value: CGFloat) -> CGSize {
+        return .init(width: .zero, height: value)
     }
     
     static func size(w: CGFloat = .zero, h: CGFloat = .zero) -> CGSize {
         return .init(width: w, height: h)
     }
 }
+
+//MARK: - CGRect
 
 public extension CGRect {
     
@@ -197,6 +177,17 @@ public extension CGRect {
         self.init(x: .zero, y: .zero, width: square, height: square)
     }
 }
+
+//MARK: - CGPoint
+
+public extension CGPoint {
+    
+    static func point(x: CGFloat = .zero, y: CGFloat = .zero) -> CGPoint {
+        return .init(x: x, y: y)
+    }
+}
+
+//MARK: - Corner Radius
 
 public extension CACornerMask {
     
@@ -215,43 +206,12 @@ public extension CACornerMask {
     static var all: CACornerMask {
         return [topLeft, topRight, bottomLeft, bottomRight]
     }
-    
-    func rectCorner() -> UIRectCorner {
-        switch self {
-            case .layerMinXMinYCorner: return .topLeft
-            case .layerMaxXMinYCorner: return .topRight
-            case .layerMinXMaxYCorner: return .bottomLeft
-            case .layerMaxXMaxYCorner: return .bottomRight
-            default: return .allCorners
-        }
-    }
 }
 
 public extension UIView {
     
-    func applyRadius(_ radius: CGFloat, corners: CACornerMask){
-        if #available(iOS 11, *) {
-            layer.cornerRadius = radius
-            layer.maskedCorners = corners
-        } else {
-            var cornerMask = UIRectCorner()
-            if(corners.contains(.layerMinXMinYCorner)){
-                cornerMask.insert(.topLeft)
-            }
-            if(corners.contains(.layerMaxXMinYCorner)){
-                cornerMask.insert(.topRight)
-            }
-            if(corners.contains(.layerMinXMaxYCorner)){
-                cornerMask.insert(.bottomLeft)
-            }
-            if(corners.contains(.layerMaxXMaxYCorner)){
-                cornerMask.insert(.bottomRight)
-            }
-            
-            let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: cornerMask, cornerRadii: CGSize(width: radius, height: radius))
-            let mask = CAShapeLayer()
-            mask.path = path.cgPath
-            layer.mask = mask
-        }
+    func setCornerRadius(_ radius: CGFloat, corners: CACornerMask = .all){
+        layer.cornerRadius = radius
+        layer.maskedCorners = corners
     }
 }

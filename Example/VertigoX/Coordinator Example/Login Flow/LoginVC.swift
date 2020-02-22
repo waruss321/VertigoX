@@ -28,14 +28,14 @@ class LoginVC: ViewController, LoginModule {
     override func setConstraints(frame: CGRect) {
         view.addSubviews(testLabel, loginButton, testView)
         testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
-                      padding: .allSides(30))
+                      padding: .square(30))
         
         loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
                         padding: .padding(left: 40, bottom: 100, right: 40),
                         size: .size(h: 60))
         
         testView.pin(leading: view.leading, size: .size(w: 120, h: 100))
-        testView.centerYTo(view)
+        testView.centerY(view)
     }
     
     //MARK: - Bind

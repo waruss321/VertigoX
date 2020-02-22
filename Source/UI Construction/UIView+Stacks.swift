@@ -9,20 +9,20 @@ import UIKit
 
 public extension UIView {
     
-    fileprivate func _stack(_ axis: NSLayoutConstraint.Axis = .vertical, views: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill, toSafe: Bool = true) -> UIStackView {
+    fileprivate func _stack(_ axis: NSLayoutConstraint.Axis = .vertical, views: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill, usingSafeArea: Bool = true) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.axis = axis
         stackView.spacing = spacing
         stackView.alignment = alignment
         stackView.distribution = distribution
         addSubview(stackView)
-        stackView.fillSuperview(safe: toSafe) //If top/bottom alignmnet is werid true changing 'toSafe'
+        stackView.fillSuperview(usingSafeArea: usingSafeArea) //If top/bottom alignmnet is werid true changing 'toSafe'
         return stackView
     }
     
     @discardableResult
-    func stack(_ views: UIView..., spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill, toSafe: Bool = true) -> UIStackView {
-        return _stack(.vertical, views: views, spacing: spacing, alignment: alignment, distribution: distribution, toSafe: toSafe)
+    func stack(_ views: UIView..., spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill, usingSafeArea: Bool = true) -> UIStackView {
+        return _stack(.vertical, views: views, spacing: spacing, alignment: alignment, distribution: distribution, usingSafeArea: usingSafeArea)
     }
     
     @discardableResult

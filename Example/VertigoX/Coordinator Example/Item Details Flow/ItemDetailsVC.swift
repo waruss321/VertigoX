@@ -31,7 +31,7 @@ class ItemDetailsVC: ViewController, ItemDetailsModule {
     
     override func viewDidLoad() {
         view.addSubviews(testView, testButton)
-        testView.fillSuperview(safe: false)
+        testView.fillSuperview(usingSafeArea: false)
         testButton.fill(testView)
 
         testButton.onTouchUpInside.subscribe(with: self) { _ in
