@@ -21,6 +21,10 @@ extension ModuleFactoryImp: ShopModuleFactory {
     func makeShopModule() -> ShopModule {
         return ShopVC(viewModel: ShopVM())
     }
+    
+    func makeConstraintsTestModule() -> ConstraintsTestModule {
+        return ConstraintsTestVC()
+    }
 }
 
 extension ModuleFactoryImp: AddItemModuleFactory {
@@ -42,7 +46,6 @@ extension ModuleFactoryImp: ItemDetailsModuleFactory {
         return EditItemDetailsViewController()
     }
 }
-
 
 extension ModuleFactoryImp: PushTestModuleFactory {
     func makePushTestModule() -> PushTestModule {

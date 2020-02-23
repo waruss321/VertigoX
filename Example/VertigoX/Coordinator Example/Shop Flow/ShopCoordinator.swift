@@ -11,6 +11,7 @@ import Signals
 
 protocol ShopModuleFactory {
     func makeShopModule() -> ShopModule
+    func makeConstraintsTestModule() -> ConstraintsTestModule
 }
 
 class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
@@ -33,7 +34,14 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
     }
 
     override func start(with option: DeepLinkType?) {
+        //test()
         showShop()
+    }
+    
+    private func test(){
+        let module = moduleFactory.makeConstraintsTestModule()
+        
+        router.setRootModule(module)
     }
     
     //MARK: - Run Flows

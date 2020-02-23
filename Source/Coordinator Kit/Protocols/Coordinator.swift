@@ -1,12 +1,6 @@
 import Signals
 
-public protocol DeepLinkType {
-    
-}
-
-public enum Deeplinks: DeepLinkType {
-    
-}
+public protocol DeepLinkType { }
 
 public protocol Coordinator: Presentable {
     func start()
@@ -31,5 +25,3 @@ public protocol CoordinatorOutput: class {
 public protocol CoordinatorLoadingDeferrable: class {
     var onCoordinatorFinishedLoading: Signal<ActionResult> { get }
 }
-
-

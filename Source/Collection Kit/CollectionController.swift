@@ -8,15 +8,15 @@
 
 import IGListKit
 
-public protocol CollectionControllerDelegate {
+public protocol CollectionControllerDelegate: class {
+    var sections: [Section] { get }
     func bindSectionController(_ controller: SectionController)
     func didScroll(_ scrollView: UIScrollView)
 }
 
 public extension CollectionControllerDelegate {
-    func didScroll(_ scrollView: UIScrollView) {
-        
-    }
+    func bindSectionController(_ controller: SectionController){}
+    func didScroll(_ scrollView: UIScrollView) { }
 }
 
 public final class CollectionController: NSObject {
@@ -33,7 +33,11 @@ public final class CollectionController: NSObject {
         : UICollectionViewFlowLayout()
     }
     
-    public var delegate: CollectionControllerDelegate? = nil
+    public weak var delegate: CollectionControllerDelegate? = nil {
+        didSet {
+            refresh()
+        }
+    }
     
     //MARK: - Dependencies
     
@@ -64,23 +68,8 @@ public final class CollectionController: NSObject {
         }
     }
     
-    public var viewModel: CollectionViewModel? = nil {
-        didSet {
-            guard let viewModel = viewModel else { return }
-            self.sections = viewModel.sections
-            
-            viewModel.updateSections.cancelAllSubscriptions()
-            viewModel.updateSections.subscribe(with: self) { [weak self] newSections in
-                self?.sections = newSections
-            }
-        }
-    }
-    
-    public var sections: [Section] = [] {
-        didSet {
-            guard let _ = target else { fatalError("Make sure your adapters collectionView has been set") }
-            self.adapter.performUpdates(animated: animated)
-        }
+    public func refresh(){
+        self.adapter.performUpdates(animated: animated)
     }
 }
 
@@ -89,7 +78,7 @@ extension CollectionController: ListAdapterDataSource {
     //MARK: - ListAdapterDataSource
         
     public func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return sections
+        return delegate?.sections ?? []
     }
        
     public func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {

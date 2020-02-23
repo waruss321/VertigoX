@@ -9,5 +9,4 @@ import Signals
 
 public protocol CollectionViewModel {
     var sections: [Section] { get }
-    var updateSections: Signal<[Section]> { get }
 }

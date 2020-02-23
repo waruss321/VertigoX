@@ -12,7 +12,7 @@ protocol WorkoutViewModule: BaseSheetModule {
     
 }
  
-final class WorkoutViewVC: ViewController, WorkoutViewModule, CollectionControllerDelegate {
+final class WorkoutViewVC: ViewController, WorkoutViewModule {
 
     //MARK: - Signals
 
@@ -51,23 +51,10 @@ final class WorkoutViewVC: ViewController, WorkoutViewModule, CollectionControll
     
     override func setConstraints(frame: CGRect) {
         view.addSubviews(collectionView)
-        //collectionView.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing, size: .size(h: 390))
         collectionView.pin(top: view.top, leading: view.leading, bottom: view.bottom, trailing: view.trailing)
         collectionController.target = collectionView
     }
 
-    //MARK: - Bind
-    
-    override func bindViewModel() {
-        collectionController.viewModel = viewModel
-    }
-    
-    //MARK: - CollectionControllerDelegate
-    
-    func bindSectionController(_ controller: SectionController) {
-        
-    }
-    
     //MARK: - PanModalPresentable
     
     var longFormHeight: PanModalHeight {
@@ -106,3 +93,15 @@ final class WorkoutViewVC: ViewController, WorkoutViewModule, CollectionControll
     
 }
 
+extension WorkoutViewVC: CollectionControllerDelegate {
+    
+    //MARK: - CollectionControllerDelegate
+    
+    var sections: [Section] {
+        return viewModel.sections
+    }
+
+    func bindSectionController(_ controller: SectionController) {
+        
+    }
+}

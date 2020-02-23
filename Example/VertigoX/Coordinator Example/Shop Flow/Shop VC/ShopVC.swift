@@ -14,7 +14,7 @@ protocol ShopModule: BaseModule {
     var open: VoidSignal { get }
 }
 
-class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
+class ShopVC: ViewController, ShopModule {
     
     var open = VoidSignal()
 
@@ -60,14 +60,11 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     }
 
     //MARK: - Bind
-    
-    override func bindViewModel() {
-        collectionController.viewModel = viewModel
-    }
-    
+
     override func bindSignals() {
         buttonTest.onTouchUpInside.subscribe(with: self) { _ in
             self.viewModel.test.toggle()
+            self.collectionController.refresh()
         }
     }
     
@@ -76,8 +73,15 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
         //If you're using a fixed height cell and height is same within SectionController
         self.collectionController.target?.scrollToItem(at: IndexPath(item: 4, section: 1), at: .top, animated: true)
     }
+}
+
+extension ShopVC: CollectionControllerDelegate {
     
     //MARK: - CollectionControllerDelegate
+    
+    var sections: [Section] {
+        return viewModel.sections
+    }
     
     func bindSectionController(_ controller: SectionController) {
         if let controller = controller as? TestSection {
@@ -90,7 +94,6 @@ class ShopVC: ViewController, ShopModule, CollectionControllerDelegate {
     }
     
     func didScroll(_ scrollView: UIScrollView) {
-        print("scroll")
+        print("Did Scroll")
     }
 }
-

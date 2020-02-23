@@ -38,7 +38,6 @@ public extension UIView {
         self.pin(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor,
                  padding: padding)
     }
-    
 }
  
 //MARK: - Pin Helpers
@@ -70,20 +69,20 @@ public extension UIView {
     
     //MARK: - Superview Pin Helpers (Top Bottom, Left Right, TopRight, TopLeft, BottomRight, BottomLeft)
     
-    func pinSuperviewTopBottom(top: CGFloat = .zero, bottom: CGFloat = .zero, size: CGSize = .zero){
+    func pinSuperviewTopBottom(top: CGFloat = .zero, bottom: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
         
         guard let superview = superview else { return }
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        pinTop(superview.top, padding: top)
+        pinTop((usingSafeArea) ? superview.topSafe : superview.top, padding: top)
         
-        pinBottom(superview.bottom, padding: bottom)
+        pinBottom((usingSafeArea) ? superview.bottomSafe : superview.bottom, padding: bottom)
         
         self.setSize(size)
     }
     
-    func pinSuperviewLeadingTrailing(leading: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero){
+    func pinSuperviewLeadingTrailing(leading: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
         
         guard let superview = superview else { return }
         
@@ -96,52 +95,82 @@ public extension UIView {
         self.setSize(size)
     }
     
-    func pinSuperviewTopLeading(top: CGFloat = .zero, leading: CGFloat = .zero, size: CGSize = .zero){
+    func pinSuperviewTopLeading(top: CGFloat = .zero, leading: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
         
         guard let superview = superview else { return }
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        pinTop(superview.top, padding: top)
+        pinTop((usingSafeArea) ? superview.topSafe : superview.top, padding: top)
                 
         pinLeading(superview.leading, padding: leading)
         
         self.setSize(size)
     }
     
-    func pinSuperviewTopTrailing(top: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero){
+    func pinSuperviewTopTrailing(top: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
         
         guard let superview = superview else { return }
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        pinTop(superview.top, padding: top)
+        pinTop((usingSafeArea) ? superview.topSafe : superview.top, padding: top)
                 
         pinTrailing(superview.trailing, padding: trailing)
         
         self.setSize(size)
     }
     
-    func pinSuperviewBottomLeading(bottom: CGFloat = .zero, leading: CGFloat = .zero, size: CGSize = .zero){
+    func pinSuperviewBottomLeading(bottom: CGFloat = .zero, leading: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
         
         guard let superview = superview else { return }
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        pinBottom(superview.bottom, padding: bottom)
+        pinBottom((usingSafeArea) ? superview.bottomSafe : superview.bottom, padding: bottom)
                 
         pinLeading(superview.leading, padding: leading)
         
         self.setSize(size)
     }
     
-    func pinSuperviewBottomTrailing(bottom: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero){
+    func pinSuperviewBottomTrailing(bottom: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
         
         guard let superview = superview else { return }
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        pinBottom(superview.bottom, padding: bottom)
+        pinBottom((usingSafeArea) ? superview.bottomSafe : superview.bottom, padding: bottom)
+                
+        pinTrailing(superview.trailing, padding: trailing)
+        
+        self.setSize(size)
+    }
+    
+    func pinSuperviewTopLeadingTrailing(top: CGFloat = .zero, leading: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
+        
+        guard let superview = superview else { return }
+        
+        translatesAutoresizingMaskIntoConstraints = false
+
+        pinTop((usingSafeArea) ? superview.topSafe : superview.top, padding: top)
+        
+        pinLeading(superview.leading, padding: leading)
+                
+        pinTrailing(superview.trailing, padding: trailing)
+        
+        self.setSize(size)
+    }
+    
+    func pinSuperviewBottomLeadingTrailing(bottom: CGFloat = .zero, leading: CGFloat = .zero, trailing: CGFloat = .zero, size: CGSize = .zero, usingSafeArea: Bool = true){
+        
+        guard let superview = superview else { return }
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        pinBottom((usingSafeArea) ? superview.bottomSafe : superview.bottom, padding: bottom)
+        
+        pinLeading(superview.leading, padding: leading)
                 
         pinTrailing(superview.trailing, padding: trailing)
         
