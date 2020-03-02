@@ -11,6 +11,8 @@ public protocol ViewControllerTemplate {
     func run(frame: CGRect) //Run all the functions below in specific order. Should be done on viewDidLoad
         
     func configureView() //Setting up of properties e.g setting delegates
+    func setConstraints(frame: CGRect) //Set programatic constraints
+    func styleView() //Setting styling e.g background colors
 
     func bindViewModel() //Bind values from view model to the view (nameLabel.text=viewModel.name)
     func bindViewModelSignals() //Bind signals from view model to view (viewModel.dataFetched.subscribe..)
@@ -21,7 +23,10 @@ public protocol ViewControllerTemplate {
 
 public extension ViewControllerTemplate where Self: UIViewController {
     func run(frame: CGRect){
+        setConstraints(frame: frame)
+        styleView()
         configureView()
+        
         fetchRequests()
         bindViewModel()
         bindViewModelSignals()
@@ -49,6 +54,8 @@ open class ViewController: UIViewController, ViewControllerTemplate {
         return UIView(backgroundColor: .white)
     }
     
+    open func setConstraints(frame: CGRect){ }
+    open func styleView(){}
     open func configureView(){}
     
     open func fetchRequests(){}
