@@ -25,19 +25,19 @@ class LoginVC: ViewController, LoginModule {
     private let testView = TestView(test: "this is a test")
     //MARK: - Main View
     
-    override func setConstraints(frame: CGRect) {
-        view.addSubviews(testLabel, loginButton, testView)
-        testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
-                      padding: .square(30))
-        
-        loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
-                        padding: .padding(left: 40, bottom: 100, right: 40),
-                        size: .size(h: 60))
-        
-        testView.pin(leading: view.leading, size: .size(w: 120, h: 100))
-        testView.centerY(view)
-    }
-    
+//    override func setConstraints(frame: CGRect) {
+//        view.addSubviews(testLabel, loginButton, testView)
+//        testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
+//                      padding: .square(30))
+//        
+//        loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
+//                        padding: .padding(left: 40, bottom: 100, right: 40),
+//                        size: .size(h: 60))
+//        
+//        testView.pin(leading: view.leading, size: .size(w: 120, h: 100))
+//        testView.centerY(view)
+//    }
+//    
     //MARK: - Bind
     
     override func bindSignals() {

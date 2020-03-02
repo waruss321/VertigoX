@@ -45,7 +45,6 @@ open class View: UIView, ViewTemplate {
     open func configureView(){}
     open func setConstraints(frame: CGRect){}
     open func styleView(){}
-    open func fetchRequests(){}
     open func bindViewModel(){}
     open func bindViewModelSignals() {}
     open func bindSignals(){}

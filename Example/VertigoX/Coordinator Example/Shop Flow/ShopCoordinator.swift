@@ -34,8 +34,8 @@ class ShopCoordinator: BaseCoordinator, CoordinatorOutput {
     }
 
     override func start(with option: DeepLinkType?) {
-        //test()
-        showShop()
+        test()
+        //showShop()
     }
     
     private func test(){

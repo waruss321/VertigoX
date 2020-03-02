@@ -12,6 +12,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		BC0481B8240C233E00195B34 /* ConstraintsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0481B7240C233E00195B34 /* ConstraintsTestView.swift */; };
+		BC0481BA240C257000195B34 /* ConstraintsTestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0481B9240C257000195B34 /* ConstraintsTestVM.swift */; };
 		BC09D48A24017E7700389B9B /* ConstraintsTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09D48924017E7700389B9B /* ConstraintsTestVC.swift */; };
 		BC21039623A7023000DDE520 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21039423A7023000DDE520 /* AppDelegate.swift */; };
 		BC21039723A7023000DDE520 /* AppDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21039523A7023000DDE520 /* AppDelegateCoordinator.swift */; };
@@ -59,6 +61,8 @@
 		810DC4AF9E84A4EDA140860C /* Pods-VertigoX_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertigoX_Tests.debug.xcconfig"; path = "Target Support Files/Pods-VertigoX_Tests/Pods-VertigoX_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E564B49B307072340F95283 /* Pods-VertigoX_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertigoX_Example.debug.xcconfig"; path = "Target Support Files/Pods-VertigoX_Example/Pods-VertigoX_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B950C4C943A13AC52D0F0708 /* VertigoX.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VertigoX.podspec; path = ../VertigoX.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC0481B7240C233E00195B34 /* ConstraintsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsTestView.swift; sourceTree = "<group>"; };
+		BC0481B9240C257000195B34 /* ConstraintsTestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsTestVM.swift; sourceTree = "<group>"; };
 		BC09D48924017E7700389B9B /* ConstraintsTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsTestVC.swift; sourceTree = "<group>"; };
 		BC21039423A7023000DDE520 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC21039523A7023000DDE520 /* AppDelegateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinator.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		BC09D48B24017E8100389B9B /* Constraints Test VC */ = {
 			isa = PBXGroup;
 			children = (
+				BC0481B7240C233E00195B34 /* ConstraintsTestView.swift */,
+				BC0481B9240C257000195B34 /* ConstraintsTestVM.swift */,
 				BC09D48924017E7700389B9B /* ConstraintsTestVC.swift */,
 			);
 			path = "Constraints Test VC";
@@ -509,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0481BA240C257000195B34 /* ConstraintsTestVM.swift in Sources */,
 				BC50E32023E0D68A00189898 /* ItemDetailsVC.swift in Sources */,
 				BC9DBCFE23EDB09D00704809 /* WorkoutViewVC.swift in Sources */,
 				BC2103AA23A7024000DDE520 /* ShopVC.swift in Sources */,
@@ -524,6 +531,7 @@
 				BC2103AD23A7024000DDE520 /* LoginVC.swift in Sources */,
 				BC21039C23A7023900DDE520 /* ModuleFactoryImp.swift in Sources */,
 				BC62BF9923E7A5A600A520B0 /* EditItemDetailsViewController.swift in Sources */,
+				BC0481B8240C233E00195B34 /* ConstraintsTestView.swift in Sources */,
 				BC21039723A7023000DDE520 /* AppDelegateCoordinator.swift in Sources */,
 				BC72563623E904640044FA07 /* PushTestVC.swift in Sources */,
 				BCD9B77623DD021F00D1B958 /* ShopItem.swift in Sources */,

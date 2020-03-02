@@ -44,16 +44,16 @@ final class WorkoutViewVC: ViewController, WorkoutViewModule {
     override func configureView() {
         collectionController.delegate = self
     }
-    
-    override func styleView() {
-        view.backgroundColor = .clear
-    }
-    
-    override func setConstraints(frame: CGRect) {
-        view.addSubviews(collectionView)
-        collectionView.pin(top: view.top, leading: view.leading, bottom: view.bottom, trailing: view.trailing)
-        collectionController.target = collectionView
-    }
+//
+//    override func styleView() {
+//        view.backgroundColor = .clear
+//    }
+//
+//    override func setConstraints(frame: CGRect) {
+//        view.addSubviews(collectionView)
+//        collectionView.pin(top: view.top, leading: view.leading, bottom: view.bottom, trailing: view.trailing)
+//        collectionController.target = collectionView
+//    }
 
     //MARK: - PanModalPresentable
     

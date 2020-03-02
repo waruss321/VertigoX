@@ -28,25 +28,25 @@ class AddItemVC: ViewController, AddItemModule {
     
     
     //MARK: - Main View
-    
-    override func styleView() {
-        view.backgroundColor = .yellow
-    }
+//    
+//    override func styleView() {
+//        view.backgroundColor = .yellow
+//    }
     
     private var animatableButtonHeightConstraint: NSLayoutConstraint? = nil
-    
-    override func setConstraints(frame: CGRect) {
-        view.addSubviews(testLabel, animatableButton, loginButton)
-        testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
-                      padding: .square(30))
-        
-        animatableButton.pin(top: testLabel.bottom, leading: testLabel.leading, trailing: testLabel.trailing, padding: .padding(top: 10))
-        animatableButtonHeightConstraint = animatableButton.setHeight(100)
-        
-        loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
-                        padding: .padding(left: 40, bottom: 100, right: 40),
-                        size: .size(h: 60))
-    }
+//    
+//    override func setConstraints(frame: CGRect) {
+//        view.addSubviews(testLabel, animatableButton, loginButton)
+//        testLabel.pin(top: view.topSafe, leading: view.leading, trailing: view.trailing,
+//                      padding: .square(30))
+//        
+//        animatableButton.pin(top: testLabel.bottom, leading: testLabel.leading, trailing: testLabel.trailing, padding: .padding(top: 10))
+//        animatableButtonHeightConstraint = animatableButton.setHeight(100)
+//        
+//        loginButton.pin(leading: view.leading, bottom: view.bottom, trailing: view.trailing,
+//                        padding: .padding(left: 40, bottom: 100, right: 40),
+//                        size: .size(h: 60))
+//    }
     
     //MARK: - Bind
     
@@ -73,10 +73,10 @@ class MoreInfoVC: ViewController, MoreInfoModule {
     
     var dismiss = VoidSignal()
     
-    override func styleView() {
-        view.backgroundColor = .cyan
-    }
-    
+//    override func styleView() {
+//        view.backgroundColor = .cyan
+//    }
+//    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismiss.fire(())
     }

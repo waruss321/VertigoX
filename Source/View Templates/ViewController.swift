@@ -7,18 +7,22 @@
 //
 import UIKit
 
-public protocol ViewControllerTemplate: ViewTemplate {
+public protocol ViewControllerTemplate {
+    func run(frame: CGRect) //Run all the functions below in specific order. Should be done on viewDidLoad
+        
+    func configureView() //Setting up of properties e.g setting delegates
+
+    func bindViewModel() //Bind values from view model to the view (nameLabel.text=viewModel.name)
+    func bindViewModelSignals() //Bind signals from view model to view (viewModel.dataFetched.subscribe..)
+    func bindSignals() //Bind views signals (button.onTouchUpInside.subscribe)
     func fetchRequests() //Any API/Network calls
+    func setView() -> UIView
 }
 
 public extension ViewControllerTemplate where Self: UIViewController {
     func run(frame: CGRect){
         configureView()
-        setConstraints(frame: frame)
-        styleView()
-        
         fetchRequests()
-        
         bindViewModel()
         bindViewModelSignals()
         bindSignals()
@@ -35,15 +39,17 @@ open class ViewController: UIViewController, ViewControllerTemplate {
     
     //View did load should no longer be used. Please use viewLoaded instead
     
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
+    open override func loadView() {
+        super.loadView()
+        view = setView()
         run(frame: view.frame)
     }
     
+    open func setView() -> UIView {
+        return UIView(backgroundColor: .white)
+    }
+    
     open func configureView(){}
-    open func setConstraints(frame: CGRect){}
-    open func styleView(){}
     
     open func fetchRequests(){}
     

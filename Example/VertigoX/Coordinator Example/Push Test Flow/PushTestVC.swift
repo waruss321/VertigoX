@@ -32,18 +32,21 @@ class PushTestVC: ViewController, PushTestModule {
     private let popButton = UIButton(text: "Go back")
     private let popRootButton = UIButton(text: "Pop to root")
     
-    override func configureView() {
-        navigationController?.navigationBar.isHidden = true
-    }
+//    override func configureView() {
+//        navigationController?.navigationBar.isHidden = true
+//    }
+//
+//    override func setConstraints(frame: CGRect) {
+//        view.stack(addItemButton, button, popButton, popRootButton, distribution: .fillEqually)
+//                
+//        addItemButton.addTarget(self, action: #selector(addItemAction), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(pushNext), for: .touchUpInside)
+//        popButton.addTarget(self, action: #selector(popToLastAct), for: .touchUpInside)
+//        popRootButton.addTarget(self, action: #selector(popToRootAct), for: .touchUpInside)
+//    }
+    
 
-    override func setConstraints(frame: CGRect) {
-        view.stack(addItemButton, button, popButton, popRootButton, distribution: .fillEqually)
-                
-        addItemButton.addTarget(self, action: #selector(addItemAction), for: .touchUpInside)
-        button.addTarget(self, action: #selector(pushNext), for: .touchUpInside)
-        popButton.addTarget(self, action: #selector(popToLastAct), for: .touchUpInside)
-        popRootButton.addTarget(self, action: #selector(popToRootAct), for: .touchUpInside)
-    }
+
     
     @objc func pushNext(){
         push.fire(())

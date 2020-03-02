@@ -43,11 +43,11 @@ class ItemDetailsVC: ViewController, ItemDetailsModule {
     func panModalDidDismiss() {
         sheetDidDismiss.fire(())
     }
-    
-    override func styleView() {
-        view.backgroundColor = .white
-    }
-    
+//    
+//    override func styleView() {
+//        view.backgroundColor = .white
+//    }
+//    
     
     var panScrollable: UIScrollView? {
         return nil
