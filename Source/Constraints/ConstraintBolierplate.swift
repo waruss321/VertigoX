@@ -115,6 +115,10 @@ public extension UIStackView {
         views.forEach({ addArrangedSubview($0) })
     }
     
+    func addArrangedSubviews(_ views: [UIView]){
+        views.forEach({ addArrangedSubview($0) })
+    }
+    
     @discardableResult
     func removeAllArrangedSubviews() -> [UIView] {
         let removedSubviews = arrangedSubviews.reduce([]) { (removedSubviews, subview) -> [UIView] in
