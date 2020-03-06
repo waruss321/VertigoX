@@ -12,6 +12,7 @@ public protocol VerticalItem: Item {
 }
 
 open class VerticalCell: UICollectionViewCell, ViewTemplate {
+    
     //MARK: - Public
     
     public var item: VerticalItem? {
@@ -19,6 +20,8 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
             bindViewModel()
         }
     }
+    
+    public var position: ItemCellPosition = .single
     
     public var cellWidth: CGFloat? = nil {
         didSet {
@@ -69,7 +72,7 @@ internal extension VerticalCell {
         let doesNeedShadowViews: Bool = opacity != 0.0
 
         switch position {
-        case .firstItem:
+        case .first:
 
             if controller.showSeporator && controller.seporatorColor != .clear {
                 let seporatorView = SeporatorView(backgroundColor: controller.seporatorColor)
@@ -105,7 +108,7 @@ internal extension VerticalCell {
             topLeftView.pin(top: top, leading: leading, bottom: bottom)
             topLeftView.equalWidth(contentView, multiplier: 0.503)
 
-        case .middleItem:
+        case .middle:
             
             if controller.showSeporator && controller.seporatorColor != .clear {
                 let seporatorView = SeporatorView(backgroundColor: controller.seporatorColor)
@@ -126,7 +129,7 @@ internal extension VerticalCell {
             
             right.pin(top: top, bottom: bottom, trailing: trailing, size: .size(w: 1))
         
-        case .lastItem:
+        case .last:
             
             if controller.cornerRadiusOption == CornerOptions.topBottom ||
                 controller.cornerRadiusOption == CornerOptions.bottom {
@@ -148,7 +151,7 @@ internal extension VerticalCell {
             bottomLeftView.pin(top: top, leading: leading, bottom: bottom, padding: .padding(top: 0, bottom: -1))
             bottomLeftView.equalWidth(contentView, multiplier: 0.503)
             
-        case .onlyItem:
+        case .single:
             
             if controller.cornerRadiusOption == CornerOptions.topBottom {
                 contentView.setCornerRadius(cornerRadius)

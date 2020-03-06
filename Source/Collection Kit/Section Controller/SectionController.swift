@@ -61,11 +61,12 @@ open class SectionController: ListSectionController, Section {
             cell.styleSectionCell(item: item, controller: self, position: itemPosition)
             cell.item = item
             cell.cellWidth = sectionWidth
-
+            cell.position = itemPosition
+            
             return cell
         }
         
-        //TODO: Can add horizontal item support here
+        //TODO: Add horizontal item support here
         
         return UICollectionViewCell()
     }
@@ -82,23 +83,23 @@ open class SectionController: ListSectionController, Section {
 //ROUND CORNERS
 
 public enum ItemCellPosition {
-    case lastItem
-    case middleItem
-    case firstItem
-    case onlyItem
+    case single
+    case first
+    case middle
+    case last
 }
 
 public extension SectionController {
     
     func position(index: Int) -> ItemCellPosition {
         if isFirstItem(index: index) {
-            return .firstItem
+            return .first
         } else if isLastItem(index: index){
-            return .lastItem
+            return .last
         } else if isMiddleItem(index: index){
-            return .middleItem
+            return .middle
         } else {
-            return .onlyItem
+            return .single
         }
     }
     

@@ -51,6 +51,7 @@ class ShopItemCell: VerticalCell {
     override func styleView() {
         backgroundColor = .purple
         contentView.backgroundColor = .black
+        
     }
     
     //MARK: - Bind
