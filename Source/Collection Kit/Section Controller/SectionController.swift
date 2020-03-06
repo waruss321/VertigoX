@@ -85,7 +85,7 @@ open class SectionController: ListSectionController, Section {
 public enum ItemCellPosition {
     case single
     case first
-    case middle
+    case middle(index: Int)
     case last
 }
 
@@ -97,7 +97,7 @@ public extension SectionController {
         } else if isLastItem(index: index){
             return .last
         } else if isMiddleItem(index: index){
-            return .middle
+            return .middle(index: index)
         } else {
             return .single
         }
