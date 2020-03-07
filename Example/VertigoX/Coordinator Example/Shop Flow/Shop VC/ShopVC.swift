@@ -47,17 +47,17 @@ class ShopVC: ViewController, ShopModule {
         collectionController.delegate = self
     }
 //    
-//    override func setConstraints(frame: CGRect) {
-//        view.addSubviews(collectionView, buttonTest)
-//        collectionView.pin(top: view.topSafe, leading: view.leadingAnchor, bottom: buttonTest.top, trailing: view.trailing)
-//        buttonTest.pinTrailing(view.trailing, padding: 50, relation: .equal)
-//        buttonTest.pinBottom(view.bottom, padding: 0)
-//        buttonTest.setSize(.size(w: 100, h: 200))
-//    }
-//    
-//    override func styleView() {
-//        view.backgroundColor = .purple
-//    }
+    override func setConstraints(frame: CGRect) {
+        view.addSubviews(collectionView, buttonTest)
+        collectionView.pin(top: view.topSafe, leading: view.leadingAnchor, bottom: buttonTest.top, trailing: view.trailing)
+        buttonTest.pinTrailing(view.trailing, padding: 50, relation: .equal)
+        buttonTest.pinBottom(view.bottom, padding: 0)
+        buttonTest.setSize(.size(w: 100, h: 200))
+    }
+    
+    override func styleView() {
+        view.backgroundColor = .purple
+    }
 
     //MARK: - Bind
 
@@ -94,6 +94,6 @@ extension ShopVC: CollectionControllerDelegate {
     }
     
     func didScroll(_ scrollView: UIScrollView) {
-        print("Did Scroll")
+        //print("Did Scroll")
     }
 }

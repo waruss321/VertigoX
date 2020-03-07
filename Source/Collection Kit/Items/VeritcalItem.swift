@@ -22,6 +22,7 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
     }
     
     public var position: ItemCellPosition = .single
+    public var index: Int = 0
     
     public var cellWidth: CGFloat? = nil {
         didSet {

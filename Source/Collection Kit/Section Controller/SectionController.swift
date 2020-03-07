@@ -59,9 +59,10 @@ open class SectionController: ListSectionController, Section {
            let cell = self.collectionContext?.dequeueReusableCell(of: item.cellType, for: self, at: index) as? VerticalCell {
             
             cell.styleSectionCell(item: item, controller: self, position: itemPosition)
+            cell.position = itemPosition
+            cell.index = index
             cell.item = item
             cell.cellWidth = sectionWidth
-            cell.position = itemPosition
             
             return cell
         }
@@ -85,7 +86,7 @@ open class SectionController: ListSectionController, Section {
 public enum ItemCellPosition {
     case single
     case first
-    case middle(index: Int)
+    case middle
     case last
 }
 
@@ -97,7 +98,7 @@ public extension SectionController {
         } else if isLastItem(index: index){
             return .last
         } else if isMiddleItem(index: index){
-            return .middle(index: index)
+            return .middle
         } else {
             return .single
         }
