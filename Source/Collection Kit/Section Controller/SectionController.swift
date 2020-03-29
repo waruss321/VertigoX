@@ -28,7 +28,7 @@ open class SectionController: ListSectionController, Section {
     open var estimatedCellHeight: CGFloat { return 100 }
     open var cornerRadiusOption: CornerOptions { return .topBottom}
     
-    open func bindSignalsForItem(_ item: Item){ }
+    open func bindSignalsForItem(_ item: Item) {}
     
     //MARK: - Init
         

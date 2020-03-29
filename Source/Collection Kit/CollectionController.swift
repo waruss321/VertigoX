@@ -71,6 +71,10 @@ public final class CollectionController: NSObject {
     public func refresh(){
         self.adapter.performUpdates(animated: animated)
     }
+    
+    public func reload(){
+        self.adapter.reloadData(completion: nil)
+    }
 }
 
 extension CollectionController: ListAdapterDataSource {
