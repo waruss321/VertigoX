@@ -25,7 +25,6 @@ open class SectionController: ListSectionController, Section {
     open var shadowOpacity: Float { return 0.3 }
     
     open var margin: CGFloat { return .zero }
-    open var estimatedCellHeight: CGFloat { return 100 }
     open var cornerRadiusOption: CornerOptions { return .topBottom}
     
     open func bindSignalsForItem(_ item: Item) {}
@@ -48,6 +47,10 @@ open class SectionController: ListSectionController, Section {
     }
     
     override open func sizeForItem(at index: Int) -> CGSize {
+        var estimatedCellHeight: CGFloat = 100
+        if let item = items[safe: index] as? VerticalItem {
+            estimatedCellHeight = item.estimatedHeight
+        }
         return .size(w: sectionWidth, h: estimatedCellHeight)
     }
 

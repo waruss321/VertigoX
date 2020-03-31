@@ -28,6 +28,10 @@ struct ShopItemModel: VerticalItem {
     var cellType: AnyClass {
         return ShopItemCell.self
     }
+    
+    var estimatedHeight: CGFloat {
+        return 100
+    }
 }
 
 class ShopItemCell: VerticalCell {

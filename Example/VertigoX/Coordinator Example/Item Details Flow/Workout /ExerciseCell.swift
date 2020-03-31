@@ -22,9 +22,9 @@ struct ExerciseModel: VerticalItem {
        return ExerciseCell.self
     }
     
-    public var cellHeight: CGFloat {
+    var estimatedHeight: CGFloat {
         return 120
-    }
+    }    
 }
 
 final class ExerciseCell: VerticalCell {

@@ -25,10 +25,6 @@ final class TestSection: SectionController {
         return 25
     }
     
-    override var estimatedCellHeight: CGFloat {
-        return 100
-    }
-    
     override var shadowOpacity: Float {
         return 0
     }

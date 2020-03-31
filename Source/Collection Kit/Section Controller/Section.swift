@@ -23,7 +23,6 @@ public protocol Section: NSObject {
     var shadowOpacity: Float { get }
     
     var margin: CGFloat { get } //Section margin that will be minused from the collectionView width
-    var estimatedCellHeight: CGFloat { get } //Cell's height for the section. The more acurate the better performance
 }
 
 public extension Section {

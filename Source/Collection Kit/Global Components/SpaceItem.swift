@@ -9,7 +9,7 @@
 import IGListKit
 
 public struct SpaceModel: VerticalItem {
-
+    
     public let height: CGFloat
     public let color: UIColor
     
@@ -24,9 +24,10 @@ public struct SpaceModel: VerticalItem {
        return SpaceCell.self
     }
     
-    public var cellHeight: CGFloat {
+    public var estimatedHeight: CGFloat {
         return height
     }
+
 }
 
 public final class SpaceCell: VerticalCell {

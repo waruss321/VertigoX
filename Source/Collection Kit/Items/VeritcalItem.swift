@@ -9,7 +9,9 @@ import UIKit
 
 public protocol VerticalItem: Item {
     //Might add some stuff here. Also might add a Horizontal Item
+    var estimatedHeight: CGFloat { get }
 }
+
 
 open class VerticalCell: UICollectionViewCell, ViewTemplate {
     
