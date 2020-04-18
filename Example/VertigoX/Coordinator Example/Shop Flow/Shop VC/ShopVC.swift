@@ -20,8 +20,10 @@ class ShopVC: ViewController, ShopModule {
 
     //MARK: - Properties
 
-    private let collectionView = UICollectionView(background: .clear)
+    
     private let buttonTest = UIButton(text: "Refresh list", backgroundColor: .lightGray)
+    
+    private let collectionView = UICollectionView(background: .clear)
     
     private lazy var collectionController: CollectionController = {
         return CollectionController(viewController: self)
@@ -43,8 +45,11 @@ class ShopVC: ViewController, ShopModule {
     //MARK: - Configure
     
     override func configureView() {
+        
+        
         collectionController.target = collectionView
         collectionController.delegate = self
+        
     }
 //    
     override func setConstraints(frame: CGRect) {
@@ -53,6 +58,7 @@ class ShopVC: ViewController, ShopModule {
         buttonTest.pinTrailing(view.trailing, padding: 50, relation: .equal)
         buttonTest.pinBottom(view.bottom, padding: 0)
         buttonTest.setSize(.size(w: 100, h: 200))
+        //collectionView.scroll
     }
     
     override func styleView() {
@@ -70,10 +76,11 @@ class ShopVC: ViewController, ShopModule {
     
     private func scrollToIndex(){
         //This only works properly if automatic size = false, or
-        //If you're using a fixed height cell and height is same within SectionController
+        //If you're using a fixed height cell and height is same within VerticalSectionController
         self.collectionController.target?.scrollToItem(at: IndexPath(item: 4, section: 1), at: .top, animated: true)
     }
 }
+
 
 extension ShopVC: CollectionControllerDelegate {
     
@@ -83,7 +90,7 @@ extension ShopVC: CollectionControllerDelegate {
         return viewModel.sections
     }
     
-    func bindSectionController(_ controller: SectionController) {
+    func bindSectionController(_ controller: VerticalSectionController) {
         if let controller = controller as? TestSection {
             controller.selectedItem.cancelAllSubscriptions()
             

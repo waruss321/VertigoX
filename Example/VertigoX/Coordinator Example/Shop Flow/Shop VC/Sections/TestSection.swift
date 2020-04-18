@@ -9,7 +9,7 @@
 import VertigoX
 import Signals
 
-final class TestSection: SectionController {
+final class TestSection: VerticalSectionController {
     
     //MARK: - Signals
     

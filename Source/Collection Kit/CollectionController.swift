@@ -27,16 +27,17 @@ public final class CollectionController: NSObject {
         return ListAdapter(updater: updater, viewController: viewController)
     }()
     
-    private var layout: UICollectionViewFlowLayout {
-        return (autoSize)
-        ? UICollectionViewFlowLayout(estimatedItemSize: UICollectionViewFlowLayout.automaticSize)
-        : UICollectionViewFlowLayout()
-    }
-    
     public weak var delegate: CollectionControllerDelegate? = nil {
         didSet {
             refresh()
         }
+    }
+    
+    private var layout: UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = (autoSize) ? UICollectionViewFlowLayout.automaticSize : .zero
+        layout.scrollDirection = direction
+        return layout
     }
     
     //MARK: - Dependencies
@@ -45,26 +46,26 @@ public final class CollectionController: NSObject {
     private let viewController: UIViewController
     private let autoSize: Bool
     private let animated: Bool
+    private let direction: UICollectionView.ScrollDirection
     
     //MARK: - Init
      
-    public init(updater: ListAdapterUpdater = ListAdapterUpdater(), viewController: UIViewController, autoSize: Bool = true, animated: Bool = true) {
+    public init(updater: ListAdapterUpdater = ListAdapterUpdater(), viewController: UIViewController, autoSize: Bool = true, animated: Bool = true, direction: UICollectionView.ScrollDirection = .vertical) {
         self.updater = updater
         self.viewController = viewController
         self.autoSize = autoSize
         self.animated = animated
+        self.direction = direction
     }
     
     //MARK: - Public
-    
+
     public var target: UICollectionView? = nil {
         didSet {
             self.adapter.collectionView = target
             self.adapter.dataSource = self
             self.adapter.scrollViewDelegate = self
-            self.adapter.collectionView?.collectionViewLayout = (autoSize)
-                ? UICollectionViewFlowLayout(estimatedItemSize: UICollectionViewFlowLayout.automaticSize)
-                : UICollectionViewFlowLayout()
+            self.adapter.collectionView?.collectionViewLayout = layout
         }
     }
     

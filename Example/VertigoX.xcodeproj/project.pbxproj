@@ -30,6 +30,8 @@
 		BC62BF9923E7A5A600A520B0 /* EditItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BF9823E7A5A600A520B0 /* EditItemDetailsViewController.swift */; };
 		BC72563323E902E00044FA07 /* PushTestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC72563223E902E00044FA07 /* PushTestCoordinator.swift */; };
 		BC72563623E904640044FA07 /* PushTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC72563523E904640044FA07 /* PushTestVC.swift */; };
+		BC95A1E4244B5C1F003ADAE7 /* TestHItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1E3244B5C1F003ADAE7 /* TestHItem.swift */; };
+		BC95A1E6244B5C47003ADAE7 /* TestHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1E5244B5C47003ADAE7 /* TestHSection.swift */; };
 		BC9DBCFE23EDB09D00704809 /* WorkoutViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DBCFC23EDB09D00704809 /* WorkoutViewVC.swift */; };
 		BC9DBCFF23EDB09D00704809 /* WorkoutViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DBCFD23EDB09D00704809 /* WorkoutViewVM.swift */; };
 		BC9DBD0223EDB13000704809 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9DBD0123EDB13000704809 /* ExerciseCell.swift */; };
@@ -79,6 +81,8 @@
 		BC62BF9823E7A5A600A520B0 /* EditItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC72563223E902E00044FA07 /* PushTestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTestCoordinator.swift; sourceTree = "<group>"; };
 		BC72563523E904640044FA07 /* PushTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTestVC.swift; sourceTree = "<group>"; };
+		BC95A1E3244B5C1F003ADAE7 /* TestHItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHItem.swift; sourceTree = "<group>"; };
+		BC95A1E5244B5C47003ADAE7 /* TestHSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHSection.swift; sourceTree = "<group>"; };
 		BC9DBCFC23EDB09D00704809 /* WorkoutViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewVC.swift; sourceTree = "<group>"; };
 		BC9DBCFD23EDB09D00704809 /* WorkoutViewVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewVM.swift; sourceTree = "<group>"; };
 		BC9DBD0123EDB13000704809 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD9B77723DDAB7100D1B958 /* TestSection.swift */,
+				BC95A1E5244B5C47003ADAE7 /* TestHSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD9B77523DD021F00D1B958 /* ShopItem.swift */,
+				BC95A1E3244B5C1F003ADAE7 /* TestHItem.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				BC9DBCFE23EDB09D00704809 /* WorkoutViewVC.swift in Sources */,
 				BC2103AA23A7024000DDE520 /* ShopVC.swift in Sources */,
 				BC9DBCFF23EDB09D00704809 /* WorkoutViewVM.swift in Sources */,
+				BC95A1E4244B5C1F003ADAE7 /* TestHItem.swift in Sources */,
 				BC562B9523E2272700E7BFC2 /* ItemDetailsCoordinator.swift in Sources */,
 				BC09D48A24017E7700389B9B /* ConstraintsTestVC.swift in Sources */,
 				BCD9B77823DDAB7100D1B958 /* TestSection.swift in Sources */,
@@ -533,6 +540,7 @@
 				BC62BF9923E7A5A600A520B0 /* EditItemDetailsViewController.swift in Sources */,
 				BC0481B8240C233E00195B34 /* ConstraintsTestView.swift in Sources */,
 				BC21039723A7023000DDE520 /* AppDelegateCoordinator.swift in Sources */,
+				BC95A1E6244B5C47003ADAE7 /* TestHSection.swift in Sources */,
 				BC72563623E904640044FA07 /* PushTestVC.swift in Sources */,
 				BCD9B77623DD021F00D1B958 /* ShopItem.swift in Sources */,
 				BCA0A40723CCEB170046DB45 /* AddItemCoordinator.swift in Sources */,

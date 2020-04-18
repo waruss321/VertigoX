@@ -1,37 +1,12 @@
 //
 //  Section.swift
-//  VertigoX
+//  IGListDiffKit
 //
-//  Created by Russell Warwick on 25/01/2020.
+//  Created by Russell Warwick on 17/04/2020.
 //
 
-import UIKit
+import Foundation
 
 public protocol Section: NSObject {
-    init(items: [Item])
-    
     var items: [Item] { get set }
-    var numberOfItems: Int { get }
-    var topPadding: CGFloat { get}
-    var bottomPadding: CGFloat { get }
-    
-    var showSeporator: Bool { get }
-    var seporatorColor: UIColor { get }
-    
-    var cornerRadiusOption: CornerOptions { get }
-    var cornerRadius: CGFloat { get }
-    var shadowOpacity: Float { get }
-    
-    var margin: CGFloat { get } //Section margin that will be minused from the collectionView width
-}
-
-public extension Section {
-    init(items: [Item]){
-        self.init()
-        self.items = items
-    }
-
-    var numberOfItems: Int {
-        return items.count
-    }
 }

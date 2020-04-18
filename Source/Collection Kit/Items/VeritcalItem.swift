@@ -8,10 +8,8 @@
 import UIKit
 
 public protocol VerticalItem: Item {
-    //Might add some stuff here. Also might add a Horizontal Item
     var estimatedHeight: CGFloat { get }
 }
-
 
 open class VerticalCell: UICollectionViewCell, ViewTemplate {
     
@@ -63,7 +61,7 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
 
 internal extension VerticalCell {
        
-    func styleSectionCell(item: VerticalItem, controller: SectionController, position: ItemCellPosition) {
+    func styleSectionCell(item: VerticalItem, controller: VerticalSectionController, position: ItemCellPosition) {
       
         removeShadows()
         removeSeporators()
