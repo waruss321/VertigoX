@@ -66,6 +66,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = false
+        collectionView.alwaysBounceHorizontal = true
         collectionView.showsHorizontalScrollIndicator = false
     }
     
