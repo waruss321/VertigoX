@@ -80,7 +80,6 @@ internal final class HorizontalLoaderCell: VerticalCell {
         }
             
         loader?.didBindSignalsForItem = { cellItem in
-            //print("item.didBindSignalsForItem?(cellItem)")
             item.didBindSignalsForItem?(cellItem)
         }
         
@@ -89,11 +88,6 @@ internal final class HorizontalLoaderCell: VerticalCell {
 }
 
 extension HorizontalLoaderCell: CollectionControllerDelegate {
-    
-    func bindSectionController(_ controller: SectionController) {
-
-    }
-    
     var sections: [Section] {
         return [loader].compactMap({ $0 })
     }

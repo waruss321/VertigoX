@@ -28,17 +28,11 @@ open class HorizontalCell: UICollectionViewCell, ViewTemplate {
         contentView.fillSuperview() //This needs to happen otherwise the cell will not adjust to auto size
         run(frame: frame)
     }
-    
 
     required public init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
         
     open func configureView(){}
-    open func setConstraints(frame: CGRect){
-        
-        contentView.backgroundColor = .green
-        
-        
-    }
+    open func setConstraints(frame: CGRect){}
     open func styleView(){}
 
     open func bindViewModel() {}

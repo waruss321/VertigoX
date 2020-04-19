@@ -143,7 +143,6 @@
 		B9C00926C7E9DE67B5349B8DC56BB17A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70861C371576393E401CDCB2F51F20F7 /* Coordinator.swift */; };
 		BB146E7C3C9F84A17E539111F520633F /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1CBD55527431FF46420FA764B4D0F /* CollectionViewModel.swift */; };
 		BC95A1C22447C168003ADAE7 /* HorizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1C02447BCAD003ADAE7 /* HorizontalItem.swift */; };
-		BC95A1C52447F8A1003ADAE7 /* PagerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1C32447F880003ADAE7 /* PagerItem.swift */; };
 		BC95A1D0244A16DD003ADAE7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1CE244A16C9003ADAE7 /* Section.swift */; };
 		BC95A1D4244A8873003ADAE7 /* HorizontalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1D2244A86DE003ADAE7 /* HorizontalSection.swift */; };
 		BC95A1DB244A8A49003ADAE7 /* HorizontalLoaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */; };
@@ -428,7 +427,6 @@
 		BBF06CFD6C676032B7D2C449D9E10EEA /* VertigoX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VertigoX-dummy.m"; sourceTree = "<group>"; };
 		BC62EC0AA1C764F9803B1FFB9AB628BB /* IGListSectionMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionMap.h; path = Source/IGListKit/Internal/IGListSectionMap.h; sourceTree = "<group>"; };
 		BC95A1C02447BCAD003ADAE7 /* HorizontalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalItem.swift; sourceTree = "<group>"; };
-		BC95A1C32447F880003ADAE7 /* PagerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerItem.swift; sourceTree = "<group>"; };
 		BC95A1CE244A16C9003ADAE7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		BC95A1D2244A86DE003ADAE7 /* HorizontalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSection.swift; sourceTree = "<group>"; };
 		BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLoaderItem.swift; sourceTree = "<group>"; };
@@ -890,10 +888,10 @@
 			children = (
 				C94F14B2C9FD65925F581159BD59777C /* CollectionController.swift */,
 				88D1CBD55527431FF46420FA764B4D0F /* CollectionViewModel.swift */,
-				CF94D32AB93784BE20D329A732B51914 /* Global Components */,
+				569BF3CADB75585D443BA5A78D6F264E /* Section Controller */,
 				756BAF0D93391779CB1093C2A81CCAE2 /* Items */,
 				E6F032B4B449A64D89F1EE63A6740571 /* NSObject */,
-				569BF3CADB75585D443BA5A78D6F264E /* Section Controller */,
+				CF94D32AB93784BE20D329A732B51914 /* Global Components */,
 			);
 			name = "Collection Kit";
 			path = "Source/Collection Kit";
@@ -1061,7 +1059,6 @@
 			isa = PBXGroup;
 			children = (
 				FD51F9F0ACBE932D0E9338EB20A065BF /* SpaceItem.swift */,
-				BC95A1C32447F880003ADAE7 /* PagerItem.swift */,
 			);
 			path = "Global Components";
 			sourceTree = "<group>";
@@ -1490,7 +1487,6 @@
 				EAD462DA9D4D8FE9332E753649FD8296 /* DimmedView.swift in Sources */,
 				E2BC7AC6D313ACEF0E75E9E1CCF79230 /* Helpers.swift in Sources */,
 				22B3DA29A8730633A4506DECEBA315AD /* Item.swift in Sources */,
-				BC95A1C52447F8A1003ADAE7 /* PagerItem.swift in Sources */,
 				536C6CA563C7221DA8F1BAFDCC3FB95E /* NSObjectDiffable.swift in Sources */,
 				BC95A1E2244A8D76003ADAE7 /* SectionController.swift in Sources */,
 				F1FAE9C151D40CC298685E864BB3671E /* PanContainerView.swift in Sources */,

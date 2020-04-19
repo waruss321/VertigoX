@@ -27,7 +27,6 @@ public struct SpaceModel: VerticalItem {
     public var estimatedHeight: CGFloat {
         return height
     }
-
 }
 
 public final class SpaceCell: VerticalCell {
@@ -47,5 +46,4 @@ public final class SpaceCell: VerticalCell {
         spaceView.setHeight(item.height)
         spaceView.backgroundColor = item.color
     }
-
 }

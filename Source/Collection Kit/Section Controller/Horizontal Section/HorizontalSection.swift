@@ -38,6 +38,7 @@ open class HorizontalSection: SectionController, Section {
     //MARK: - ListSectionController
     
     override open func numberOfItems() -> Int {
+        //Only needs 1 because we only need to use the HorizontalLoaderItem
         return 1
     }
 
@@ -58,8 +59,6 @@ open class HorizontalSection: SectionController, Section {
             }
             
             loaderItem.didBindSignalsForItem = { [weak self] item in
-                
-                //print("itemitemitemitem")
                 self?.bindSignalsForItem(item)
             }
             
@@ -67,11 +66,5 @@ open class HorizontalSection: SectionController, Section {
         }
   
         return UICollectionViewCell()
-    }
-    
-    //MARK: -
-    
-    override open func didUpdate(to object: Any) {
- 
     }
 }
