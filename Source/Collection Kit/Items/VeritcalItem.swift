@@ -61,7 +61,7 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
 
 internal extension VerticalCell {
        
-    func styleSectionCell(item: VerticalItem, controller: VerticalSectionController, position: ItemCellPosition) {
+    func styleSectionCell(item: VerticalItem, controller: VerticalSection, position: ItemCellPosition) {
       
         removeShadows()
         removeSeporators()

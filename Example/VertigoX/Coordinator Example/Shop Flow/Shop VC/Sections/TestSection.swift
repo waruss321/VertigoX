@@ -9,7 +9,7 @@
 import VertigoX
 import Signals
 
-final class TestSection: VerticalSectionController {
+final class TestSection: VerticalSection {
     
     //MARK: - Signals
     
@@ -52,7 +52,6 @@ final class TestSection: VerticalSectionController {
         if let item = item as? ShopItemModel {
             item.selectedItem.cancelAllSubscriptions()
             item.selectedItem.subscribe(with: self) { value in
-                print(value)
             }
         }
     }

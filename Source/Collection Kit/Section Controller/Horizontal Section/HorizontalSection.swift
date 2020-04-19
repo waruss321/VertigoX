@@ -7,7 +7,7 @@
 
 import IGListKit
 
-open class HorizontalSectionController: SectionController, Section {
+open class HorizontalSection: SectionController, Section {
     
     //MARK: - Template
     
@@ -45,16 +45,22 @@ open class HorizontalSectionController: SectionController, Section {
         return .size(w: sectionWidth, h: height)
     }
     
-    lazy var loader = HorizontalLoaderItem(height: height, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, padding: .padding(left: leftPadding, right: rightPadding))
+    lazy var loaderItem = HorizontalLoaderItem(height: height, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, padding: .padding(left: leftPadding, right: rightPadding))
 
     override open func cellForItem(at index: Int) -> UICollectionViewCell {
         
         if let cell = self.collectionContext?.dequeueReusableCell(of: HorizontalLoaderCell.self, for: self, at: index) as? VerticalCell {
 
-            cell.item = loader
+            cell.item = loaderItem
             
-            loader.didSelectAtIndex = { [weak self] index in
+            loaderItem.didSelectAtIndex = { [weak self] index in
                 self?.didSelectItem(at: index)
+            }
+            
+            loaderItem.didBindSignalsForItem = { [weak self] item in
+                
+                //print("itemitemitemitem")
+                self?.bindSignalsForItem(item)
             }
             
             return cell
@@ -66,8 +72,6 @@ open class HorizontalSectionController: SectionController, Section {
     //MARK: -
     
     override open func didUpdate(to object: Any) {
-        for item in items {
-            bindSignalsForItem(item)
-        }
+ 
     }
 }

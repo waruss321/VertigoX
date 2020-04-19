@@ -7,8 +7,9 @@
 //
 
 import VertigoX
+import Signals
 
-class TestHSection: HorizontalSectionController {
+class TestHSection: HorizontalSection {
     
     override var itemSpacing: CGFloat {
         return 90
@@ -31,6 +32,18 @@ class TestHSection: HorizontalSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        print(index)
+        print("Did select item at index :\(index)")
     }
+    
+    override func bindSignalsForItem(_ item: Item) {
+        
+        if let item = item as? TestHItem {
+            item.didTapOptions.newSubscribe(with: self) { _ in
+                print("YOYO")
+            }
+        }
+    }
+    
 }
+
+

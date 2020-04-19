@@ -7,7 +7,7 @@
 
 import IGListKit
 
-public struct HorizontalLoaderItem: VerticalItem {
+struct HorizontalLoaderItem: VerticalItem {
     
     public let height: CGFloat
     public let items: [HorizontalItem]
@@ -15,6 +15,7 @@ public struct HorizontalLoaderItem: VerticalItem {
     public let padding: UIEdgeInsets
     
     var didSelectAtIndex: ((Int) -> Void)?
+    var didBindSignalsForItem: ((Item) -> Void)?
     
     public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat, padding: UIEdgeInsets) {
         self.height = height
@@ -71,10 +72,16 @@ internal final class HorizontalLoaderCell: VerticalCell {
     override func bindViewModel() {
         guard let item = item as? HorizontalLoaderItem else { return }
         collectionView.setHeight(item.height)
+        
         loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
-                                         padding: item.padding)
+                                             padding: item.padding)
         loader?.didSelectAtIndex = { index in
             item.didSelectAtIndex?(index)
+        }
+            
+        loader?.didBindSignalsForItem = { cellItem in
+            //print("item.didBindSignalsForItem?(cellItem)")
+            item.didBindSignalsForItem?(cellItem)
         }
         
         collectionController.refresh()
@@ -84,20 +91,13 @@ internal final class HorizontalLoaderCell: VerticalCell {
 extension HorizontalLoaderCell: CollectionControllerDelegate {
     
     func bindSectionController(_ controller: SectionController) {
-        
+
     }
     
     var sections: [Section] {
         return [loader].compactMap({ $0 })
     }
 }
-
-
-
-
-
-
-
 
 
 
@@ -110,10 +110,9 @@ private class HorizontalLoaderSection: SectionController, Section {
     //MARK: - Template
     
     var didSelectAtIndex: ((Int) -> Void)?
-    //var didSelectItem: (HorizontalItem -> Void)?
+    var didBindSignalsForItem: ((Item) -> Void)?
     
     open var items: [Item] = []
-    open func bindSignalsForItem(_ item: Item) {}
     
     //MARK: - Init
         
@@ -155,7 +154,7 @@ private class HorizontalLoaderSection: SectionController, Section {
     
     override open func didUpdate(to object: Any) {
         for item in items {
-            bindSignalsForItem(item)
+            self.didBindSignalsForItem?(item)
         }
     }
     

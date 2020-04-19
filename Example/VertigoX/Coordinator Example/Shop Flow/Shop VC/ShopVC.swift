@@ -90,7 +90,7 @@ extension ShopVC: CollectionControllerDelegate {
         return viewModel.sections
     }
     
-    func bindSectionController(_ controller: VerticalSectionController) {
+    func bindSectionController(_ controller: SectionController) {
         if let controller = controller as? TestSection {
             controller.selectedItem.cancelAllSubscriptions()
             

@@ -19,7 +19,7 @@
 		0A1DD699F76A9764CE12FB20EDA8330F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518E298E1B20EDC9C349FB31B39F95C3 /* BaseCoordinator.swift */; };
 		10EBC928ED396109D97DB48AB758987D /* IGListBatchUpdateData.mm in Sources */ = {isa = PBXBuildFile; fileRef = C94629271D3ACD501A41FD77C61D4510 /* IGListBatchUpdateData.mm */; };
 		111C47426C41C6688DB749DB2D3F5AF7 /* IGListDebugger.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD9497F2AD7F8666A65305C8520BC20 /* IGListDebugger.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		12A1E7BAC8A6FF02F508113451BC014C /* VerticalSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BA2223A8DFDBA22549F02590F849E /* VerticalSectionController.swift */; };
+		12A1E7BAC8A6FF02F508113451BC014C /* VerticalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BA2223A8DFDBA22549F02590F849E /* VerticalSection.swift */; };
 		131DBABAC805176E319469F94F245B9B /* IGListWorkingRangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A9D0DE84174EB9B0E7905E4B0EFAAE2 /* IGListWorkingRangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		140E842632B9853F9CF5F8CB2B4729CE /* AlignmentConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6CC926448C438572DBD48019A6EC12 /* AlignmentConstraints.swift */; };
 		14D45D0ECF93B41A2DF127869EA37E6B /* PanModalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD6F6D4BFCA3C60E9E9AB9B488B096 /* PanModalHeight.swift */; };
@@ -148,6 +148,7 @@
 		BC95A1D4244A8873003ADAE7 /* HorizontalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1D2244A86DE003ADAE7 /* HorizontalSection.swift */; };
 		BC95A1DB244A8A49003ADAE7 /* HorizontalLoaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */; };
 		BC95A1E2244A8D76003ADAE7 /* SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1E0244A8D6D003ADAE7 /* SectionController.swift */; };
+		BC95A1E9244C21EF003ADAE7 /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1E7244C21E3003ADAE7 /* Signals.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B571E132A42F6028A89BDFC2304B231 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F61AA06D0DF9073F0C6ECC3020D600 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B108B18231AA13B74633311642117F /* IGListIndexSetResult.m */; };
@@ -352,7 +353,7 @@
 		6B431AF5E4C15E1418ED30A770A2A9FA /* Pods-VertigoX_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VertigoX_Tests-dummy.m"; sourceTree = "<group>"; };
 		6D5512F0F357EC046C9425EA21D69BB4 /* UIBarButtonItem+Signals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Signals.swift"; path = "Signals/ios/UIBarButtonItem+Signals.swift"; sourceTree = "<group>"; };
 		6ECB75B4A51858BDA7840605494A1C15 /* IGListAdapterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterDelegate.h; path = Source/IGListKit/IGListAdapterDelegate.h; sourceTree = "<group>"; };
-		702BA2223A8DFDBA22549F02590F849E /* VerticalSectionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerticalSectionController.swift; sourceTree = "<group>"; };
+		702BA2223A8DFDBA22549F02590F849E /* VerticalSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VerticalSection.swift; sourceTree = "<group>"; };
 		70861C371576393E401CDCB2F51F20F7 /* Coordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		721DFB31095BD5E1049F37573FD02FFA /* Signals-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Signals-umbrella.h"; sourceTree = "<group>"; };
 		75B952A53CF3629236C06027CB0CA38E /* Presentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
@@ -432,6 +433,7 @@
 		BC95A1D2244A86DE003ADAE7 /* HorizontalSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSection.swift; sourceTree = "<group>"; };
 		BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLoaderItem.swift; sourceTree = "<group>"; };
 		BC95A1E0244A8D6D003ADAE7 /* SectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionController.swift; sourceTree = "<group>"; };
+		BC95A1E7244C21E3003ADAE7 /* Signals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
 		BD8390FB6CA9994C7CFB10CF53B17D37 /* IGListIndexPathResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResultInternal.h; path = Source/IGListDiffKit/Internal/IGListIndexPathResultInternal.h; sourceTree = "<group>"; };
 		BE8F0AB02947FD687CE5AABC640BA83B /* VertigoX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VertigoX.modulemap; sourceTree = "<group>"; };
 		BE8F9D50BB04C9A0E30320043131F350 /* IGListWorkingRangeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListWorkingRangeHandler.h; path = Source/IGListKit/Internal/IGListWorkingRangeHandler.h; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 				C5B3EC901BCBFC75F6322BD61EE55794 /* DateExtensions.swift */,
 				4D12C215B18BC5C3808B43B410341433 /* UIApplication.swift */,
 				D1999ED98096706BFF6C966FD8FDB0B4 /* UIViewExtension.swift */,
+				BC95A1E7244C21E3003ADAE7 /* Signals.swift */,
 			);
 			name = Extensions;
 			path = Source/Extensions;
@@ -927,7 +930,7 @@
 		BC95A1C6244A0F38003ADAE7 /* Vertical Section */ = {
 			isa = PBXGroup;
 			children = (
-				702BA2223A8DFDBA22549F02590F849E /* VerticalSectionController.swift */,
+				702BA2223A8DFDBA22549F02590F849E /* VerticalSection.swift */,
 			);
 			path = "Vertical Section";
 			sourceTree = "<group>";
@@ -1506,7 +1509,8 @@
 				9A8B5ED82D982A2245416548BB3F0032 /* Router.swift in Sources */,
 				5035DE16B2F00E24F7BEAF2DF19664CA /* RouterAnimations.swift in Sources */,
 				891948DDF79F762C818B5BAFAEC0F784 /* RouterImp.swift in Sources */,
-				12A1E7BAC8A6FF02F508113451BC014C /* VerticalSectionController.swift in Sources */,
+				12A1E7BAC8A6FF02F508113451BC014C /* VerticalSection.swift in Sources */,
+				BC95A1E9244C21EF003ADAE7 /* Signals.swift in Sources */,
 				50E38BFA55E35419813E86493736186C /* SizeConstraints.swift in Sources */,
 				C9842F18131871FB096EA9E2DC393B29 /* SpaceItem.swift in Sources */,
 				956E5D254EBC4E78213AC527D1189AF3 /* UIApplication.swift in Sources */,

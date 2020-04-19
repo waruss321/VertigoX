@@ -67,7 +67,6 @@ class ShopItemCell: VerticalCell {
     override func bindViewModel() {
         guard let item = shopItem else { return }
         itemLabel.text = item.title
-        print(index)
         button.onTouchUpInside.cancelAllSubscriptions()
         button.onTouchUpInside.subscribe(with: self) { _ in
             item.selectedItem.fire("Hello from cell")

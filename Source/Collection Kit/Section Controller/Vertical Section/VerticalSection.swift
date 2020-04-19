@@ -8,7 +8,7 @@
 
 import IGListKit
 
-open class VerticalSectionController: SectionController, Section {
+open class VerticalSection: SectionController, Section {
     
     //MARK: - Template
     
@@ -92,7 +92,7 @@ public enum ItemCellPosition {
     case last
 }
 
-public extension VerticalSectionController {
+public extension VerticalSection {
     
     func position(index: Int) -> ItemCellPosition {
         if isFirstItem(index: index) {
