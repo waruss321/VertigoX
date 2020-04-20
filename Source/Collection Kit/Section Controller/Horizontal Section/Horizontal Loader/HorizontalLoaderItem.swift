@@ -7,7 +7,7 @@
 
 import IGListKit
 
-struct HorizontalLoaderItem: VerticalItem {
+public struct HorizontalLoaderItem: VerticalItem {
     
     public let height: CGFloat
     public let items: [HorizontalItem]
@@ -15,7 +15,6 @@ struct HorizontalLoaderItem: VerticalItem {
     public let padding: UIEdgeInsets
     
     var didSelectAtIndex: ((Int) -> Void)?
-    var didBindSignalsForItem: ((Item) -> Void)?
     
     public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat, padding: UIEdgeInsets) {
         self.height = height
@@ -64,7 +63,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
     
     override func styleView() {
         backgroundColor = .clear
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = .red
         collectionView.alwaysBounceVertical = false
         collectionView.alwaysBounceHorizontal = true
         collectionView.showsHorizontalScrollIndicator = false
@@ -79,11 +78,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
         loader?.didSelectAtIndex = { index in
             item.didSelectAtIndex?(index)
         }
-            
-        loader?.didBindSignalsForItem = { cellItem in
-            item.didBindSignalsForItem?(cellItem)
-        }
-        
+
         collectionController.refresh()
     }
 }
@@ -105,7 +100,6 @@ private class HorizontalLoaderSection: SectionController, Section {
     //MARK: - Template
     
     var didSelectAtIndex: ((Int) -> Void)?
-    var didBindSignalsForItem: ((Item) -> Void)?
     
     open var items: [Item] = []
     
@@ -148,9 +142,6 @@ private class HorizontalLoaderSection: SectionController, Section {
     //MARK: -
     
     override open func didUpdate(to object: Any) {
-        for item in items {
-            self.didBindSignalsForItem?(item)
-        }
     }
     
     //MARK: - Did Select

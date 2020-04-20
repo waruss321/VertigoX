@@ -91,13 +91,7 @@ extension ShopVC: CollectionControllerDelegate {
     }
     
     func bindSectionController(_ controller: SectionController) {
-        if let controller = controller as? TestSection {
-            controller.selectedItem.cancelAllSubscriptions()
-            
-            controller.selectedItem.subscribe(with: self) { [weak self] title in
-                self?.open.fire(())
-            }
-        }
+     
     }
     
     func didScroll(_ scrollView: UIScrollView) {

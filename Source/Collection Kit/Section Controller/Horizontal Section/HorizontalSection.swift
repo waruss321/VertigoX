@@ -12,21 +12,31 @@ open class HorizontalSection: SectionController, Section {
     //MARK: - Template
     
     open var items: [Item] = []
-    open var leftPadding: CGFloat { return .zero }
-    open var rightPadding: CGFloat { return .zero }
+    open var leftPadding: CGFloat = .zero
+    open var rightPadding: CGFloat = .zero
     
-    open var itemSpacing: CGFloat { return .zero }
-    open var height: CGFloat { return 100 }
+    open var margin: CGFloat = .zero
     
-    open var margin: CGFloat { return .zero }
-    
-    open func bindSignalsForItem(_ item: Item) {}
+    open var itemSpacing: CGFloat = .zero
+    open var height: CGFloat = 100
+ 
+    open var didSelectItem: ((Item) -> Void)?
     
     //MARK: - Init
         
     public init(items: [HorizontalItem]) {
         super.init()
         self.items = items
+    }
+    
+    public init(items: [HorizontalItem], height: CGFloat = 100, padding: CGFloat = .zero, margin: CGFloat = .zero, itemSpacing: CGFloat = .zero) {
+        super.init()
+        self.items = items
+        self.leftPadding = padding
+        self.rightPadding = padding
+        self.height = height
+        self.margin = margin
+        self.itemSpacing = itemSpacing
     }
     
     //MARK: -
@@ -55,11 +65,8 @@ open class HorizontalSection: SectionController, Section {
             cell.item = loaderItem
             
             loaderItem.didSelectAtIndex = { [weak self] index in
-                self?.didSelectItem(at: index)
-            }
-            
-            loaderItem.didBindSignalsForItem = { [weak self] item in
-                self?.bindSignalsForItem(item)
+                guard let item = self?.items[safe: index] else { return }
+                self?.didSelectItem?(item)
             }
             
             return cell

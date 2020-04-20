@@ -13,23 +13,28 @@ open class VerticalSection: SectionController, Section {
     //MARK: - Template
     
     open var items: [Item] = []
-    open var topPadding: CGFloat { return .zero }
-    open var bottomPadding: CGFloat { return .zero }
+    open var topPadding: CGFloat = .zero
+    open var bottomPadding: CGFloat = .zero
+    open var margin: CGFloat = .zero
     
-    open var showSeporator: Bool { return false }
-    open var seporatorColor: UIColor { return UIColor(red: 0.87, green: 0.87, blue: 0.87, alpha: 1.0) }
+    open var showSeporator: Bool = false
+    open var seporatorColor: UIColor = UIColor(red: 0.87, green: 0.87, blue: 0.87, alpha: 1.0)
     
-    open var cornerRadius: CGFloat { return 4 }
-    open var shadowOpacity: Float { return 0.3 }
+    open var cornerRadius: CGFloat = .zero
+    open var shadowOpacity: Float = .zero
+    open var cornerRadiusOption: CornerOptions = .none
     
-    open var margin: CGFloat { return .zero }
-    open var cornerRadiusOption: CornerOptions { return .topBottom }
-    
-    open func bindSignalsForItem(_ item: Item) {}
-    
+    open var didSelectItem: ((Item) -> Void)?
+        
     //MARK: - Init
         
     public init(items: [VerticalItem]) {
+        super.init()
+        self.items = items
+        self.inset = .padding(top: topPadding, bottom: bottomPadding)
+    }
+    
+    public init(items: [VerticalItem], topPadding: CGFloat = .zero, bottomPadding: CGFloat = .zero, margin: CGFloat = .zero, cornerStyle: CornerOptions = .none, cornerRadius: CGFloat = 0, shadowOpacity: CGFloat = 0.3) {
         super.init()
         self.items = items
         self.inset = .padding(top: topPadding, bottom: bottomPadding)
@@ -74,13 +79,14 @@ open class VerticalSection: SectionController, Section {
         return UICollectionViewCell()
     }
     
+    open override func didSelectItem(at index: Int) {
+        guard let item = items[safe: index] else { return }
+        self.didSelectItem?(item)
+    }
+    
     //MARK: -
     
-    override open func didUpdate(to object: Any) {
-        for item in items {
-            bindSignalsForItem(item)
-        }
-    }
+    override open func didUpdate(to object: Any) { }
 }
 
 //ROUND CORNERS
@@ -124,6 +130,7 @@ public extension VerticalSection {
 }
 
 public enum CornerOptions {
+    case none
     case topBottom
     case top
     case bottom

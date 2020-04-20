@@ -67,6 +67,8 @@ internal extension VerticalCell {
         removeSeporators()
         
         contentView.setCornerRadius(.zero)
+        
+        guard controller.cornerRadiusOption != CornerOptions.none else { return }
 
         let opacity: Float = controller.shadowOpacity
         let cornerRadius: CGFloat = controller.cornerRadius

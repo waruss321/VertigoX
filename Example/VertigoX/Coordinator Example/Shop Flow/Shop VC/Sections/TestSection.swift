@@ -11,48 +11,4 @@ import Signals
 
 final class TestSection: VerticalSection {
     
-    //MARK: - Signals
-    
-    public var selectedItem = Signal<String>()
-    
-    //MARK: - Settings
-    
-    override var margin: CGFloat {
-        return 20
-    }
-    
-    override var topPadding: CGFloat {
-        return 25
-    }
-    
-    override var shadowOpacity: Float {
-        return 0
-    }
-    
-    override var cornerRadiusOption: CornerOptions {
-        return .bottom
-    }
-    
-    override var showSeporator: Bool {
-        return false
-    }
-    
-    override var cornerRadius: CGFloat {
-        return 30
-    }
-    
-    //MARK: - Item
-    
-    override func didSelectItem(at index: Int) {
-        guard let item = items[safe: index] as? ShopItemModel else { return }
-        selectedItem.fire(item.title)
-    }
-    
-    override func bindSignalsForItem(_ item: Item){
-        if let item = item as? ShopItemModel {
-            item.selectedItem.cancelAllSubscriptions()
-            item.selectedItem.subscribe(with: self) { value in
-            }
-        }
-    }
 }

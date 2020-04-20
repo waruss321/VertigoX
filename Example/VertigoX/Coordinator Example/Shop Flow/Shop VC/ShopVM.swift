@@ -31,13 +31,66 @@ class ShopVM: ShopVMType {
     //MARK: - Sections
     
     private var fruitSection: TestHSection {
-        return TestHSection(items: [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")])
+
+        let section = TestHSection(items: [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")])
+        
+        section.didSelectItem = { item in
+            print(item)
+        }
+        
+        
+        return section
     }
     
     private var techSection: TestSection {
-        return TestSection(items: [ShopItemModel(title: "0 Android"), ShopItemModel(title: "1 CPU"), ShopItemModel(title: "2 iPhone"), ShopItemModel(title: "3 Laptop"), ShopItemModel(title: "4 Xbox"), ShopItemModel(title: "5 Apples"), ShopItemModel(title: "6 Bananas"), ShopItemModel(title: "7 Carrots"), ShopItemModel(title: "8 Leeks"), ShopItemModel(title: "9 Melons"), ShopItemModel(title: "10 Pears"), ShopItemModel(title: "11 Apples"), ShopItemModel(title: "12 Bananas"), ShopItemModel(title: "13 Carrots"), ShopItemModel(title: "14 Leeks"), ShopItemModel(title: "15 Melons"), ShopItemModel(title: "16 Pears")])
+        let section = TestSection(items: [ShopItemModel(title: "0 Android"), ShopItemModel(title: "1 CPU"), ShopItemModel(title: "2 iPhone"), ShopItemModel(title: "3 Laptop"), ShopItemModel(title: "4 Xbox"), ShopItemModel(title: "5 Apples"), ShopItemModel(title: "6 Bananas"), ShopItemModel(title: "7 Carrots"), ShopItemModel(title: "8 Leeks"), ShopItemModel(title: "9 Melons"), ShopItemModel(title: "10 Pears"), ShopItemModel(title: "11 Apples"), ShopItemModel(title: "12 Bananas"), ShopItemModel(title: "13 Carrots"), ShopItemModel(title: "14 Leeks"), ShopItemModel(title: "15 Melons"), ShopItemModel(title: "16 Pears")])
+        
+        section.didSelectItem = { item in
+            print(item)
+        }
+        
+        return section
     }
 }
 
+
+
+struct DiscoveryHeaderItem: HorizontalItem {
+    
+    let category: Category
+    
+    //MARK: - HorizontalItem
+    
+    var size: CGSize {
+        return .square(110)
+    }
+    
+    var cellType: AnyClass {
+        return DiscoveryHeaderCell.self
+    }
+}
+
+
+fileprivate class DiscoveryHeaderCell: HorizontalCell {
+    
+    //MARK: - UI
+    
+    private let titleLabel = UILabel(text: "Discover")
+    private let allButton = UIButton(text: "All")
+    
+    //MARK: - View
+    
+    override func setConstraints(frame: CGRect) {
+        hstack(allButton, titleLabel, distribution: .fillEqually)
+    }
+    
+    //MARK: - Bind
+
+    override func bindViewModel() {
+        guard let item = item as? DiscoveryHeaderItem else { return }
+
+    }
+    
+}
 
 
