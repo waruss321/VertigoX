@@ -13,14 +13,16 @@ public struct HorizontalLoaderItem: VerticalItem {
     public let items: [HorizontalItem]
     public let itemSpacing: CGFloat
     public let padding: UIEdgeInsets
+    public let loaderBackgroundColor: UIColor
     
     var didSelectAtIndex: ((Int) -> Void)?
     
-    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat, padding: UIEdgeInsets) {
+    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat, padding: UIEdgeInsets, loaderBackgroundColor: UIColor) {
         self.height = height
         self.items = items
         self.itemSpacing = itemSpacing
         self.padding = padding
+        self.loaderBackgroundColor = loaderBackgroundColor
     }
     
     //MARK: - VerticalItem
@@ -63,7 +65,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
     
     override func styleView() {
         backgroundColor = .clear
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = false
         collectionView.alwaysBounceHorizontal = true
         collectionView.showsHorizontalScrollIndicator = false
@@ -72,6 +74,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
     override func bindViewModel() {
         guard let item = item as? HorizontalLoaderItem else { return }
         collectionView.setHeight(item.height)
+        contentView.backgroundColor = item.loaderBackgroundColor
         
         loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
                                              padding: item.padding)

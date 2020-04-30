@@ -11,6 +11,7 @@ open class HorizontalSection: SectionController, Section {
     
     //MARK: - Template
     
+    open var backgroundColor: UIColor = .clear
     open var items: [Item] = []
     open var leftPadding: CGFloat = .zero
     open var rightPadding: CGFloat = .zero
@@ -29,7 +30,7 @@ open class HorizontalSection: SectionController, Section {
         self.items = items
     }
     
-    public init(items: [HorizontalItem], height: CGFloat = 100, padding: CGFloat = .zero, margin: CGFloat = .zero, itemSpacing: CGFloat = .zero) {
+    public init(items: [HorizontalItem], height: CGFloat = 100, padding: CGFloat = .zero, margin: CGFloat = .zero, itemSpacing: CGFloat = .zero, backgroundColor: UIColor) {
         super.init()
         self.items = items
         self.leftPadding = padding
@@ -37,6 +38,7 @@ open class HorizontalSection: SectionController, Section {
         self.height = height
         self.margin = margin
         self.itemSpacing = itemSpacing
+        self.backgroundColor = backgroundColor
     }
     
     //MARK: -
@@ -56,7 +58,7 @@ open class HorizontalSection: SectionController, Section {
         return .size(w: sectionWidth, h: height)
     }
     
-    lazy var loaderItem = HorizontalLoaderItem(height: height, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, padding: .padding(left: leftPadding, right: rightPadding))
+    lazy var loaderItem = HorizontalLoaderItem(height: height, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
 
     override open func cellForItem(at index: Int) -> UICollectionViewCell {
         
