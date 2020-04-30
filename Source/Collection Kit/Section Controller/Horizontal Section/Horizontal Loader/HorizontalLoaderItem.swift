@@ -15,9 +15,9 @@ public struct HorizontalLoaderItem: VerticalItem {
     public let padding: UIEdgeInsets
     public let loaderBackgroundColor: UIColor
     
-    var didSelectAtIndex: ((Int) -> Void)?
+    public var didSelectAtIndex: ((Int) -> Void)?
     
-    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat, padding: UIEdgeInsets, loaderBackgroundColor: UIColor) {
+    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat = .zero, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
         self.height = height
         self.items = items
         self.itemSpacing = itemSpacing
