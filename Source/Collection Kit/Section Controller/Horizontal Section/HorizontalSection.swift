@@ -30,7 +30,7 @@ open class HorizontalSection: SectionController, Section {
         self.items = items
     }
     
-    public init(items: [HorizontalItem], height: CGFloat = 100, padding: CGFloat = .zero, margin: CGFloat = .zero, itemSpacing: CGFloat = .zero, backgroundColor: UIColor) {
+    public init(items: [HorizontalItem], height: CGFloat = 100, padding: CGFloat = .zero, margin: CGFloat = .zero, itemSpacing: CGFloat = .zero, backgroundColor: UIColor = .clear) {
         super.init()
         self.items = items
         self.leftPadding = padding
