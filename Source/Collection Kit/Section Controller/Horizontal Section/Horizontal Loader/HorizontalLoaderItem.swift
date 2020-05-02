@@ -45,7 +45,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
     //MARK: -
 
     private lazy var collectionController: CollectionController = {
-        return CollectionController(viewController: UIViewController(), direction: .horizontal)
+        return CollectionController(viewController: UIViewController(), autoSize: false, direction: .horizontal)
     }()
 
     private var loader: HorizontalLoaderSection?
@@ -58,6 +58,7 @@ internal final class HorizontalLoaderCell: VerticalCell {
         super.setConstraints(frame: frame)
         contentView.addSubviews(collectionView)
         collectionView.fillSuperview()
+        
     }
     
     override func configureView() {
@@ -76,7 +77,12 @@ internal final class HorizontalLoaderCell: VerticalCell {
     override func bindViewModel() {
         guard let item = item as? HorizontalLoaderItem else { return }
         
-        collectionView.setHeight(item.estimatedHeight, priority: .almost)
+        if heightConstraint == nil {
+            heightConstraint = contentView.setHeight(item.estimatedHeight, priority: .almost)
+        } else {
+            heightConstraint?.constant = item.estimatedHeight
+            self.layoutIfNeeded()
+        }
         
         contentView.backgroundColor = item.loaderBackgroundColor
         

@@ -20,7 +20,7 @@ public struct TestHItem: HorizontalItem {
     }
 
     public var size: CGSize {
-        return .size(w: 100, h: 100)
+        return .size(w: 120, h: 120)
     }
     
     public var cellType: AnyClass {

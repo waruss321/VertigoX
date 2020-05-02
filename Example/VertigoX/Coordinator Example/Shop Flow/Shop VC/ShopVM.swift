@@ -30,17 +30,18 @@ class ShopVM: ShopVMType {
 
     //MARK: - Sections
     
-    private var fruitSection: TestHSection {
+    private var fruitSection: VerticalSection {
 
-        let section = TestHSection(items: [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")])
-        
-        section.didSelectItem = { item in
-            print(item)
-        }
-        
-        
-        return section
-    }
+         let itemsTest = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
+         
+         
+         var horizontalItem = HorizontalLoaderItem(height: 130, items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
+         
+    
+         
+         
+         return VerticalSection(items: [horizontalItem])
+     }
     
     
     private var fruitSection2: VerticalSection {
@@ -48,7 +49,7 @@ class ShopVM: ShopVMType {
         let itemsTest = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
         
         
-        var horizontalItem = HorizontalLoaderItem(height: 300, items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
+        var horizontalItem = HorizontalLoaderItem(height: 170, items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
         
    
         
