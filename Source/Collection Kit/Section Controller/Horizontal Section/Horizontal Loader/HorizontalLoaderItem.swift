@@ -9,7 +9,7 @@ import IGListKit
 
 public struct HorizontalLoaderItem: VerticalItem {
     
-    public let height: CGFloat
+    private let height: CGFloat
     public let items: [HorizontalItem]
     public let itemSpacing: CGFloat
     public let padding: UIEdgeInsets
@@ -49,6 +49,8 @@ internal final class HorizontalLoaderCell: VerticalCell {
     }()
 
     private var loader: HorizontalLoaderSection?
+    
+    private var heightConstraint: NSLayoutConstraint? = nil
         
     //MARK: - Configure
     
@@ -73,7 +75,9 @@ internal final class HorizontalLoaderCell: VerticalCell {
     
     override func bindViewModel() {
         guard let item = item as? HorizontalLoaderItem else { return }
-        collectionView.setHeight(item.height)
+        
+        collectionView.setHeight(item.estimatedHeight, priority: .almost)
+        
         contentView.backgroundColor = item.loaderBackgroundColor
         
         loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
@@ -91,10 +95,6 @@ extension HorizontalLoaderCell: CollectionControllerDelegate {
         return [loader].compactMap({ $0 })
     }
 }
-
-
-
-
 
 //MARK: - HorizontalLoaderSection
 

@@ -25,6 +25,7 @@
 		BC2103AB23A7024000DDE520 /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2103A523A7024000DDE520 /* AddItemVC.swift */; };
 		BC2103AC23A7024000DDE520 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2103A723A7024000DDE520 /* LoginCoordinator.swift */; };
 		BC2103AD23A7024000DDE520 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2103A823A7024000DDE520 /* LoginVC.swift */; };
+		BC415374245D0E0200BCED5B /* TestHItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC415373245D0E0200BCED5B /* TestHItem2.swift */; };
 		BC50E32023E0D68A00189898 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC50E31F23E0D68A00189898 /* ItemDetailsVC.swift */; };
 		BC562B9523E2272700E7BFC2 /* ItemDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC562B9423E2272700E7BFC2 /* ItemDetailsCoordinator.swift */; };
 		BC62BF9923E7A5A600A520B0 /* EditItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62BF9823E7A5A600A520B0 /* EditItemDetailsViewController.swift */; };
@@ -76,6 +77,7 @@
 		BC2103A523A7024000DDE520 /* AddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
 		BC2103A723A7024000DDE520 /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BC2103A823A7024000DDE520 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BC415373245D0E0200BCED5B /* TestHItem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHItem2.swift; sourceTree = "<group>"; };
 		BC50E31F23E0D68A00189898 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
 		BC562B9423E2272700E7BFC2 /* ItemDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsCoordinator.swift; sourceTree = "<group>"; };
 		BC62BF9823E7A5A600A520B0 /* EditItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemDetailsViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				BCD9B77523DD021F00D1B958 /* ShopItem.swift */,
 				BC95A1E3244B5C1F003ADAE7 /* TestHItem.swift */,
+				BC415373245D0E0200BCED5B /* TestHItem2.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				BCD9B77423DCFF7600D1B958 /* ShopVM.swift in Sources */,
 				BC2103AD23A7024000DDE520 /* LoginVC.swift in Sources */,
 				BC21039C23A7023900DDE520 /* ModuleFactoryImp.swift in Sources */,
+				BC415374245D0E0200BCED5B /* TestHItem2.swift in Sources */,
 				BC62BF9923E7A5A600A520B0 /* EditItemDetailsViewController.swift in Sources */,
 				BC0481B8240C233E00195B34 /* ConstraintsTestView.swift in Sources */,
 				BC21039723A7023000DDE520 /* AppDelegateCoordinator.swift in Sources */,
