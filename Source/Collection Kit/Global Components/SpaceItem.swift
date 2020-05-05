@@ -8,12 +8,12 @@
 
 import IGListKit
 
-public struct SpaceModel: VerticalItem {
+public struct SpaceItem: VerticalItem {
     
     public let height: CGFloat
     public let color: UIColor
     
-    public init(height: CGFloat, color: UIColor = .white) {
+    public init(height: CGFloat, color: UIColor = .clear) {
         self.height = height
         self.color = color
     }
@@ -42,7 +42,7 @@ public final class SpaceCell: VerticalCell {
     }
     
     override public func bindViewModel() {
-        guard let item = item as? SpaceModel else { return }
+        guard let item = item as? SpaceItem else { return }
         spaceView.setHeight(item.height)
         spaceView.backgroundColor = item.color
     }

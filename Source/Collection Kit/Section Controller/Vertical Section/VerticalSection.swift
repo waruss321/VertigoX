@@ -13,8 +13,6 @@ open class VerticalSection: SectionController, Section {
     //MARK: - Template
     
     open var items: [Item] = []
-    open var topPadding: CGFloat = .zero
-    open var bottomPadding: CGFloat = .zero
     open var margin: CGFloat = .zero
     
     open var showSeporator: Bool = false
@@ -31,12 +29,21 @@ open class VerticalSection: SectionController, Section {
     public init(items: [VerticalItem]) {
         super.init()
         self.items = items
+    }
+    
+    public init(items: [VerticalItem], topPadding: CGFloat = .zero, bottomPadding: CGFloat = .zero, margin: CGFloat = .zero) {
+        super.init()
+        self.items = items
         self.inset = .padding(top: topPadding, bottom: bottomPadding)
     }
     
-    public init(items: [VerticalItem], topPadding: CGFloat = .zero, bottomPadding: CGFloat = .zero, margin: CGFloat = .zero, cornerStyle: CornerOptions = .none, cornerRadius: CGFloat = 0, shadowOpacity: CGFloat = 0.3) {
+    public init(items: [VerticalItem], topPadding: CGFloat = .zero, bottomPadding: CGFloat = .zero, margin: CGFloat = .zero, cornerStyle: CornerOptions = .none, cornerRadius: CGFloat = 0, shadowOpacity: Float = 0.3) {
         super.init()
         self.items = items
+        self.margin = margin
+        self.cornerRadiusOption = cornerStyle
+        self.cornerRadius = cornerRadius
+        self.shadowOpacity = shadowOpacity
         self.inset = .padding(top: topPadding, bottom: bottomPadding)
     }
         
