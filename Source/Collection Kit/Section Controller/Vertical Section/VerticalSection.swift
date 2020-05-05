@@ -34,6 +34,7 @@ open class VerticalSection: SectionController, Section {
     public init(items: [VerticalItem], topPadding: CGFloat = .zero, bottomPadding: CGFloat = .zero, margin: CGFloat = .zero) {
         super.init()
         self.items = items
+        self.margin = margin
         self.inset = .padding(top: topPadding, bottom: bottomPadding)
     }
     
