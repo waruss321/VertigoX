@@ -11,7 +11,7 @@ open class SpaceSection: VerticalSection {
     
     //MARK: - Init
     
-    init(height: CGFloat, color: UIColor = .clear) {
+    public init(height: CGFloat, color: UIColor = .clear) {
         super.init(items: [SpaceItem(height: height, color: color)])
     }
 }
