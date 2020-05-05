@@ -50,7 +50,7 @@ public final class CollectionController: NSObject {
     
     //MARK: - Init
      
-    public init(updater: ListAdapterUpdater = ListAdapterUpdater(), viewController: UIViewController, autoSize: Bool = true, animated: Bool = true, direction: UICollectionView.ScrollDirection = .vertical) {
+    public init(updater: ListAdapterUpdater = ListAdapterUpdater(), viewController: UIViewController = UIViewController(), autoSize: Bool = true, animated: Bool = true, direction: UICollectionView.ScrollDirection = .vertical) {
         self.updater = updater
         self.viewController = viewController
         self.autoSize = autoSize
