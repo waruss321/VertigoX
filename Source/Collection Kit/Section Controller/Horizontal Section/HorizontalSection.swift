@@ -23,6 +23,7 @@ open class HorizontalSection: SectionController, Section {
     open var canBounce: Bool = true
  
     open var didSelectItem: ((Item) -> Void)?
+    open var didChangePage: ((Int) -> Void)?
     
     private var topSpacing: CGFloat = .zero
     
@@ -98,6 +99,10 @@ open class HorizontalSection: SectionController, Section {
             loaderItem.didSelectAtIndex = { [weak self] index in
                 guard let item = self?.items[safe: index] else { return }
                 self?.didSelectItem?(item)
+            }
+            
+            loaderItem.didChangePage = { [weak self] index in
+                self?.didChangePage?(index)
             }
             
             return cell

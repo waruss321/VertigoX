@@ -20,7 +20,7 @@ public struct TestHItem: HorizontalItem {
     }
 
     public var size: CGSize {
-        return .size(w: 120, h: 120)
+        return .size(w: UIScreen.main.bounds.width - 50, h: 335)
     }
     
     public var cellType: AnyClass {

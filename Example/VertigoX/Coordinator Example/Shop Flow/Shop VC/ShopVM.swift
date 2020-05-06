@@ -21,7 +21,7 @@ class ShopVM: ShopVMType {
         if test {
             return [techSection]
         } else {
-            return [fruitSection, fruitSection2, fruitSection3,  techSection]
+            return [fruitSection]
         }
         
     }
@@ -32,15 +32,15 @@ class ShopVM: ShopVMType {
     
     private var fruitSection: HorizontalSection {
 
-        let itemsTest: [HorizontalItem] = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem2(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
-         
-         
-        // var horizontalItem = HorizontalLoaderItem(height: 130, items: itemsTest, itemSpacing: 20, pagingEnabled: true, padding: .padding(left: 24, right: 24))
-         
-    
-         
-         
-        return HorizontalSection(items: itemsTest, itemSpacing: 20, pagingEnabled: true, padding: .padding(left: 25, right: 25), topSpacing: 30)
+        let itemsTest: [HorizontalItem] = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
+
+        let section = HorizontalSection(items: itemsTest, itemSpacing: 50, pagingEnabled: true, padding: .padding(left: 25, right: 25), topSpacing: 30)
+        
+        section.didChangePage = { [weak self] index in
+            print("Did change page \(index)")
+        }
+        
+        return section
      }
     
     

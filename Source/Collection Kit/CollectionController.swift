@@ -12,11 +12,13 @@ public protocol CollectionControllerDelegate: class {
     var sections: [Section] { get }
     func bindSectionController(_ controller: SectionController)
     func didScroll(_ scrollView: UIScrollView)
+    func didChangePage(_ index: Int)
 }
 
 public extension CollectionControllerDelegate {
     func bindSectionController(_ controller: SectionController){}
-    func didScroll(_ scrollView: UIScrollView) { }
+    func didScroll(_ scrollView: UIScrollView) {}
+    func didChangePage(_ index: Int) {}
 }
 
 public final class CollectionController: NSObject {
@@ -116,5 +118,14 @@ extension CollectionController: ListAdapterDataSource {
 extension CollectionController: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.delegate?.didScroll(scrollView)
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard pagingEnabled, let collectionView = self.adapter.collectionView else { return }
+        
+        let x = collectionView.contentOffset.x
+        let w = collectionView.bounds.size.width
+        let currentPage = Int(ceil(x/w))
+        self.delegate?.didChangePage(currentPage)
     }
 }

@@ -18,6 +18,7 @@ public struct HorizontalLoaderItem: VerticalItem {
     public let canBounce: Bool
     
     public var didSelectAtIndex: ((Int) -> Void)?
+    public var didChangePage: ((Int) -> Void)?
     
     public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat = .zero, pagingEnabled: Bool = false, canBounce: Bool = true, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
         self.height = height
@@ -106,6 +107,11 @@ internal final class HorizontalLoaderCell: VerticalCell {
 extension HorizontalLoaderCell: CollectionControllerDelegate {
     var sections: [Section] {
         return [loader].compactMap({ $0 })
+    }
+    
+    func didChangePage(_ index: Int) {
+        guard let item = item as? HorizontalLoaderItem else { return }
+        item.didChangePage?(index)
     }
 }
 
