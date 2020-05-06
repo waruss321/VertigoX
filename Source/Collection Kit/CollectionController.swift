@@ -66,9 +66,22 @@ public final class CollectionController: NSObject {
             self.adapter.dataSource = self
             self.adapter.scrollViewDelegate = self
             self.adapter.collectionView?.collectionViewLayout = layout
+            
         }
     }
     
+    public var pagingEnabled: Bool = false {
+        didSet {
+            self.adapter.collectionView?.isPagingEnabled = pagingEnabled
+        }
+    }
+        
+    public var canBounce: Bool = true {
+        didSet {
+            self.adapter.collectionView?.alwaysBounceHorizontal = canBounce
+        }
+    }
+
     public func refresh(){
         self.adapter.performUpdates(animated: animated)
     }

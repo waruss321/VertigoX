@@ -19,9 +19,12 @@ open class HorizontalSection: SectionController, Section {
     open var margin: CGFloat = .zero
     
     open var itemSpacing: CGFloat = .zero
-    open var height: CGFloat = 100
+    open var pagingEnabled: Bool = false
+    open var canBounce: Bool = true
  
     open var didSelectItem: ((Item) -> Void)?
+    
+    private var topSpacing: CGFloat = .zero
     
     //MARK: - Init
         
@@ -30,15 +33,30 @@ open class HorizontalSection: SectionController, Section {
         self.items = items
     }
     
-    public init(items: [HorizontalItem], height: CGFloat = 100, padding: CGFloat = .zero, margin: CGFloat = .zero, itemSpacing: CGFloat = .zero, backgroundColor: UIColor = .clear) {
+    public init(items: [HorizontalItem], itemSpacing: CGFloat = .zero, padding: UIEdgeInsets = .zero, margin: CGFloat = .zero, topSpacing: CGFloat = .zero) {
         super.init()
         self.items = items
-        self.leftPadding = padding
-        self.rightPadding = padding
-        self.height = height
+        self.leftPadding = padding.left
+        self.rightPadding = padding.right
         self.margin = margin
+        self.pagingEnabled = false
+        self.canBounce = true
+        self.itemSpacing = itemSpacing
+        self.backgroundColor = .clear
+        self.topSpacing = topSpacing
+    }
+    
+    public init(items: [HorizontalItem], itemSpacing: CGFloat = .zero, pagingEnabled: Bool = false, canBounce: Bool = true, padding: UIEdgeInsets = .zero, margin: CGFloat = .zero, topSpacing: CGFloat = .zero, backgroundColor: UIColor = .clear) {
+        super.init()
+        self.items = items
+        self.leftPadding = padding.left
+        self.rightPadding = padding.left
+        self.margin = margin
+        self.pagingEnabled = pagingEnabled
+        self.canBounce = canBounce
         self.itemSpacing = itemSpacing
         self.backgroundColor = backgroundColor
+        self.topSpacing = topSpacing
     }
     
     //MARK: -
@@ -50,19 +68,30 @@ open class HorizontalSection: SectionController, Section {
     //MARK: - ListSectionController
     
     override open func numberOfItems() -> Int {
-        //Only needs 1 because we only need to use the HorizontalLoaderItem
-        return 1
+        //Only needs 2 because we only need to use the SpaceItem at the top and for other HorizontalLoaderItem
+        return 2
+    }
+    
+    private var maxItemHeight: CGFloat {
+        guard let hItems = self.items as? [HorizontalItem] else { return 100 }
+        let heights = hItems.compactMap({ $0.size.height })
+        return heights.max() ?? 100
     }
 
     override open func sizeForItem(at index: Int) -> CGSize {
-        return .size(w: sectionWidth, h: height)
+        return .size(w: sectionWidth, h: maxItemHeight)
     }
     
-    lazy var loaderItem = HorizontalLoaderItem(height: height, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
+    lazy var loaderItem = HorizontalLoaderItem(height: maxItemHeight, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, pagingEnabled: pagingEnabled, canBounce: canBounce, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
 
     override open func cellForItem(at index: Int) -> UICollectionViewCell {
         
-        if let cell = self.collectionContext?.dequeueReusableCell(of: HorizontalLoaderCell.self, for: self, at: index) as? VerticalCell {
+        if index == 0, let cell = self.collectionContext?.dequeueReusableCell(of: SpaceCell.self, for: self, at: 0) as? VerticalCell {
+            
+            cell.item = SpaceItem(height: topSpacing)
+            return cell
+            
+        } else if let cell = self.collectionContext?.dequeueReusableCell(of: HorizontalLoaderCell.self, for: self, at: index) as? VerticalCell {
 
             cell.item = loaderItem
             

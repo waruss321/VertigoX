@@ -14,13 +14,17 @@ public struct HorizontalLoaderItem: VerticalItem {
     public let itemSpacing: CGFloat
     public let padding: UIEdgeInsets
     public let loaderBackgroundColor: UIColor
+    public let pagingEnabled: Bool
+    public let canBounce: Bool
     
     public var didSelectAtIndex: ((Int) -> Void)?
     
-    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat = .zero, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
+    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat = .zero, pagingEnabled: Bool = false, canBounce: Bool = true, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
         self.height = height
         self.items = items
         self.itemSpacing = itemSpacing
+        self.pagingEnabled = pagingEnabled
+        self.canBounce = canBounce
         self.padding = padding
         self.loaderBackgroundColor = loaderBackgroundColor
     }
@@ -76,6 +80,9 @@ internal final class HorizontalLoaderCell: VerticalCell {
     
     override func bindViewModel() {
         guard let item = item as? HorizontalLoaderItem else { return }
+        
+        collectionController.canBounce = item.canBounce
+        collectionController.pagingEnabled = item.pagingEnabled
         
         if heightConstraint == nil {
             heightConstraint = contentView.setHeight(item.estimatedHeight, priority: .almost)

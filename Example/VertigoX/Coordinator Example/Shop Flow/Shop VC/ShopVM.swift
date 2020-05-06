@@ -30,17 +30,17 @@ class ShopVM: ShopVMType {
 
     //MARK: - Sections
     
-    private var fruitSection: VerticalSection {
+    private var fruitSection: HorizontalSection {
 
-         let itemsTest = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
+        let itemsTest: [HorizontalItem] = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem2(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
          
          
-         var horizontalItem = HorizontalLoaderItem(height: 130, items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
+        // var horizontalItem = HorizontalLoaderItem(height: 130, items: itemsTest, itemSpacing: 20, pagingEnabled: true, padding: .padding(left: 24, right: 24))
          
     
          
          
-         return VerticalSection(items: [horizontalItem])
+        return HorizontalSection(items: itemsTest, itemSpacing: 20, pagingEnabled: true, padding: .padding(left: 25, right: 25), topSpacing: 30)
      }
     
     
