@@ -83,7 +83,7 @@ open class HorizontalSection: SectionController, Section {
         return .size(w: sectionWidth, h: maxItemHeight)
     }
     
-    lazy var loaderItem = HorizontalLoaderItem(height: maxItemHeight, items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, pagingEnabled: pagingEnabled, canBounce: canBounce, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
+    lazy var loaderItem = HorizontalLoaderItem(items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, pagingEnabled: pagingEnabled, canBounce: canBounce, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
 
     override open func cellForItem(at index: Int) -> UICollectionViewCell {
         

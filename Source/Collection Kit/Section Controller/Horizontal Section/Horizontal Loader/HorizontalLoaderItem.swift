@@ -9,7 +9,6 @@ import IGListKit
 
 public struct HorizontalLoaderItem: VerticalItem {
     
-    private let height: CGFloat
     public let items: [HorizontalItem]
     public let itemSpacing: CGFloat
     public let padding: UIEdgeInsets
@@ -20,8 +19,7 @@ public struct HorizontalLoaderItem: VerticalItem {
     public var didSelectAtIndex: ((Int) -> Void)?
     public var didChangePage: ((Int) -> Void)?
     
-    public init(height: CGFloat, items: [HorizontalItem], itemSpacing: CGFloat = .zero, pagingEnabled: Bool = false, canBounce: Bool = true, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
-        self.height = height
+    public init(items: [HorizontalItem], itemSpacing: CGFloat = .zero, pagingEnabled: Bool = false, canBounce: Bool = true, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
         self.items = items
         self.itemSpacing = itemSpacing
         self.pagingEnabled = pagingEnabled
@@ -37,7 +35,13 @@ public struct HorizontalLoaderItem: VerticalItem {
     }
     
     public var estimatedHeight: CGFloat {
-        return height
+        return maxItemHeight
+    }
+    
+    private var maxItemHeight: CGFloat {
+        guard let hItems = self.items as? [HorizontalItem] else { return 100 }
+        let heights = hItems.compactMap({ $0.size.height })
+        return heights.max() ?? 100
     }
 }
 

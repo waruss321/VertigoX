@@ -49,7 +49,7 @@ class ShopVM: ShopVMType {
         let itemsTest = [TestHItem(text: "1"), TestHItem(text: "2"), TestHItem(text: "3"), TestHItem(text: "4"), TestHItem(text: "5")]
         
         
-        var horizontalItem = HorizontalLoaderItem(height: 170, items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
+        var horizontalItem = HorizontalLoaderItem(items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
         
    
         
@@ -63,7 +63,7 @@ class ShopVM: ShopVMType {
          let itemsTest = [TestHItem2(text: "1"), TestHItem2(text: "2"), TestHItem2(text: "3"), TestHItem2(text: "4"), TestHItem2(text: "5")]
          
          
-         var horizontalItem = HorizontalLoaderItem(height: 284, items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
+         var horizontalItem = HorizontalLoaderItem(items: itemsTest, itemSpacing: 20, padding: .padding(left: 24, right: 24))
          
     
          
