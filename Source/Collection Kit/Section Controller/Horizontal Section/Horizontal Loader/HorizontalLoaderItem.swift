@@ -98,13 +98,17 @@ internal final class HorizontalLoaderCell: VerticalCell {
         
         contentView.backgroundColor = item.loaderBackgroundColor
         
-        loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
-                                             padding: item.padding)
-        loader?.didSelectAtIndex = { index in
-            item.didSelectAtIndex?(index)
+        if loader == nil {
+            loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
+                                                 padding: item.padding)
+            loader?.didSelectAtIndex = { [weak self] index in
+                item.didSelectAtIndex?(index)
+                self?.collectionController.refresh()
+            }
+        } else {
+            collectionController.refresh()
         }
-
-        collectionController.refresh()
+   
     }
 }
 
