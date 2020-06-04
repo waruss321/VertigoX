@@ -26,14 +26,10 @@ public final class CollectionController: NSObject {
     //MARK: - Properties
 
     private lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: updater, viewController: viewController)
+        return ListAdapter(updater: updater, viewController: viewController, workingRangeSize: 0)
     }()
     
-    public weak var delegate: CollectionControllerDelegate? = nil {
-        didSet {
-            refresh()
-        }
-    }
+    public weak var delegate: CollectionControllerDelegate? = nil
     
     private var layout: UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()

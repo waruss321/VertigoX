@@ -143,6 +143,7 @@
 		B9C00926C7E9DE67B5349B8DC56BB17A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70861C371576393E401CDCB2F51F20F7 /* Coordinator.swift */; };
 		BB146E7C3C9F84A17E539111F520633F /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1CBD55527431FF46420FA764B4D0F /* CollectionViewModel.swift */; };
 		BC41539C2461D63600BCED5B /* SpaceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41539A2461D5E100BCED5B /* SpaceSection.swift */; };
+		BC5F78F62489A4DD008B18F4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F78F42489A4D7008B18F4 /* CollectionViewCell.swift */; };
 		BC95A1C22447C168003ADAE7 /* HorizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1C02447BCAD003ADAE7 /* HorizontalItem.swift */; };
 		BC95A1D0244A16DD003ADAE7 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1CE244A16C9003ADAE7 /* Section.swift */; };
 		BC95A1D4244A8873003ADAE7 /* HorizontalSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1D2244A86DE003ADAE7 /* HorizontalSection.swift */; };
@@ -427,6 +428,7 @@
 		BB5D8833DF477FC309DBC4EDE6D3CB2A /* Pods-VertigoX_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VertigoX_Tests.modulemap"; sourceTree = "<group>"; };
 		BBF06CFD6C676032B7D2C449D9E10EEA /* VertigoX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VertigoX-dummy.m"; sourceTree = "<group>"; };
 		BC41539A2461D5E100BCED5B /* SpaceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceSection.swift; sourceTree = "<group>"; };
+		BC5F78F42489A4D7008B18F4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BC62EC0AA1C764F9803B1FFB9AB628BB /* IGListSectionMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionMap.h; path = Source/IGListKit/Internal/IGListSectionMap.h; sourceTree = "<group>"; };
 		BC95A1C02447BCAD003ADAE7 /* HorizontalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalItem.swift; sourceTree = "<group>"; };
 		BC95A1CE244A16C9003ADAE7 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -948,6 +950,7 @@
 			isa = PBXGroup;
 			children = (
 				BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */,
+				BC5F78F42489A4D7008B18F4 /* CollectionViewCell.swift */,
 			);
 			path = "Horizontal Loader";
 			sourceTree = "<group>";
@@ -1490,6 +1493,7 @@
 				EAD462DA9D4D8FE9332E753649FD8296 /* DimmedView.swift in Sources */,
 				E2BC7AC6D313ACEF0E75E9E1CCF79230 /* Helpers.swift in Sources */,
 				22B3DA29A8730633A4506DECEBA315AD /* Item.swift in Sources */,
+				BC5F78F62489A4DD008B18F4 /* CollectionViewCell.swift in Sources */,
 				536C6CA563C7221DA8F1BAFDCC3FB95E /* NSObjectDiffable.swift in Sources */,
 				BC95A1E2244A8D76003ADAE7 /* SectionController.swift in Sources */,
 				F1FAE9C151D40CC298685E864BB3671E /* PanContainerView.swift in Sources */,

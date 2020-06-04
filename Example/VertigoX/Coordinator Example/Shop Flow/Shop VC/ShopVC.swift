@@ -25,9 +25,7 @@ class ShopVC: ViewController, ShopModule {
     
     private let collectionView = UICollectionView(background: .clear)
     
-    private lazy var collectionController: CollectionController = {
-        return CollectionController(viewController: self)
-    }()
+    private var collectionController = CollectionController(autoSize: false)
     
     //MARK: - Dependencies
     
@@ -49,6 +47,7 @@ class ShopVC: ViewController, ShopModule {
         
         collectionController.target = collectionView
         collectionController.delegate = self
+        collectionController.refresh()
         
     }
 //    
@@ -58,28 +57,24 @@ class ShopVC: ViewController, ShopModule {
         buttonTest.pinLeading(view.leadingAnchor, padding: 50)
         buttonTest.pinTrailing(view.trailing, padding: 50, relation: .equal)
         buttonTest.pinBottom(view.bottom, padding: 0)
-        buttonTest.setSize(.size(w: 100, h: 200))
+        buttonTest.setSize(.size(w: 100, h: 100))
         //collectionView.scroll
     }
     
     override func styleView() {
-        view.backgroundColor = .purple
+        view.backgroundColor = .white
     }
 
     //MARK: - Bind
 
     override func bindSignals() {
         buttonTest.onTouchUpInside.subscribe(with: self) { _ in
-            self.viewModel.test.toggle()
-            self.collectionController.refresh()
+            self.collectionController.reload()
+            
+            
         }
     }
     
-    private func scrollToIndex(){
-        //This only works properly if automatic size = false, or
-        //If you're using a fixed height cell and height is same within VerticalSectionController
-        self.collectionController.target?.scrollToItem(at: IndexPath(item: 4, section: 1), at: .top, animated: true)
-    }
 }
 
 
@@ -88,14 +83,10 @@ extension ShopVC: CollectionControllerDelegate {
     //MARK: - CollectionControllerDelegate
     
     var sections: [Section] {
+        print("\nacessing section")
+        viewModel.sections.forEach { section in
+            print(section.items.count)
+        }
         return viewModel.sections
-    }
-    
-    func bindSectionController(_ controller: SectionController) {
-     
-    }
-    
-    func didScroll(_ scrollView: UIScrollView) {
-        //print("Did Scroll")
     }
 }

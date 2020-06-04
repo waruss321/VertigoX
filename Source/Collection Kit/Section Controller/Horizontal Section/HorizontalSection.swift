@@ -70,7 +70,7 @@ open class HorizontalSection: SectionController, Section {
     
     override open func numberOfItems() -> Int {
         //Only needs 2 because we only need to use the SpaceItem at the top and for other HorizontalLoaderItem
-        return 2
+        return 1
     }
     
     private var maxItemHeight: CGFloat {
@@ -83,16 +83,11 @@ open class HorizontalSection: SectionController, Section {
         return .size(w: sectionWidth, h: maxItemHeight)
     }
     
-    lazy var loaderItem = HorizontalLoaderItem(items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, pagingEnabled: pagingEnabled, canBounce: canBounce, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
-
+    private lazy var loaderItem = HorizontalLoaderItem(items: items as? [HorizontalItem] ?? [], itemSpacing: itemSpacing, pagingEnabled: pagingEnabled, canBounce: canBounce, padding: .padding(left: leftPadding, right: rightPadding), loaderBackgroundColor: backgroundColor)
+    
     override open func cellForItem(at index: Int) -> UICollectionViewCell {
         
-        if index == 0, let cell = self.collectionContext?.dequeueReusableCell(of: SpaceCell.self, for: self, at: 0) as? VerticalCell {
-            
-            cell.item = SpaceItem(height: topSpacing)
-            return cell
-            
-        } else if let cell = self.collectionContext?.dequeueReusableCell(of: HorizontalLoaderCell.self, for: self, at: index) as? VerticalCell {
+        if let cell = self.collectionContext?.dequeueReusableCell(of: loaderItem.cellType.self, for: self, at: index) as? VerticalCell {
 
             cell.item = loaderItem
             

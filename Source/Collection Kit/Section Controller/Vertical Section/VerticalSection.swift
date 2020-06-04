@@ -94,7 +94,9 @@ open class VerticalSection: SectionController, Section {
     
     //MARK: -
     
-    override open func didUpdate(to object: Any) { }
+    override open func didUpdate(to object: Any) {
+        
+    }
 }
 
 //ROUND CORNERS

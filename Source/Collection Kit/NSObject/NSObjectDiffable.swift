@@ -16,3 +16,4 @@ extension NSObject: ListDiffable {
         return isEqual(object)
     }
 }
+
