@@ -17,27 +17,29 @@ class ShopVM: ShopVMType {
     //MARK: - ShopVMType
         
     var sections: [Section] {
-        return [topSection, pictures, header, articleSection, largePictures, bottomSection2, largePictures]
+        return [topSection, pictures, header, articleSection, largePictures, bottomSection2]
     }
     
     private var topSection: VerticalSection {
-        let items = [ExerciseItem(title: "Exercise 1"), ExerciseItem(title: "Exercise 2"), ExerciseItem(title: "Exercise 3"), ExerciseItem(title: "Exercise 4"), ExerciseItem(title: "Exercise 5"), ExerciseItem(title: "Exercise 6"), ExerciseItem(title: "Exercise 7")]
+        let items = [ExerciseItem(title: "Exercise 1"), ExerciseItem(title: "Exercise 2"), ExerciseItem(title: "Exercise 3")]
         
         return VerticalSection(items: items)
     }
 
-    
- 
-    
-    //
-    
-    
     private var pictures: VerticalSection {
         
         let hItems = [ImageItem(title: "1"), ImageItem(title: "2"), ImageItem(title: "3"), ImageItem(title: "4"), ImageItem(title: "5"), ImageItem(title: "6")]
         
         
-        let loader = HCollectionViewItem(items: hItems, paging: true)
+        let loader = HCollectionViewItem(items: hItems)
+        
+        loader.didChangePage = { page in
+            print(page)
+        }
+        
+        loader.didSelectAtIndex = { index in
+            print(index)
+        }
         
         return VerticalSection(items: [loader])
     }

@@ -32,6 +32,9 @@ public class HCollectionViewItem: VerticalItem {
     }
     
     public var xScrolled: CGFloat = 0
+    
+    public var didSelectAtIndex: ((Int) -> Void)?
+    public var didChangePage: ((Int) -> Void)?
 }
 
 final class CollectionViewCell: VerticalCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -57,14 +60,15 @@ final class CollectionViewCell: VerticalCell, UICollectionViewDelegate, UICollec
 
     override public func bindViewModel() {
         guard let item = item as? HCollectionViewItem else { return }
+        
+        collectionView.contentInset = item.padding
+        collectionView.isPagingEnabled = item.paging
             
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.04) {
             self.collectionView.setContentOffset(.init(x: item.xScrolled, y: 0), animated: false)
             self.collectionView.reloadData()
         }
         
-        collectionView.contentInset = item.padding
-        collectionView.isPagingEnabled = item.paging
         collectionView.setHeight(item.estimatedHeight)
     }
     
@@ -76,6 +80,7 @@ final class CollectionViewCell: VerticalCell, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let viewItem = item as? HCollectionViewItem, let item = viewItem.items[safe: indexPath.row] else { return UICollectionViewCell() }
 
         
@@ -112,4 +117,17 @@ final class CollectionViewCell: VerticalCell, UICollectionViewDelegate, UICollec
         item.xScrolled = scrollView.contentOffset.x
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard let item = item as? HCollectionViewItem, item.paging  else { return }
+        
+        let x = collectionView.contentOffset.x
+        let w = collectionView.bounds.size.width
+        let currentPage = Int(ceil(x/w))
+        item.didChangePage?(currentPage)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = item as? HCollectionViewItem else { return }
+        item.didSelectAtIndex?(indexPath.row)
+    }
 }

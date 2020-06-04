@@ -23,7 +23,7 @@ struct ImageItem: HorizontalItem {
     }
     
     var size: CGSize {
-        return .square(414)
+        return .square(100)
     }
 }
 
@@ -46,5 +46,4 @@ final class ImageCell: HorizontalCell {
         contentView.backgroundColor = .cyan
         label.text = item.title
     }
-
 }

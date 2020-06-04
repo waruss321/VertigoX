@@ -43,14 +43,12 @@ class ShopVC: ViewController, ShopModule {
     //MARK: - Configure
     
     override func configureView() {
-        
-        
         collectionController.target = collectionView
         collectionController.delegate = self
         collectionController.refresh()
-        
+        collectionController.reload()
     }
-//    
+    
     override func setConstraints(frame: CGRect) {
         view.addSubviews(collectionView, buttonTest)
         collectionView.pin(top: view.topSafe, leading: view.leadingAnchor, bottom: buttonTest.top, trailing: view.trailing)
@@ -70,8 +68,6 @@ class ShopVC: ViewController, ShopModule {
     override func bindSignals() {
         buttonTest.onTouchUpInside.subscribe(with: self) { _ in
             self.collectionController.reload()
-            
-            
         }
     }
     
@@ -83,10 +79,6 @@ extension ShopVC: CollectionControllerDelegate {
     //MARK: - CollectionControllerDelegate
     
     var sections: [Section] {
-        print("\nacessing section")
-        viewModel.sections.forEach { section in
-            print(section.items.count)
-        }
         return viewModel.sections
     }
 }
