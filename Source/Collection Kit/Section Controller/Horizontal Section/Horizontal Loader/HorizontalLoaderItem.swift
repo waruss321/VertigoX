@@ -7,10 +7,6 @@
 
 import IGListKit
 
-
-
-
-
 public struct HorizontalLoaderItem: VerticalItem {
     
     public let items: [HorizontalItem]
@@ -22,7 +18,6 @@ public struct HorizontalLoaderItem: VerticalItem {
     
     public var didSelectAtIndex: ((Int) -> Void)?
     public var didChangePage: ((Int) -> Void)?
-    
     
     public init(items: [HorizontalItem], itemSpacing: CGFloat = .zero, pagingEnabled: Bool = false, canBounce: Bool = true, padding: UIEdgeInsets = .zero, loaderBackgroundColor: UIColor = .clear) {
         self.items = items
@@ -40,102 +35,92 @@ public struct HorizontalLoaderItem: VerticalItem {
     }
     
     public var estimatedHeight: CGFloat {
-        return maxItemHeight
-    }
-    
-    private var maxItemHeight: CGFloat {
         let heights = items.compactMap({ $0.size.height })
         return heights.max() ?? 100
     }
-        
-    
 }
 
 internal final class HorizontalLoaderCell: VerticalCell {
     
     //MARK: - UI
     
-    private let collectionView = UICollectionView(background: .random())
+    private let collectionView = UICollectionView(background: .clear)
     
     //MARK: -
 
-//    lazy var loaderSection: HorizontalLoaderSection = HorizontalLoaderSection(items: [], itemSpacing: item.itemSpacing, padding: item.padding)
-    
-    weak var collectionController = CollectionController(autoSize: false, animated: false, direction: .horizontal)
+    private lazy var collectionController: CollectionController = {
+        return CollectionController(viewController: UIViewController(), autoSize: false, direction: .horizontal)
+    }()
 
+    private var loader: HorizontalLoaderSection?
     
-        
     private var heightConstraint: NSLayoutConstraint? = nil
         
     //MARK: - Configure
     
-    let test = UILabel(text: "This is a horizontal cell")
-    
     override func setConstraints(frame: CGRect) {
         super.setConstraints(frame: frame)
-        print("HorizontalLoaderItem setConstraints")
         contentView.addSubviews(collectionView)
         collectionView.fillSuperview()
-
-    }
-    
-    override func configureView() {
         
     }
     
+    override func configureView() {
+        collectionController.target = collectionView
+        collectionController.delegate = self
+    }
+    
     override func styleView() {
+        backgroundColor = .clear
         contentView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = false
         collectionView.alwaysBounceHorizontal = true
         collectionView.showsHorizontalScrollIndicator = false
-        collectionController?.target = collectionView
-        collectionController?.delegate = self
-        collectionController?.refresh()
     }
     
-    private var items: [HorizontalItem] = []
-    
-    
-        
     override func bindViewModel() {
-        print("HorizontalLoaderItem bind view model")
         guard let item = item as? HorizontalLoaderItem else { return }
         
-//        loaderSection = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing, padding: item.padding)
-//
-//        collectionController.canBounce = item.canBounce
-//        collectionController.pagingEnabled = item.pagingEnabled
-//
-//
-//        loaderSection?.didSelectAtIndex = { index in
-//            item.didSelectAtIndex?(index)
-//        }
-//
-//        collectionController.reload()
-//        collectionView.scrollRectToVisible(.zero, animated: false)
-//
-
-        heightConstraint = collectionView.setHeight(item.estimatedHeight, priority: .almost)
+        collectionController.canBounce = item.canBounce
+        collectionController.pagingEnabled = item.pagingEnabled
+        
+        if heightConstraint == nil {
+            heightConstraint = contentView.setHeight(item.estimatedHeight, priority: .almost)
+        } else {
+            heightConstraint?.constant = item.estimatedHeight
+            self.layoutIfNeeded()
+        }
+        
         contentView.backgroundColor = item.loaderBackgroundColor
+        
+        if loader == nil {
+            loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
+                                                 padding: item.padding)
+            loader?.didSelectAtIndex = { [weak self] index in
+                item.didSelectAtIndex?(index)
+                self?.collectionController.refresh()
+            }
+        } else {
+            collectionController.refresh()
+        }
+   
     }
 }
 
 extension HorizontalLoaderCell: CollectionControllerDelegate {
-    
     var sections: [Section] {
-        return [HorizontalLoaderSection(items: [ImageItem2(title: "start"), ImageItem2(title: "lol"), ImageItem2(title: "lol"), ImageItem2(title: "lol"), ImageItem2(title: "lol"), ImageItem2(title: "lol"), ImageItem2(title: "lol"), ImageItem2(title: "end")], itemSpacing: 10, padding: .zero)].compactMap({ $0 })
+        return [loader].compactMap({ $0 })
     }
     
     func didChangePage(_ index: Int) {
         guard let item = item as? HorizontalLoaderItem else { return }
         item.didChangePage?(index)
     }
-
 }
 
 //MARK: - HorizontalLoaderSection
 
-internal class HorizontalLoaderSection: SectionController, Section {
+private class HorizontalLoaderSection: SectionController, Section {
     
     //MARK: - Template
     
@@ -190,134 +175,3 @@ internal class HorizontalLoaderSection: SectionController, Section {
         didSelectAtIndex?(index)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct ImageItem2: HorizontalItem {
-
-    let title: String
-    
-    init(title: String) {
-        self.title = title
-    }
-    
-    //MARK: - VerticalItem
-
-    var cellType: AnyClass {
-       return ImageCell2.self
-    }
-    
-    var size: CGSize {
-        return .square(100)
-    }
-}
-
-final class ImageCell2: HorizontalCell {
-    
-    private let label = UILabel(alignment: .center)
-    
-    override public func setConstraints(frame: CGRect) {
-        super.setConstraints(frame: frame)
-        contentView.addSubview(label)
-        label.fillSuperview(padding: .square(5))
-    }
-    
-    override func styleView() {
-        label.backgroundColor = .red
-    }
-    
-    override public func bindViewModel() {
-        guard let item = item as? ImageItem2 else { return }
-        contentView.backgroundColor = .cyan
-        label.text = item.title
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
