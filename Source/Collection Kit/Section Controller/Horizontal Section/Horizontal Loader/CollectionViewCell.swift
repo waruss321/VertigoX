@@ -12,12 +12,14 @@ public class HCollectionViewItem: VerticalItem {
     public let itemSpacing: CGFloat
     public let padding: UIEdgeInsets
     public let paging: Bool
+    public let bounce: Bool
     
-    public init(items: [HorizontalItem], itemSpacing: CGFloat = .zero, padding: UIEdgeInsets = .zero, paging: Bool = false) {
+    public init(items: [HorizontalItem], itemSpacing: CGFloat = .zero, padding: UIEdgeInsets = .zero, paging: Bool = false, bounce: Bool = false) {
         self.items = items
         self.itemSpacing = itemSpacing
         self.padding = padding
         self.paging = paging
+        self.bounce = bounce
     }
     
     //MARK: - VerticalItem
@@ -48,7 +50,7 @@ final class CollectionViewCell: VerticalCell, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.alwaysBounceVertical = false
-        collectionView.alwaysBounceHorizontal = true
+        
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.reloadData()
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -63,7 +65,8 @@ final class CollectionViewCell: VerticalCell, UICollectionViewDelegate, UICollec
         
         collectionView.contentInset = item.padding
         collectionView.isPagingEnabled = item.paging
-            
+        collectionView.alwaysBounceHorizontal = item.bounce
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.04) {
             self.collectionView.setContentOffset(.init(x: item.xScrolled, y: 0), animated: false)
             self.collectionView.reloadData()
