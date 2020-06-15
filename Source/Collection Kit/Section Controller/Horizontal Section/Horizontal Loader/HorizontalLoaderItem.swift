@@ -35,7 +35,12 @@ public struct HorizontalLoaderItem: VerticalItem {
     }
     
     public var estimatedHeight: CGFloat {
-        let heights = items.compactMap({ $0.size.height })
+        return maxItemHeight
+    }
+    
+    private var maxItemHeight: CGFloat {
+        guard let hItems = self.items as? [HorizontalItem] else { return 100 }
+        let heights = hItems.compactMap({ $0.size.height })
         return heights.max() ?? 100
     }
 }
@@ -93,17 +98,13 @@ internal final class HorizontalLoaderCell: VerticalCell {
         
         contentView.backgroundColor = item.loaderBackgroundColor
         
-        if loader == nil {
-            loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
-                                                 padding: item.padding)
-            loader?.didSelectAtIndex = { [weak self] index in
-                item.didSelectAtIndex?(index)
-                self?.collectionController.refresh()
-            }
-        } else {
-            collectionController.refresh()
+        loader = HorizontalLoaderSection(items: item.items, itemSpacing: item.itemSpacing,
+                                             padding: item.padding)
+        loader?.didSelectAtIndex = { index in
+            item.didSelectAtIndex?(index)
         }
-   
+
+        collectionController.refresh()
     }
 }
 
