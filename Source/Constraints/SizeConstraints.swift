@@ -84,7 +84,7 @@ public extension UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        let constraint = widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier)
+        let constraint = heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier)
 
         constraint.priority = priority
         constraint.isActive = true
