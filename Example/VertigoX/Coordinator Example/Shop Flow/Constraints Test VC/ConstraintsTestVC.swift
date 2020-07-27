@@ -31,7 +31,7 @@ final class ConstraintsTestVC: ViewController, ConstraintsTestModule {
         
     }
     
-    override func bindSignals() {
+    override func bind() {
 
     }
 }

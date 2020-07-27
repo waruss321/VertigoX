@@ -31,22 +31,22 @@ public extension UIView {
     }
     
     @discardableResult
-    func withSize<T: UIView>(_ size: CGSize) -> T {
+    func size<T: UIView>(square: CGFloat) -> T {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalToConstant: size.width).isActive = true
-        heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        widthAnchor.constraint(equalToConstant: square).isActive = true
+        heightAnchor.constraint(equalToConstant: square).isActive = true
         return self as! T
     }
     
     @discardableResult
-    func withHeight(_ height: CGFloat) -> UIView {
+    func height(_ height: CGFloat) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: height).isActive = true
         return self
     }
     
     @discardableResult
-    func withWidth(_ width: CGFloat) -> UIView {
+    func width(_ width: CGFloat) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalToConstant: width).isActive = true
         return self
@@ -62,8 +62,25 @@ public extension UIView {
 
 public extension UIStackView {
     
+    convenience init(axis: NSLayoutConstraint.Axis = .vertical, spacing: CGFloat = .zero, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) {
+        self.init(frame: .zero)
+        self.axis = .vertical
+        self.spacing = spacing
+        self.alignment = alignment
+        self.distribution = distribution
+    }
+    
     @discardableResult
-    func margin(_ margins: UIEdgeInsets) -> UIStackView {
+    func margin(top: CGFloat = .zero, left: CGFloat = .zero, bottom: CGFloat = .zero, right: CGFloat = .zero) -> UIStackView {
+        let margins = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+        layoutMargins = margins
+        isLayoutMarginsRelativeArrangement = true
+        return self
+    }
+    
+    @discardableResult
+    func margin(square: CGFloat) -> UIStackView {
+        let margins = UIEdgeInsets(top: square, left: square, bottom: square, right: square)
         layoutMargins = margins
         isLayoutMarginsRelativeArrangement = true
         return self

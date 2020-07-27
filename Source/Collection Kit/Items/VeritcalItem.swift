@@ -55,8 +55,7 @@ open class VerticalCell: UICollectionViewCell, ViewTemplate {
     open func styleView(){}
 
     open func bindViewModel() {}
-    open func bindViewModelSignals() {}
-    open func bindSignals(){}
+    open func bind(){}
 }
 
 internal extension VerticalCell {

@@ -50,7 +50,7 @@ class AddItemVC: ViewController, AddItemModule {
     
     //MARK: - Bind
     
-    override func bindSignals() {
+    override func bind() {
         loginButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in
             self?.dismiss.fire(())
         }

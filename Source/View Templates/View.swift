@@ -17,8 +17,7 @@ public protocol ViewTemplate {
     func styleView() //Setting styling e.g background colors
         
     func bindViewModel() //Bind values from view model to the view (nameLabel.text=viewModel.name)
-    func bindViewModelSignals() //Bind signals from view model to view (viewModel.dataFetched.subscribe..)
-    func bindSignals() //Bind views signals (button.onTouchUpInside.subscribe)
+    func bind() //Bind views (button.onTouchUpInside)
 }
 
 public extension ViewTemplate {
@@ -28,8 +27,7 @@ public extension ViewTemplate {
         styleView()
                 
         bindViewModel()
-        bindViewModelSignals()
-        bindSignals()
+        bind()
     }
 }
 
@@ -46,6 +44,5 @@ open class View: UIView, ViewTemplate {
     open func setConstraints(frame: CGRect){}
     open func styleView(){}
     open func bindViewModel(){}
-    open func bindViewModelSignals() {}
-    open func bindSignals(){}
+    open func bind(){}
 }

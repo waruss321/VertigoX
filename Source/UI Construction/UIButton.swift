@@ -10,10 +10,11 @@ import UIKit
 
 public extension UIButton {
     
-    convenience init(font: UIFont = UIFont.systemFont(ofSize: 15), fontColor: UIColor = .black,
+    convenience init(text: String? = nil, font: UIFont = UIFont.systemFont(ofSize: 15),
+                     fontColor: UIColor = .black,
                      highlightedColor: UIColor = .gray, disabledColor: UIColor = .gray,
                      alignment: UIControl.ContentHorizontalAlignment = .center,
-                     text: String? = nil, backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
+                     backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0) {
         self.init()
         self.setTitle(text, for: .normal)
         self.titleLabel?.font = font

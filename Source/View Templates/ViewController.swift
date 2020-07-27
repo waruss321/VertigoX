@@ -15,8 +15,8 @@ public protocol ViewControllerTemplate {
     func styleView() //Setting styling e.g background colors
 
     func bindViewModel() //Bind values from view model to the view (nameLabel.text=viewModel.name)
-    func bindViewModelSignals() //Bind signals from view model to view (viewModel.dataFetched.subscribe..)
-    func bindSignals() //Bind views signals (button.onTouchUpInside.subscribe)
+
+    func bind() //Bind views (button.onTouchUpInside.subscribe)
     func fetchRequests() //Any API/Network calls
     func setView() -> UIView
 }
@@ -29,8 +29,7 @@ public extension ViewControllerTemplate where Self: UIViewController {
         
         fetchRequests()
         bindViewModel()
-        bindViewModelSignals()
-        bindSignals()
+        bind()
     }
 }
 
@@ -61,8 +60,7 @@ open class ViewController: UIViewController, ViewControllerTemplate {
     open func fetchRequests(){}
     
     open func bindViewModel(){}
-    open func bindViewModelSignals(){}
-    open func bindSignals(){}
+    open func bind(){}
 }
 
 public extension UIViewController {

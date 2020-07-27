@@ -36,6 +36,5 @@ open class HorizontalCell: UICollectionViewCell, ViewTemplate {
     open func styleView(){}
 
     open func bindViewModel() {}
-    open func bindViewModelSignals() {}
-    open func bindSignals(){}
+    open func bind(){}
 }

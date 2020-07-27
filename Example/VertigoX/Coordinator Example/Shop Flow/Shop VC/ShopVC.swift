@@ -65,7 +65,7 @@ class ShopVC: ViewController, ShopModule {
 
     //MARK: - Bind
 
-    override func bindSignals() {
+    override func bind() {
         buttonTest.onTouchUpInside.subscribe(with: self) { _ in
             self.collectionController.reload()
         }

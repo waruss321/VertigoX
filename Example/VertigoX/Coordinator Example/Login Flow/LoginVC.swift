@@ -40,7 +40,7 @@ class LoginVC: ViewController, LoginModule {
 //    
     //MARK: - Bind
     
-    override func bindSignals() {
+    override func bind() {
         loginButton.onTouchUpInside.subscribe(with: self) { [weak self] _ in
             self?.loggedIn.fire(())
         }

@@ -150,6 +150,8 @@
 		BC95A1DB244A8A49003ADAE7 /* HorizontalLoaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */; };
 		BC95A1E2244A8D76003ADAE7 /* SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1E0244A8D6D003ADAE7 /* SectionController.swift */; };
 		BC95A1E9244C21EF003ADAE7 /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95A1E7244C21E3003ADAE7 /* Signals.swift */; };
+		BCD5BDF224CF90220000553F /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5BDF124CF90220000553F /* ScrollStackView.swift */; };
+		BCD5BDF424CF92070000553F /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD5BDF324CF92070000553F /* Space.swift */; };
 		BD63D66CC60487272BDDAD046B6774C6 /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B571E132A42F6028A89BDFC2304B231 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BD90FC5C80D85CD3A1E7932D2F372224 /* IGListAdapterUpdateListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F61AA06D0DF9073F0C6ECC3020D600 /* IGListAdapterUpdateListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BED02047E23D9AEC26287039E9161E55 /* IGListIndexSetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B108B18231AA13B74633311642117F /* IGListIndexSetResult.m */; };
@@ -436,6 +438,8 @@
 		BC95A1D9244A894E003ADAE7 /* HorizontalLoaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLoaderItem.swift; sourceTree = "<group>"; };
 		BC95A1E0244A8D6D003ADAE7 /* SectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionController.swift; sourceTree = "<group>"; };
 		BC95A1E7244C21E3003ADAE7 /* Signals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
+		BCD5BDF124CF90220000553F /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrollStackView.swift; path = "../../../manager-app-github/Manager/Flows/Match Fee Flow/MF Assignments VC/UI/ScrollStackView.swift"; sourceTree = "<group>"; };
+		BCD5BDF324CF92070000553F /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Space.swift; path = "../../../manager-app-github/Manager/Flows/Match Fee Flow/MF Assignments VC/UI/Space.swift"; sourceTree = "<group>"; };
 		BD8390FB6CA9994C7CFB10CF53B17D37 /* IGListIndexPathResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResultInternal.h; path = Source/IGListDiffKit/Internal/IGListIndexPathResultInternal.h; sourceTree = "<group>"; };
 		BE8F0AB02947FD687CE5AABC640BA83B /* VertigoX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VertigoX.modulemap; sourceTree = "<group>"; };
 		BE8F9D50BB04C9A0E30320043131F350 /* IGListWorkingRangeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListWorkingRangeHandler.h; path = Source/IGListKit/Internal/IGListWorkingRangeHandler.h; sourceTree = "<group>"; };
@@ -922,6 +926,7 @@
 				629303A8964F1AC1BFA7395A2270E7D3 /* PanModal */,
 				630AE030B5D32A0FA9FE22C9A54FB7EA /* Pod */,
 				636504463A4A35CBCE56AF225FD5CBA5 /* Support Files */,
+				BCD5BDF024CF8FD20000553F /* UI */,
 				EA6A0173D2766E60F98EF1C314891DE1 /* UI Construction */,
 				AA51576E9C4367BA2A27F9B6C68A4EEA /* View Templates */,
 			);
@@ -953,6 +958,15 @@
 				BC5F78F42489A4D7008B18F4 /* CollectionViewCell.swift */,
 			);
 			path = "Horizontal Loader";
+			sourceTree = "<group>";
+		};
+		BCD5BDF024CF8FD20000553F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BCD5BDF124CF90220000553F /* ScrollStackView.swift */,
+				BCD5BDF324CF92070000553F /* Space.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		C2B0D897F7FC852877701F8A512AF795 /* IGListKit */ = {
@@ -1505,6 +1519,7 @@
 				4B5E3B1CF26A119A689DE810C8AE824F /* PanModalPresentable.swift in Sources */,
 				584014CA84CA534D39B4EACE20C0B1B3 /* PanModalPresentationAnimator.swift in Sources */,
 				8D4558E4F99D47F9C4C38F25D01C8CC1 /* PanModalPresentationController.swift in Sources */,
+				BCD5BDF224CF90220000553F /* ScrollStackView.swift in Sources */,
 				C35322A68D6CCCFFCC992B67935DC56F /* PanModalPresentationDelegate.swift in Sources */,
 				26DE2929CCE06E3F920C9955C8DAC317 /* PanModalPresenter.swift in Sources */,
 				C055DD2E6A7C18945E45AC24DE152639 /* PinningConstraints.swift in Sources */,
@@ -1524,6 +1539,7 @@
 				FE8D308659843598D913F20ED9488CA6 /* UITextField.swift in Sources */,
 				6AE27C49E482F6C1C57963781A8142BA /* UIView+Stacks.swift in Sources */,
 				15CB150346BF9898829CEFAB2DEDC344 /* UIView.swift in Sources */,
+				BCD5BDF424CF92070000553F /* Space.swift in Sources */,
 				BC95A1D4244A8873003ADAE7 /* HorizontalSection.swift in Sources */,
 				A6E02236C4472C910B5891F7E9E91CE0 /* UIViewController+PanModalPresenter.swift in Sources */,
 				19B02AB4D9E2653A632B4C79CF339980 /* UIViewExtension.swift in Sources */,

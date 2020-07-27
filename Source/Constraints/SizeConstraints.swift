@@ -24,6 +24,19 @@ public extension UIView {
         }
     }
     
+    func setSize(w: CGFloat = .zero, h: CGFloat = .zero, priority: UILayoutPriority = .required) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if w != .zero {
+            setWidth(w, priority: priority)
+        }
+        
+        if h != .zero {
+            setHeight(h, priority: priority)
+        }
+    }
+    
     @discardableResult
     func setWidth(_ height: CGFloat, relation: ConstraintRelation = .equal, priority: UILayoutPriority = .required) -> NSLayoutConstraint {
                 
